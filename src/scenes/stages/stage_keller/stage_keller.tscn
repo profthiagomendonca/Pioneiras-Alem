@@ -1,0 +1,192 @@
+[gd_scene load_steps=7 format=3]
+
+[ext_resource type="Script" path="res://src/scenes/stages/stage_keller/stage_keller.gd" id="1_stage"]
+[ext_resource type="PackedScene" path="res://src/scenes/dialogue_system/dialogue_box.tscn" id="2_dialogue"]
+[ext_resource type="Texture2D" path="res://src/assets/textures/backgrounds/Fundo fase 6.png" id="3_bg_keller"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_header"]
+bg_color = Color(0.08, 0.09, 0.14, 0.85)
+border_width_bottom = 2
+border_color = Color(0.4, 0.8, 0.5, 0.8)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_panel"]
+bg_color = Color(0.09, 0.11, 0.17, 0.92)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.4, 0.8, 0.5, 1)
+corner_radius_top_left = 14
+corner_radius_top_right = 14
+corner_radius_bottom_right = 14
+corner_radius_bottom_left = 14
+shadow_color = Color(0, 0, 0, 0.6)
+shadow_size = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_terminal"]
+bg_color = Color(0.05, 0.06, 0.08, 0.95)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.3, 0.6, 0.4, 0.6)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[node name="StageKeller" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_stage")
+
+[node name="BackgroundTexture" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_bg_keller")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="ColorOverlay" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.04, 0.06, 0.1, 0.6)
+
+[node name="HeaderPanel" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 54.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_header")
+
+[node name="Margin" type="MarginContainer" parent="HeaderPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 8
+
+[node name="HeaderBar" type="HBoxContainer" parent="HeaderPanel/Margin"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="HeaderPanel/Margin/HeaderBar"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.5, 0.9, 0.6, 1)
+theme_override_font_sizes/font_size = 20
+text = "Fase 5: Irmã Mary Kenneth Keller (1965) — O Primeiro Doutorado & A Linguagem BASIC"
+
+[node name="BtnMenu" type="Button" parent="HeaderPanel/Margin/HeaderBar"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 34)
+layout_mode = 2
+text = "Menu"
+
+[node name="MainPanel" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(1000, 440)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -500.0
+offset_top = -285.0
+offset_right = 500.0
+offset_bottom = 155.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_panel")
+
+[node name="Margin" type="MarginContainer" parent="MainPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 16
+
+[node name="VBox" type="VBoxContainer" parent="MainPanel/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="InstrLabel" type="Label" parent="MainPanel/Margin/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.88, 0.94, 0.9, 1)
+theme_override_font_sizes/font_size = 15
+text = "Ordene as instruções do programa BASIC para executar na Teletype 33 (Use os botões Subir/Descer):"
+horizontal_alignment = 1
+
+[node name="HBoxEditor" type="HBoxContainer" parent="MainPanel/Margin/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 20
+
+[node name="LinesContainer" type="VBoxContainer" parent="MainPanel/Margin/VBox/HBoxEditor"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 8
+
+[node name="TerminalPanel" type="PanelContainer" parent="MainPanel/Margin/VBox/HBoxEditor"]
+custom_minimum_size = Vector2(380, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_terminal")
+
+[node name="MarginTerm" type="MarginContainer" parent="MainPanel/Margin/VBox/HBoxEditor/TerminalPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 14
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 14
+theme_override_constants/margin_bottom = 10
+
+[node name="TerminalOutput" type="RichTextLabel" parent="MainPanel/Margin/VBox/HBoxEditor/TerminalPanel/MarginTerm"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/default_color = Color(0.7, 0.9, 0.75, 1)
+theme_override_font_sizes/normal_font_size = 13
+bbcode_enabled = true
+text = "[color=#88c0d0]TELETYPE MODEL 33\nDARTMOUTH TIME-SHARING SYSTEM\n\nAGUARDANDO CÓDIGO...[/color]"
+
+[node name="LabelStatus" type="Label" parent="MainPanel/Margin/VBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 24)
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+horizontal_alignment = 1
+
+[node name="ActionsHBox" type="HBoxContainer" parent="MainPanel/Margin/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="BtnRun" type="Button" parent="MainPanel/Margin/VBox/ActionsHBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(280, 38)
+layout_mode = 2
+text = "▶ Executar Programa na Teletype"
+
+[node name="BtnNextStage" type="Button" parent="MainPanel/Margin/VBox/ActionsHBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(280, 38)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.4, 0.85, 1.0, 1)
+theme_override_font_sizes/font_size = 15
+text = "▶ Próxima Era: Margaret Hamilton (1969)"
+
+[node name="DialogueBox" parent="." instance=ExtResource("2_dialogue")]
+layout_mode = 1
+offset_top = -180.0
+offset_bottom = -12.0

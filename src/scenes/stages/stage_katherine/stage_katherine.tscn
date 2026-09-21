@@ -1,0 +1,263 @@
+[gd_scene load_steps=8 format=3]
+
+[ext_resource type="Script" path="res://src/scenes/stages/stage_katherine/stage_katherine.gd" id="1_stage"]
+[ext_resource type="PackedScene" path="res://src/scenes/dialogue_system/dialogue_box.tscn" id="2_dialogue"]
+[ext_resource type="Texture2D" path="res://src/assets/textures/backgrounds/Fundo fase 4.png" id="3_bg_katherine"]
+[ext_resource type="Texture2D" path="res://src/assets/textures/icons/Regua_nasa.png" id="4_ruler_icon"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_header"]
+bg_color = Color(0.08, 0.09, 0.14, 0.85)
+border_width_bottom = 2
+border_color = Color(0.35, 0.65, 0.95, 0.8)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_panel"]
+bg_color = Color(0.09, 0.11, 0.17, 0.92)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.35, 0.65, 0.95, 1)
+corner_radius_top_left = 14
+corner_radius_top_right = 14
+corner_radius_bottom_right = 14
+corner_radius_bottom_left = 14
+shadow_color = Color(0, 0, 0, 0.6)
+shadow_size = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_box"]
+bg_color = Color(0.06, 0.07, 0.11, 0.9)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.35, 0.5, 0.7, 0.5)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[node name="StageKatherine" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_stage")
+
+[node name="BackgroundTexture" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_bg_katherine")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="ColorOverlay" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.04, 0.06, 0.1, 0.6)
+
+[node name="HeaderPanel" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 54.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_header")
+
+[node name="Margin" type="MarginContainer" parent="HeaderPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 8
+
+[node name="HeaderBar" type="HBoxContainer" parent="HeaderPanel/Margin"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="HeaderPanel/Margin/HeaderBar"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.4, 0.85, 1.0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Fase 4: Katherine Johnson (1962) — A Mecânica Orbital e a Missão Friendship 7"
+
+[node name="BtnMenu" type="Button" parent="HeaderPanel/Margin/HeaderBar"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 34)
+layout_mode = 2
+text = "Menu"
+
+[node name="MainPanel" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(1000, 440)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -500.0
+offset_top = -285.0
+offset_right = 500.0
+offset_bottom = 155.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_panel")
+
+[node name="Margin" type="MarginContainer" parent="MainPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 16
+
+[node name="VBox" type="VBoxContainer" parent="MainPanel/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="TopInfoHBox" type="HBoxContainer" parent="MainPanel/Margin/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="RulerIcon" type="TextureRect" parent="MainPanel/Margin/VBox/TopInfoHBox"]
+custom_minimum_size = Vector2(90, 42)
+layout_mode = 2
+texture = ExtResource("4_ruler_icon")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="RulerText" type="RichTextLabel" parent="MainPanel/Margin/VBox/TopInfoHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0.88, 0.92, 0.98, 1)
+theme_override_font_sizes/normal_font_size = 13
+bbcode_enabled = true
+text = "[b]Régua de Cálculo da NASA & Geometria Analítica:[/b] Calibre os parâmetros orbitais da cápsula de John Glenn para garantir que o escudo térmico suporte a reentrada."
+
+[node name="LabelCorridor" type="Label" parent="MainPanel/Margin/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(1.0, 0.85, 0.4, 1)
+theme_override_font_sizes/font_size = 15
+text = "CORREDOR DE REENTRADA: CALIBRANDO PARÂMETROS..."
+horizontal_alignment = 1
+
+[node name="SlidersBox" type="PanelContainer" parent="MainPanel/Margin/VBox"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_box")
+
+[node name="MarginSliders" type="MarginContainer" parent="MainPanel/Margin/VBox/SlidersBox"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 14
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 14
+
+[node name="Grid" type="GridContainer" parent="MainPanel/Margin/VBox/SlidersBox/MarginSliders"]
+layout_mode = 2
+theme_override_constants/h_separation = 18
+theme_override_constants/v_separation = 12
+columns = 3
+
+[node name="Lbl1" type="Label" parent="MainPanel/Margin/VBox/SlidersBox/MarginSliders/Grid"]
+custom_minimum_size = Vector2(230, 0)
+layout_mode = 2
+text = "1. Ângulo de Reentrada (Meta ~6.8°):"
+
+[node name="SliderAngle" type="HSlider" parent="MainPanel/Margin/VBox/SlidersBox/MarginSliders/Grid"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(500, 24)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+min_value = 4.0
+max_value = 10.0
+step = 0.1
+value = 8.5
+
+[node name="ValAngle" type="Label" parent="MainPanel/Margin/VBox/SlidersBox/MarginSliders/Grid"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "8.5°"
+
+[node name="Lbl2" type="Label" parent="MainPanel/Margin/VBox/SlidersBox/MarginSliders/Grid"]
+layout_mode = 2
+text = "2. Velocidade Orbital (Meta ~17.500 mph):"
+
+[node name="SliderVelocity" type="HSlider" parent="MainPanel/Margin/VBox/SlidersBox/MarginSliders/Grid"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(500, 24)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+min_value = 15000.0
+max_value = 20000.0
+step = 50.0
+value = 19000.0
+
+[node name="ValVelocity" type="Label" parent="MainPanel/Margin/VBox/SlidersBox/MarginSliders/Grid"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "19000 mph"
+
+[node name="Lbl3" type="Label" parent="MainPanel/Margin/VBox/SlidersBox/MarginSliders/Grid"]
+layout_mode = 2
+text = "3. Ignição dos Retrofoguetes (Meta ~30s):"
+
+[node name="SliderRetro" type="HSlider" parent="MainPanel/Margin/VBox/SlidersBox/MarginSliders/Grid"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(500, 24)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+min_value = 10.0
+max_value = 50.0
+step = 1.0
+value = 15.0
+
+[node name="ValRetro" type="Label" parent="MainPanel/Margin/VBox/SlidersBox/MarginSliders/Grid"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "15 s"
+
+[node name="LabelStatus" type="Label" parent="MainPanel/Margin/VBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 24)
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+horizontal_alignment = 1
+
+[node name="ActionsHBox" type="HBoxContainer" parent="MainPanel/Margin/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="BtnCalculate" type="Button" parent="MainPanel/Margin/VBox/ActionsHBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(280, 38)
+layout_mode = 2
+text = "📐 Validar Cálculos de Trajetória"
+
+[node name="BtnNextStage" type="Button" parent="MainPanel/Margin/VBox/ActionsHBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(280, 38)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.4, 0.85, 1.0, 1)
+theme_override_font_sizes/font_size = 15
+text = "▶ Próxima Era: Mary Keller (1965)"
+
+[node name="DialogueBox" parent="." instance=ExtResource("2_dialogue")]
+layout_mode = 1
+offset_top = -180.0
+offset_bottom = -12.0

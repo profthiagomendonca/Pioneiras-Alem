@@ -1,0 +1,283 @@
+[gd_scene load_steps=8 format=3]
+
+[ext_resource type="Script" path="res://src/scenes/stages/stage_ada/stage_ada.gd" id="1_stage"]
+[ext_resource type="PackedScene" path="res://src/scenes/dialogue_system/dialogue_box.tscn" id="2_dialogue"]
+[ext_resource type="Texture2D" path="res://src/assets/textures/backgrounds/Fundo fase 1.png" id="3_bg_ada"]
+[ext_resource type="Texture2D" path="res://src/assets/textures/icons/Cartao_perfurado.png" id="4_card_icon"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_header"]
+bg_color = Color(0.08, 0.09, 0.14, 0.85)
+border_width_bottom = 2
+border_color = Color(0.85, 0.68, 0.28, 0.8)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_panel"]
+bg_color = Color(0.09, 0.11, 0.17, 0.92)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.85, 0.68, 0.28, 1)
+corner_radius_top_left = 14
+corner_radius_top_right = 14
+corner_radius_bottom_right = 14
+corner_radius_bottom_left = 14
+shadow_color = Color(0, 0, 0, 0.6)
+shadow_size = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_desc"]
+bg_color = Color(0.06, 0.07, 0.11, 0.9)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.4, 0.5, 0.7, 0.6)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[node name="StageAda" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_stage")
+
+[node name="BackgroundTexture" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_bg_ada")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="ColorOverlay" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.05, 0.06, 0.1, 0.6)
+
+[node name="HeaderPanel" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 54.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_header")
+
+[node name="Margin" type="MarginContainer" parent="HeaderPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 8
+
+[node name="HeaderBar" type="HBoxContainer" parent="HeaderPanel/Margin"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="HeaderPanel/Margin/HeaderBar"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.96, 0.82, 0.36, 1)
+theme_override_font_sizes/font_size = 20
+text = "Fase 1: Ada Lovelace (1843) — O Motor Analítico e os Cartões Perfurados"
+
+[node name="BtnMenu" type="Button" parent="HeaderPanel/Margin/HeaderBar"]
+custom_minimum_size = Vector2(100, 34)
+layout_mode = 2
+text = "Menu"
+
+[node name="GearLeft" type="Control" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 0
+offset_left = 60.0
+offset_top = 110.0
+offset_right = 100.0
+offset_bottom = 150.0
+
+[node name="ColorRect" type="ColorRect" parent="GearLeft"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 0
+offset_left = -16.0
+offset_top = -16.0
+offset_right = 16.0
+offset_bottom = 16.0
+color = Color(0.85, 0.68, 0.28, 0.4)
+
+[node name="GearRight" type="Control" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -80.0
+offset_top = 110.0
+offset_right = -40.0
+offset_bottom = 150.0
+grow_horizontal = 0
+
+[node name="ColorRect" type="ColorRect" parent="GearRight"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 0
+offset_left = -16.0
+offset_top = -16.0
+offset_right = 16.0
+offset_bottom = 16.0
+color = Color(0.85, 0.68, 0.28, 0.4)
+
+[node name="MainPanel" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(1000, 440)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -500.0
+offset_top = -285.0
+offset_right = 500.0
+offset_bottom = 155.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_panel")
+
+[node name="Margin" type="MarginContainer" parent="MainPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 16
+
+[node name="VBox" type="VBoxContainer" parent="MainPanel/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="InstrLabel" type="Label" parent="MainPanel/Margin/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.88, 0.91, 0.98, 1)
+theme_override_font_sizes/font_size = 15
+text = "Organize a sequência do algoritmo nos slots do leitor da Máquina Analítica:"
+horizontal_alignment = 1
+
+[node name="SlotsContainer" type="HBoxContainer" parent="MainPanel/Margin/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="Slot1" type="Button" parent="MainPanel/Margin/VBox/SlotsContainer"]
+custom_minimum_size = Vector2(215, 80)
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "[ Vazio ]\nSlot 1"
+
+[node name="Slot2" type="Button" parent="MainPanel/Margin/VBox/SlotsContainer"]
+custom_minimum_size = Vector2(215, 80)
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "[ Vazio ]\nSlot 2"
+
+[node name="Slot3" type="Button" parent="MainPanel/Margin/VBox/SlotsContainer"]
+custom_minimum_size = Vector2(215, 80)
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "[ Vazio ]\nSlot 3"
+
+[node name="Slot4" type="Button" parent="MainPanel/Margin/VBox/SlotsContainer"]
+custom_minimum_size = Vector2(215, 80)
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "[ Vazio ]\nSlot 4"
+
+[node name="CardsLabel" type="Label" parent="MainPanel/Margin/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.75, 0.8, 0.9, 1)
+theme_override_font_sizes/font_size = 13
+text = "Cartões Perfurados Disponíveis (Passe o mouse para ler a descrição e clique para inserir):"
+
+[node name="DeckContainer" type="HBoxContainer" parent="MainPanel/Margin/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 14
+alignment = 1
+
+[node name="CardInfoPanel" type="PanelContainer" parent="MainPanel/Margin/VBox"]
+custom_minimum_size = Vector2(0, 68)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_desc")
+
+[node name="Margin" type="MarginContainer" parent="MainPanel/Margin/VBox/CardInfoPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 8
+
+[node name="HBoxInfo" type="HBoxContainer" parent="MainPanel/Margin/VBox/CardInfoPanel/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="CardIcon" type="TextureRect" parent="MainPanel/Margin/VBox/CardInfoPanel/Margin/HBoxInfo"]
+custom_minimum_size = Vector2(70, 52)
+layout_mode = 2
+texture = ExtResource("4_card_icon")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="CardInfoBox" type="RichTextLabel" parent="MainPanel/Margin/VBox/CardInfoPanel/Margin/HBoxInfo"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0.9, 0.93, 0.98, 1)
+theme_override_font_sizes/normal_font_size = 13
+bbcode_enabled = true
+text = "Passe o cursor sobre um cartão para inspecionar seus detalhes lógicos."
+
+[node name="LabelStatus" type="Label" parent="MainPanel/Margin/VBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 24)
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+horizontal_alignment = 1
+
+[node name="ActionsHBox" type="HBoxContainer" parent="MainPanel/Margin/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="BtnHint" type="Button" parent="MainPanel/Margin/VBox/ActionsHBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(130, 38)
+layout_mode = 2
+text = "💡 Pedir Dica"
+
+[node name="BtnRun" type="Button" parent="MainPanel/Margin/VBox/ActionsHBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(240, 38)
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+text = "⚙ Executar Motor Analítico"
+
+[node name="BtnNextStage" type="Button" parent="MainPanel/Margin/VBox/ActionsHBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(220, 38)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.98, 0.85, 0.3, 1)
+theme_override_font_sizes/font_size = 15
+text = "▶ Próxima Era: ENIAC Girls"
+
+[node name="DialogueBox" parent="." instance=ExtResource("2_dialogue")]
+layout_mode = 1
+offset_top = -180.0
+offset_bottom = -12.0
+
+[connection signal="pressed" from="HeaderPanel/Margin/HeaderBar/BtnMenu" to="." method="_on_btn_menu_pressed"]

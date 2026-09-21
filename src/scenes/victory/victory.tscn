@@ -1,0 +1,192 @@
+[gd_scene load_steps=7 format=3]
+
+[ext_resource type="Script" path="res://src/scenes/victory/victory.gd" id="1_victory"]
+[ext_resource type="Texture2D" path="res://src/assets/textures/backgrounds/Fundo do Menu Principal.png" id="2_bg_texture"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_card"]
+bg_color = Color(0.09, 0.11, 0.18, 0.95)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.96, 0.82, 0.36, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 0.6)
+shadow_size = 14
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_box"]
+bg_color = Color(0.07, 0.08, 0.13, 0.9)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.35, 0.45, 0.65, 0.5)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[node name="Victory" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_victory")
+
+[node name="BackgroundTexture" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_bg_texture")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="ColorOverlay" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.04, 0.05, 0.09, 0.65)
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MainPanel" type="PanelContainer" parent="CenterContainer"]
+custom_minimum_size = Vector2(940, 590)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_card")
+
+[node name="Margin" type="MarginContainer" parent="CenterContainer/MainPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 24
+
+[node name="VBox" type="VBoxContainer" parent="CenterContainer/MainPanel/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="Title" type="Label" parent="CenterContainer/MainPanel/Margin/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.96, 0.82, 0.36, 1)
+theme_override_font_sizes/font_size = 30
+text = "Jornada Concluída: O Código Tornou-se Visível!"
+horizontal_alignment = 1
+
+[node name="LabelScore" type="Label" parent="CenterContainer/MainPanel/Margin/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.4, 0.85, 1.0, 1)
+theme_override_font_sizes/font_size = 18
+text = "Pontuação Total: 600 pts"
+horizontal_alignment = 1
+
+[node name="HBoxCols" type="HBoxContainer" parent="CenterContainer/MainPanel/Margin/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 24
+
+[node name="MetricsPanel" type="PanelContainer" parent="CenterContainer/MainPanel/Margin/VBox/HBoxCols"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_box")
+
+[node name="Margin" type="MarginContainer" parent="CenterContainer/MainPanel/Margin/VBox/HBoxCols/MetricsPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 14
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 14
+
+[node name="LabelMetrics" type="RichTextLabel" parent="CenterContainer/MainPanel/Margin/VBox/HBoxCols/MetricsPanel/Margin"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/default_color = Color(0.9, 0.92, 0.98, 1)
+theme_override_font_sizes/normal_font_size = 13
+bbcode_enabled = true
+text = "Carregando telemetria..."
+
+[node name="SurveyPanel" type="PanelContainer" parent="CenterContainer/MainPanel/Margin/VBox/HBoxCols"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_box")
+
+[node name="Margin" type="MarginContainer" parent="CenterContainer/MainPanel/Margin/VBox/HBoxCols/SurveyPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 14
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 14
+
+[node name="VBoxSurvey" type="VBoxContainer" parent="CenterContainer/MainPanel/Margin/VBox/HBoxCols/SurveyPanel/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="SurveyTitle" type="Label" parent="CenterContainer/MainPanel/Margin/VBox/HBoxCols/SurveyPanel/Margin/VBoxSurvey"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.96, 0.82, 0.36, 1)
+theme_override_font_sizes/font_size = 15
+text = "Avaliação Científica & Percepção (COTB):"
+
+[node name="Q1Check" type="CheckBox" parent="CenterContainer/MainPanel/Margin/VBox/HBoxCols/SurveyPanel/Margin/VBoxSurvey"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 13
+text = "Eu já conhecia essas três pioneiras antes do jogo."
+
+[node name="Q2Check" type="CheckBox" parent="CenterContainer/MainPanel/Margin/VBox/HBoxCols/SurveyPanel/Margin/VBoxSurvey"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 13
+text = "O jogo aumentou minha percepção sobre o ODS 05."
+
+[node name="Q3Check" type="CheckBox" parent="CenterContainer/MainPanel/Margin/VBox/HBoxCols/SurveyPanel/Margin/VBoxSurvey"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 13
+text = "A metodologia interativa facilitou a compreensão."
+
+[node name="BtnCopyTelemetry" type="Button" parent="CenterContainer/MainPanel/Margin/VBox/HBoxCols/SurveyPanel/Margin/VBoxSurvey"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 36)
+layout_mode = 2
+text = "📋 Copiar Dados da Sessão (JSON)"
+
+[node name="CopyFeedback" type="Label" parent="CenterContainer/MainPanel/Margin/VBox/HBoxCols/SurveyPanel/Margin/VBoxSurvey"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+horizontal_alignment = 1
+
+[node name="ButtonsHBox" type="HBoxContainer" parent="CenterContainer/MainPanel/Margin/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="BtnPlayAgain" type="Button" parent="CenterContainer/MainPanel/Margin/VBox/ButtonsHBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(180, 42)
+layout_mode = 2
+text = "🔄 Jogar Novamente"
+
+[node name="BtnMainMenu" type="Button" parent="CenterContainer/MainPanel/Margin/VBox/ButtonsHBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(180, 42)
+layout_mode = 2
+text = "🏠 Menu Principal"

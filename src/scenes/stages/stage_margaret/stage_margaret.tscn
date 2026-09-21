@@ -1,0 +1,184 @@
+[gd_scene load_steps=7 format=3]
+
+[ext_resource type="Script" path="res://src/scenes/stages/stage_margaret/stage_margaret.gd" id="1_stage"]
+[ext_resource type="PackedScene" path="res://src/scenes/dialogue_system/dialogue_box.tscn" id="2_dialogue"]
+[ext_resource type="Texture2D" path="res://src/assets/textures/backgrounds/Fundo fase 3.png" id="3_bg_apollo"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_header"]
+bg_color = Color(0.08, 0.09, 0.14, 0.85)
+border_width_bottom = 2
+border_color = Color(0.9, 0.45, 0.45, 0.8)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dsky"]
+bg_color = Color(0.07, 0.08, 0.13, 0.92)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.9, 0.45, 0.45, 1)
+corner_radius_top_left = 14
+corner_radius_top_right = 14
+corner_radius_bottom_right = 14
+corner_radius_bottom_left = 14
+shadow_color = Color(0, 0, 0, 0.6)
+shadow_size = 12
+
+[node name="StageMargaret" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_stage")
+
+[node name="BackgroundTexture" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_bg_apollo")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="ColorOverlay" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.04, 0.05, 0.09, 0.6)
+
+[node name="HeaderPanel" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 54.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_header")
+
+[node name="Margin" type="MarginContainer" parent="HeaderPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 8
+
+[node name="HeaderBar" type="HBoxContainer" parent="HeaderPanel/Margin"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="HeaderPanel/Margin/HeaderBar"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1.0, 0.65, 0.65, 1)
+theme_override_font_sizes/font_size = 20
+text = "Fase 6: Margaret Hamilton (1969) — O Pouso da Apollo 11 & Engenharia de Software"
+
+[node name="BtnMenu" type="Button" parent="HeaderPanel/Margin/HeaderBar"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 34)
+layout_mode = 2
+text = "Menu"
+
+[node name="MainPanel" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(1000, 440)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -500.0
+offset_top = -285.0
+offset_right = 500.0
+offset_bottom = 155.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_dsky")
+
+[node name="Margin" type="MarginContainer" parent="MainPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 16
+
+[node name="VBox" type="VBoxContainer" parent="MainPanel/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="TelemetryHBox" type="HBoxContainer" parent="MainPanel/Margin/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="LabelAltitude" type="Label" parent="MainPanel/Margin/VBox/TelemetryHBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(1.0, 0.85, 0.4, 1)
+theme_override_font_sizes/font_size = 18
+text = "ALTITUDE LUNAR: 3000 m"
+
+[node name="LabelAlarm" type="Label" parent="MainPanel/Margin/VBox/TelemetryHBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(1.0, 0.3, 0.3, 1)
+theme_override_font_sizes/font_size = 16
+text = "🚨 ALARME AGC 1202: SOBRECARGA DE CPU"
+
+[node name="CPULabel" type="Label" parent="MainPanel/Margin/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8, 0.85, 0.95, 1)
+theme_override_font_sizes/font_size = 13
+text = "Carga da Memória e Ciclos da CPU do Apollo Guidance Computer (AGC):"
+
+[node name="ProgressCPU" type="ProgressBar" parent="MainPanel/Margin/VBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 22)
+layout_mode = 2
+value = 85.0
+
+[node name="QueueLabel" type="Label" parent="MainPanel/Margin/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.85, 0.88, 0.95, 1)
+theme_override_font_sizes/font_size = 14
+text = "Fila de Tarefas Concorrentes do AGC (Descarte o tráfego supérfluo):"
+
+[node name="TasksContainer" type="VBoxContainer" parent="MainPanel/Margin/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="LabelStatus" type="Label" parent="MainPanel/Margin/VBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 24)
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+horizontal_alignment = 1
+
+[node name="ActionsHBox" type="HBoxContainer" parent="MainPanel/Margin/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="BtnPriorityMode" type="Button" parent="MainPanel/Margin/VBox/ActionsHBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(280, 38)
+layout_mode = 2
+text = "⚡ Ativar Agendamento por Prioridade"
+
+[node name="BtnFinish" type="Button" parent="MainPanel/Margin/VBox/ActionsHBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(240, 38)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.3, 1.0, 0.5, 1)
+theme_override_font_sizes/font_size = 15
+text = "🏆 Concluir Jornada Histórica"
+
+[node name="DialogueBox" parent="." instance=ExtResource("2_dialogue")]
+layout_mode = 1
+offset_top = -180.0
+offset_bottom = -12.0

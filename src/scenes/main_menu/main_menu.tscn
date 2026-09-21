@@ -1,0 +1,284 @@
+[gd_scene load_steps=6 format=3]
+
+[ext_resource type="Script" path="res://src/scenes/main_menu/main_menu.gd" id="1_menu"]
+[ext_resource type="Texture2D" path="res://src/assets/textures/backgrounds/Fundo do Menu Principal.png" id="2_bg_texture"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_modal"]
+bg_color = Color(0.09, 0.11, 0.18, 0.98)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.85, 0.68, 0.28, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 0.7)
+shadow_size = 14
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_badge"]
+bg_color = Color(0.12, 0.15, 0.24, 0.85)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.4, 0.7, 0.9, 0.6)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_glass"]
+bg_color = Color(0.06, 0.08, 0.14, 0.75)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.85, 0.68, 0.28, 0.6)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 0.6)
+shadow_size = 16
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_menu")
+
+[node name="BackgroundTexture" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_bg_texture")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="ColorOverlay" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.04, 0.05, 0.09, 0.55)
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MainCard" type="PanelContainer" parent="CenterContainer"]
+custom_minimum_size = Vector2(720, 520)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_glass")
+
+[node name="Margin" type="MarginContainer" parent="CenterContainer/MainCard"]
+layout_mode = 2
+theme_override_constants/margin_left = 36
+theme_override_constants/margin_top = 28
+theme_override_constants/margin_right = 36
+theme_override_constants/margin_bottom = 28
+
+[node name="MainVBox" type="VBoxContainer" parent="CenterContainer/MainCard/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 18
+alignment = 1
+
+[node name="Title" type="Label" parent="CenterContainer/MainCard/Margin/MainVBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.960784, 0.819608, 0.360784, 1)
+theme_override_font_sizes/font_size = 46
+text = "PIONEIRAS & ALÉM"
+horizontal_alignment = 1
+
+[node name="Subtitle" type="Label" parent="CenterContainer/MainCard/Margin/MainVBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.85, 0.89, 0.96, 1)
+theme_override_font_sizes/font_size = 18
+text = "O Código Invisível que Construiu a Computação"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="CenterContainer/MainCard/Margin/MainVBox"]
+custom_minimum_size = Vector2(420, 14)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="MenuButtons" type="VBoxContainer" parent="CenterContainer/MainCard/Margin/MainVBox"]
+custom_minimum_size = Vector2(360, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 12
+
+[node name="BtnStart" type="Button" parent="CenterContainer/MainCard/Margin/MainVBox/MenuButtons"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "▶  Iniciar Jornada"
+
+[node name="BtnStages" type="Button" parent="CenterContainer/MainCard/Margin/MainVBox/MenuButtons"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 44)
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "🗺  Linha do Tempo (6 Eras)"
+
+[node name="BtnAbout" type="Button" parent="CenterContainer/MainCard/Margin/MainVBox/MenuButtons"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 44)
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "ℹ  Sobre a Pesquisa & ODS"
+
+[node name="StagesModal" type="PanelContainer" parent="."]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(680, 520)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -340.0
+offset_top = -260.0
+offset_right = 340.0
+offset_bottom = 260.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_modal")
+
+[node name="Margin" type="MarginContainer" parent="StagesModal"]
+layout_mode = 2
+theme_override_constants/margin_left = 28
+theme_override_constants/margin_top = 18
+theme_override_constants/margin_right = 28
+theme_override_constants/margin_bottom = 18
+
+[node name="VBox" type="VBoxContainer" parent="StagesModal/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="ModalTitle" type="Label" parent="StagesModal/Margin/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.96, 0.82, 0.36, 1)
+theme_override_font_sizes/font_size = 22
+text = "Selecione uma Era Histórica"
+horizontal_alignment = 1
+
+[node name="BtnStage1" type="Button" parent="StagesModal/Margin/VBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 42)
+layout_mode = 2
+text = "▶ Fase 1: Ada Lovelace (1843) — O Primeiro Algoritmo"
+
+[node name="BtnStage2" type="Button" parent="StagesModal/Margin/VBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 42)
+layout_mode = 2
+text = "▶ Fase 2: ENIAC Girls (1945) — Programação Física"
+
+[node name="BtnStage3" type="Button" parent="StagesModal/Margin/VBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 42)
+layout_mode = 2
+text = "▶ Fase 3: Grace Hopper (1947) — O Bug & o Compilador"
+
+[node name="BtnStage4" type="Button" parent="StagesModal/Margin/VBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 42)
+layout_mode = 2
+text = "▶ Fase 4: Katherine Johnson (1962) — Mecânica Orbital"
+
+[node name="BtnStage5" type="Button" parent="StagesModal/Margin/VBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 42)
+layout_mode = 2
+text = "▶ Fase 5: Mary Kenneth Keller (1965) — BASIC na Educação"
+
+[node name="BtnStage6" type="Button" parent="StagesModal/Margin/VBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 42)
+layout_mode = 2
+text = "▶ Fase 6: Margaret Hamilton (1969) — A Missão Apollo"
+
+[node name="BtnCloseStages" type="Button" parent="StagesModal/Margin/VBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(140, 36)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Voltar"
+
+[node name="AboutModal" type="PanelContainer" parent="."]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(680, 480)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -340.0
+offset_top = -240.0
+offset_right = 340.0
+offset_bottom = 240.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_modal")
+
+[node name="Margin" type="MarginContainer" parent="AboutModal"]
+layout_mode = 2
+theme_override_constants/margin_left = 28
+theme_override_constants/margin_top = 22
+theme_override_constants/margin_right = 28
+theme_override_constants/margin_bottom = 22
+
+[node name="VBox" type="VBoxContainer" parent="AboutModal/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="AboutTitle" type="Label" parent="AboutModal/Margin/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.96, 0.82, 0.36, 1)
+theme_override_font_sizes/font_size = 22
+text = "Sobre a Pesquisa & Computer on the Beach"
+horizontal_alignment = 1
+
+[node name="AboutText" type="RichTextLabel" parent="AboutModal/Margin/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/default_color = Color(0.88, 0.9, 0.95, 1)
+theme_override_font_sizes/normal_font_size = 14
+bbcode_enabled = true
+text = "[b]Pioneiras & Além[/b] é um jogo sério e educativo concebido para evidenciar o protagonismo e as contribuições essenciais de mulheres na ciência da computação.
+
+[b]As 6 Pioneiras do Jogo:[/b]
+1. [color=#ffc107]Ada Lovelace (1843):[/color] Primeiro Algoritmo da história.
+2. [color=#ef5350]ENIAC Girls (1945):[/color] Primeira programação física de computador eletrônico.
+3. [color=#4fc3f7]Grace Hopper (1947):[/color] Primeiro bug documentado e criação dos compiladores.
+4. [color=#81c784]Katherine Johnson (1962):[/color] Cálculos orbitais cruciais para a NASA.
+5. [color=#ba68c8]Mary Kenneth Keller (1965):[/color] Primeiro Ph.D. em TI e pioneira do BASIC educacional.
+6. [color=#ff8a65]Margaret Hamilton (1969):[/color] Criação da Engenharia de Software e o pouso na Lua.
+
+[b]Alinhamento aos ODS:[/b] ODS 05 (Igualdade de Gênero) e ODS 04 (Educação de Qualidade)."
+
+[node name="BtnCloseAbout" type="Button" parent="AboutModal/Margin/VBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(140, 36)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Fechar"
