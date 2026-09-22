@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://src/scenes/stages/stage_margaret/stage_margaret.gd" id="1_stage"]
 [ext_resource type="PackedScene" path="res://src/scenes/dialogue_system/dialogue_box.tscn" id="2_dialogue"]
-[ext_resource type="Texture2D" path="res://src/assets/textures/backgrounds/Fundo fase 3.png" id="3_bg_apollo"]
+[ext_resource type="Texture2D" path="res://src/assets/textures/backgrounds/Fundo fase 6.png" id="3_bg_apollo"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_header"]
 bg_color = Color(0.08, 0.09, 0.14, 0.85)
@@ -143,9 +143,9 @@ value = 85.0
 
 [node name="QueueLabel" type="Label" parent="MainPanel/Margin/VBox"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.85, 0.88, 0.95, 1)
+theme_override_colors/font_color = Color(1.0, 0.85, 0.4, 1)
 theme_override_font_sizes/font_size = 14
-text = "Fila de Tarefas Concorrentes do AGC (Descarte o tráfego supérfluo):"
+text = "DESAFIO: O AGC está em sobrecarga (Alarme 1202)! Descarte os 2 processos supérfluos para priorizar o pouso:"
 
 [node name="TasksContainer" type="VBoxContainer" parent="MainPanel/Margin/VBox"]
 unique_name_in_owner = true

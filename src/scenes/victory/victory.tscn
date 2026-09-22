@@ -148,7 +148,7 @@ text = "Avaliação Científica & Percepção (COTB):"
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_font_sizes/font_size = 13
-text = "Eu já conhecia essas três pioneiras antes do jogo."
+text = "Eu já conhecia essas pioneiras antes do jogo."
 
 [node name="Q2Check" type="CheckBox" parent="CenterContainer/MainPanel/Margin/VBox/HBoxCols/SurveyPanel/Margin/VBoxSurvey"]
 unique_name_in_owner = true

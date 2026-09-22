@@ -117,28 +117,28 @@ layout_mode = 2
 size_flags_horizontal = 4
 
 [node name="MenuButtons" type="VBoxContainer" parent="CenterContainer/MainCard/Margin/MainVBox"]
-custom_minimum_size = Vector2(360, 0)
+custom_minimum_size = Vector2(380, 0)
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_constants/separation = 12
+theme_override_constants/separation = 14
 
 [node name="BtnStart" type="Button" parent="CenterContainer/MainCard/Margin/MainVBox/MenuButtons"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 48)
+custom_minimum_size = Vector2(0, 52)
 layout_mode = 2
 theme_override_font_sizes/font_size = 18
 text = "Iniciar Jornada"
 
 [node name="BtnStages" type="Button" parent="CenterContainer/MainCard/Margin/MainVBox/MenuButtons"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 44)
+custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 theme_override_font_sizes/font_size = 16
 text = "Linha do Tempo (6 Eras)"
 
 [node name="BtnAbout" type="Button" parent="CenterContainer/MainCard/Margin/MainVBox/MenuButtons"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 44)
+custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 theme_override_font_sizes/font_size = 16
 text = "Sobre a Pesquisa & ODS"

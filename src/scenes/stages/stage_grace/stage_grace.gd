@@ -27,6 +27,7 @@ var selected_high_btn: Button = null
 func _ready() -> void:
 	start_time = Time.get_ticks_msec() / 1000.0
 	GameState.record_attempt("grace")
+	moth_relay_index = randi() % 8
 	var portrait_icon = TextureRect.new()
 	portrait_icon.custom_minimum_size = Vector2(38, 38)
 	portrait_icon.texture = preload("res://src/assets/textures/portraits/Grace_Hopper.png")
@@ -77,15 +78,16 @@ func _on_relay_clicked(idx: int, btn: Button) -> void:
 	if idx == moth_relay_index:
 		AudioManager.play_bug_catch()
 		bug_found = true
-		btn.text = "Relé #74\nBUG (MARIPOSA)!"
+		var relay_num = 70 + idx
+		btn.text = "Relé #" + str(relay_num) + "\nBUG (MARIPOSA)!"
 		btn.icon = moth_texture
 		btn.expand_icon = true
 		btn.modulate = Color(1.0, 0.85, 0.2)
 		moth_icon_rect.show()
 
-		label_status.text = "Incrível! Uma mariposa estava presa nos contatos do Relé #74!"
+		label_status.text = "Incrível! Uma mariposa estava presa nos contatos do Relé #" + str(relay_num) + "!"
 		label_status.modulate = Color(0.4, 1.0, 0.5)
-		bug_info_label.text = "[color=#ffd54f][b]Registro Histórico (9 de Setembro de 1947):[/b][/color] Grace Hopper e sua equipe colaram a mariposa com fita adesiva no caderno de bordo oficial: [i]'First actual case of bug being found'[/i]. Daqui nasceu o termo moderno de 'Debugging'!"
+		bug_info_label.text = "[color=#ffd54f][b]Registro Histórico (9 de Setembro de 1947):[/b][/color] Grace Hopper e sua equipe colaram a mariposa com fita adesiva no caderno de bordo oficial: [i]'First actual case of bug being found'[/i] (no Relé #" + str(relay_num) + "). Daqui nasceu o termo moderno de 'Debugging'!"
 
 		var mid_lines: Array[Dictionary] = [
 			{

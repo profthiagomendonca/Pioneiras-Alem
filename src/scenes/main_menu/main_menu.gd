@@ -24,6 +24,19 @@ var icon_margaret = preload("res://src/assets/textures/portraits/Margaret_Hamilt
 
 func _ready() -> void:
 	AudioManager.play_bgm()
+
+	btn_start.icon = preload("res://src/assets/textures/icons/icon_play.svg")
+	btn_start.expand_icon = true
+	btn_start.alignment = HORIZONTAL_ALIGNMENT_LEFT
+
+	btn_stages.icon = preload("res://src/assets/textures/icons/icon_timeline.svg")
+	btn_stages.expand_icon = true
+	btn_stages.alignment = HORIZONTAL_ALIGNMENT_LEFT
+
+	btn_about.icon = preload("res://src/assets/textures/icons/icon_info.svg")
+	btn_about.expand_icon = true
+	btn_about.alignment = HORIZONTAL_ALIGNMENT_LEFT
+
 	btn_start.pressed.connect(_on_btn_start_pressed)
 	btn_stages.pressed.connect(_on_btn_stages_pressed)
 	btn_about.pressed.connect(_on_btn_about_pressed)

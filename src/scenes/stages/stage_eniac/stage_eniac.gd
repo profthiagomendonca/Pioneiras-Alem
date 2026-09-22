@@ -81,20 +81,31 @@ func _setup_patch_panel() -> void:
 	for child in targets_container.get_children():
 		child.queue_free()
 
-	for i in range(patch_connections.size()):
-		var data = patch_connections[i]
+	var source_indices = [0, 1, 2]
+	source_indices.shuffle()
+
+	var target_indices = [0, 1, 2]
+	var deranged = false
+	while not deranged:
+		target_indices.shuffle()
+		deranged = true
+		for k in range(3):
+			if target_indices[k] == source_indices[k]:
+				deranged = false
+				break
+
+	for idx in source_indices:
+		var data = patch_connections[idx]
 		var btn_s = Button.new()
 		btn_s.custom_minimum_size = Vector2(340, 56)
 		btn_s.text = data["source"]
 		btn_s.icon = cable_texture
 		btn_s.expand_icon = true
 		btn_s.alignment = HORIZONTAL_ALIGNMENT_LEFT
-		btn_s.set_meta("idx", i)
+		btn_s.set_meta("idx", idx)
 		btn_s.pressed.connect(_on_source_btn_pressed.bind(btn_s, data))
 		sources_container.add_child(btn_s)
 
-	var target_indices = [0, 1, 2]
-	target_indices.shuffle()
 	for idx in target_indices:
 		var data = patch_connections[idx]
 		var btn_t = Button.new()

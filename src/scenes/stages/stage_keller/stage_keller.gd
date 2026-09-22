@@ -11,10 +11,10 @@ extends Control
 var start_time: float = 0.0
 
 var basic_lines = [
-	{"line_num": 10, "code": "10 REM PROGRAMA EDUCATIVO BASIC", "correct_idx": 0},
-	{"line_num": 20, "code": "20 PRINT \"QUAL O SEU NOME?\"", "correct_idx": 1},
+	{"line_num": 10, "code": "10 REM BOAS-VINDAS AO JOGO", "correct_idx": 0},
+	{"line_num": 20, "code": "20 PRINT \"QUAL O SEU NOME, PESQUISADOR INICIANTE?\"", "correct_idx": 1},
 	{"line_num": 30, "code": "30 INPUT NOME$", "correct_idx": 2},
-	{"line_num": 40, "code": "40 PRINT \"BEM-VINDO AO COTB, \"; NOME$", "correct_idx": 3}
+	{"line_num": 40, "code": "40 PRINT \"BEM-VINDO AO JOGO DESENVOLVIDO PARA VOCE NOS CONHECER MELHOR, \"; NOME$", "correct_idx": 3}
 ]
 var current_order = []
 
@@ -50,7 +50,7 @@ func _start_intro_dialogue() -> void:
 		{
 			"speaker": "Irmã Mary Kenneth Keller (1965)",
 			"color": Color(0.4, 0.8, 0.5),
-			"text": "Participei do desenvolvimento da linguagem BASIC na Dartmouth College. Nosso lema era simples: qualquer pessoa, estudante ou pesquisador, tem o direito e a capacidade de aprender a programar!"
+			"text": "Participei do desenvolvimento da linguagem BASIC na Dartmouth College. Nosso lema era simples: qualquer pessoa, estudante ou pesquisador iniciante, tem o direito e a capacidade de aprender a programar!"
 		},
 		{
 			"speaker": "Irmã Mary Kenneth Keller (1965)",
@@ -121,7 +121,7 @@ func _on_btn_run_pressed() -> void:
 		GameState.complete_stage("keller", duration, 240)
 		GameState.unlock_next_stage(5)
 
-		terminal_output.text = "[color=#a3be8c]READY.\nRUN\n\nQUAL O SEU NOME?\n> PESQUISADOR DO COTB\nBEM-VINDO AO COTB, PESQUISADOR DO COTB!\n\nSUCCESS: 0 ERRORS. PROGRAM FINISHED.[/color]"
+		terminal_output.text = "[color=#a3be8c]READY.\nRUN\n\nQUAL O SEU NOME, PESQUISADOR INICIANTE?\n> PESQUISADOR INICIANTE\nBEM-VINDO AO JOGO DESENVOLVIDO PARA VOCE NOS CONHECER MELHOR, PESQUISADOR INICIANTE!\n\nSUCCESS: 0 ERRORS. PROGRAM FINISHED.[/color]"
 		label_status.text = "Execução perfeita! O interpretador BASIC processou todas as instruções sem erros de compilação!"
 		label_status.modulate = Color(0.3, 1.0, 0.5)
 		btn_run.disabled = true
