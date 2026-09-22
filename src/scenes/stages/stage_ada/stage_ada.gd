@@ -19,26 +19,26 @@ var attempts: int = 0
 var cards_data = [
 	{
 		"id": "input",
-		"title": "1. Entrada",
-		"desc": "[b]Cartão de Operação 01:[/b] Inicializar variáveis [i]n = 4[/i] e zerar acumuladores na memória.",
+		"title": "Entrada de Dados",
+		"desc": "[b]Cartão de Operação:[/b] Inicializar variáveis [i]n = 4[/i] e zerar acumuladores na memória mecânica.",
 		"correct_pos": 0
 	},
 	{
 		"id": "loop",
-		"title": "2. Laço",
-		"desc": "[b]Cartão de Controle 02:[/b] Laço condicional: Enquanto [i]k <= n[/i], avançar colunas do tear.",
+		"title": "Laço de Repetição",
+		"desc": "[b]Cartão de Controle:[/b] Estrutura condicional iterativa: enquanto [i]k <= n[/i], avançar colunas do tear.",
 		"correct_pos": 1
 	},
 	{
 		"id": "calc",
-		"title": "3. Cálculo",
-		"desc": "[b]Cartão de Variável 03:[/b] Multiplicar coeficientes binomiais e subtrair termos fracionários.",
+		"title": "Cálculo Aritmético",
+		"desc": "[b]Cartão de Variável:[/b] Multiplicar coeficientes binomiais e processar termos fracionários intermediários.",
 		"correct_pos": 2
 	},
 	{
 		"id": "output",
-		"title": "4. Saída",
-		"desc": "[b]Cartão de Saída 04:[/b] Perfurar e imprimir o Número de Bernoulli correspondente.",
+		"title": "Saída e Impressão",
+		"desc": "[b]Cartão de Saída:[/b] Perfurar e imprimir na folha o Número de Bernoulli correspondente.",
 		"correct_pos": 3
 	}
 ]
