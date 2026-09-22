@@ -1,5 +1,7 @@
 # Pioneiras & Além: O Código Invisível
 
+> Jogo educacional e narrativo em Godot 4 sobre o protagonismo feminino na história da computação, desenvolvido para que as mulheres reconheçam e aprendam seu lugar na história, sendo alinhado ao ODS 05 (Igualdade de Gênero).
+
 Pioneiras & Além é um jogo educacional e narrativo desenvolvido em Godot Engine 4, concebido como instrumento de pesquisa acadêmica para submissão e apresentação no congresso científico Computer on the Beach (COTB). O projeto articula os campos de Jogos Digitais, Informática na Educação e Mulheres na Computação, alinhando-se diretamente aos Objetivos de Desenvolvimento Sustentável da Organização das Nações Unidas, em especial o ODS 05 (Igualdade de Gênero) e o ODS 04 (Educação de Qualidade).
 
 O objetivo central da obra é resgatar o protagonismo de cientistas mulheres nos marcos fundacionais da computação, traduzindo suas contribuições teóricas e práticas em desafios interativos que estimulam o raciocínio lógico e a compreensão histórica da área.
