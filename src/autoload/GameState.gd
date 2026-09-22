@@ -40,12 +40,15 @@ func unlock_next_stage(completed_stage: int) -> void:
 func go_to_stage(stage_num: int) -> void:
 	if stage_num in stage_scene_paths:
 		current_stage = stage_num
+		AudioManager.stop_bgm()
 		get_tree().change_scene_to_file(stage_scene_paths[stage_num])
 
 func go_to_main_menu() -> void:
+	AudioManager.play_bgm()
 	get_tree().change_scene_to_file("res://src/scenes/main_menu/main_menu.tscn")
 
 func go_to_victory() -> void:
+	AudioManager.stop_bgm()
 	get_tree().change_scene_to_file("res://src/scenes/victory/victory.tscn")
 
 func record_attempt(stage_key: String) -> void:

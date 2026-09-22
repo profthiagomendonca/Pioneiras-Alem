@@ -16,6 +16,7 @@ extends Control
 @onready var btn_stage_6: Button = %BtnStage6
 
 func _ready() -> void:
+	AudioManager.play_bgm()
 	btn_start.pressed.connect(_on_btn_start_pressed)
 	btn_stages.pressed.connect(_on_btn_stages_pressed)
 	btn_about.pressed.connect(_on_btn_about_pressed)

@@ -14,9 +14,9 @@ func _ready() -> void:
 	add_child(bgm_player)
 
 	_generate_procedural_sounds()
-	_start_bgm_if_available()
+	_load_bgm_stream()
 
-func _start_bgm_if_available() -> void:
+func _load_bgm_stream() -> void:
 	var music_paths = [
 		"res://Musica tela inicial.mp3",
 		"res://src/assets/audio/Musica tela inicial.mp3"
@@ -29,15 +29,16 @@ func _start_bgm_if_available() -> void:
 				if stream is AudioStreamMP3:
 					stream.loop = true
 				bgm_player.volume_db = -6.0
-				bgm_player.play()
 				break
 
 func play_bgm() -> void:
-	if bgm_player.stream and not bgm_player.playing:
+	if bgm_player.stream == null:
+		_load_bgm_stream()
+	if bgm_player.stream != null and not bgm_player.playing:
 		bgm_player.play()
 
 func stop_bgm() -> void:
-	if bgm_player.playing:
+	if bgm_player != null and bgm_player.playing:
 		bgm_player.stop()
 
 func _generate_procedural_sounds() -> void:
