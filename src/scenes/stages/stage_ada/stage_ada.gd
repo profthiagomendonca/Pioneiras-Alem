@@ -11,6 +11,7 @@ extends Control
 @onready var gear_left: Control = %GearLeft
 @onready var gear_right: Control = %GearRight
 
+var card_texture = preload("res://src/assets/textures/icons/Cartao_perfurado.png")
 var start_time: float = 0.0
 var attempts: int = 0
 
@@ -48,6 +49,14 @@ var selected_deck_card_index: int = -1
 func _ready() -> void:
 	start_time = Time.get_ticks_msec() / 1000.0
 	GameState.record_attempt("ada")
+	var portrait_icon = TextureRect.new()
+	portrait_icon.custom_minimum_size = Vector2(38, 38)
+	portrait_icon.texture = preload("res://src/assets/textures/portraits/Ada_Lovelace.png")
+	portrait_icon.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+	portrait_icon.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+	$HeaderPanel/Margin/HeaderBar.add_child(portrait_icon)
+	$HeaderPanel/Margin/HeaderBar.move_child(portrait_icon, 0)
+
 	btn_run.pressed.connect(_on_btn_run_pressed)
 	btn_hint.pressed.connect(_on_btn_hint_pressed)
 	btn_next_stage.pressed.connect(_on_btn_next_stage_pressed)
@@ -96,8 +105,10 @@ func _setup_deck() -> void:
 	for i in range(shuffled.size()):
 		var data = shuffled[i]
 		var btn = Button.new()
-		btn.custom_minimum_size = Vector2(170, 75)
+		btn.custom_minimum_size = Vector2(210, 80)
 		btn.text = data["title"]
+		btn.icon = card_texture
+		btn.expand_icon = true
 		btn.set_meta("card_data", data)
 		btn.pressed.connect(_on_deck_card_pressed.bind(btn))
 		btn.mouse_entered.connect(_on_card_hover.bind(data))
@@ -120,6 +131,8 @@ func _on_deck_card_pressed(btn: Button) -> void:
 		if active_slot_cards[i] == null:
 			active_slot_cards[i] = card_data
 			var slot_btn: Button = slots_container.get_node("Slot" + str(i + 1))
+			slot_btn.icon = card_texture
+			slot_btn.expand_icon = true
 			slot_btn.text = "[OK] " + card_data["title"]
 			btn.disabled = true
 			card_info_box.text = "Cartão inserido no Slot " + str(i + 1) + ". Clique no slot se quiser remover."
@@ -137,6 +150,7 @@ func _on_slot_pressed(slot_idx: int, slot_btn: Button) -> void:
 				child.disabled = false
 				break
 		active_slot_cards[slot_idx] = null
+		slot_btn.icon = null
 		slot_btn.text = "[ Vazio ]\nSlot " + str(slot_idx + 1)
 		card_info_box.text = "Cartão removido do Slot " + str(slot_idx + 1)
 

@@ -27,6 +27,14 @@ var selected_high_btn: Button = null
 func _ready() -> void:
 	start_time = Time.get_ticks_msec() / 1000.0
 	GameState.record_attempt("grace")
+	var portrait_icon = TextureRect.new()
+	portrait_icon.custom_minimum_size = Vector2(38, 38)
+	portrait_icon.texture = preload("res://src/assets/textures/portraits/Grace_Hopper.png")
+	portrait_icon.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+	portrait_icon.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+	$HeaderPanel/Margin/HeaderBar.add_child(portrait_icon)
+	$HeaderPanel/Margin/HeaderBar.move_child(portrait_icon, 0)
+
 	btn_menu.pressed.connect(func():
 		AudioManager.play_click()
 		GameState.go_to_main_menu()
@@ -69,7 +77,7 @@ func _on_relay_clicked(idx: int, btn: Button) -> void:
 	if idx == moth_relay_index:
 		AudioManager.play_bug_catch()
 		bug_found = true
-		btn.text = "Relé #74\n🪲 TRAÇA!"
+		btn.text = "Relé #74\nBUG (MARIPOSA)!"
 		btn.icon = moth_texture
 		btn.expand_icon = true
 		btn.modulate = Color(1.0, 0.85, 0.2)

@@ -37,6 +37,14 @@ var patch_connections = [
 func _ready() -> void:
 	start_time = Time.get_ticks_msec() / 1000.0
 	GameState.record_attempt("eniac")
+	var portrait_icon = TextureRect.new()
+	portrait_icon.custom_minimum_size = Vector2(38, 38)
+	portrait_icon.texture = preload("res://src/assets/textures/portraits/Eniac Girls.png")
+	portrait_icon.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+	portrait_icon.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+	$HeaderPanel/Margin/HeaderBar.add_child(portrait_icon)
+	$HeaderPanel/Margin/HeaderBar.move_child(portrait_icon, 0)
+
 	btn_menu.pressed.connect(func():
 		AudioManager.play_click()
 		GameState.go_to_main_menu()
@@ -76,8 +84,11 @@ func _setup_patch_panel() -> void:
 	for i in range(patch_connections.size()):
 		var data = patch_connections[i]
 		var btn_s = Button.new()
-		btn_s.custom_minimum_size = Vector2(300, 52)
+		btn_s.custom_minimum_size = Vector2(340, 56)
 		btn_s.text = data["source"]
+		btn_s.icon = cable_texture
+		btn_s.expand_icon = true
+		btn_s.alignment = HORIZONTAL_ALIGNMENT_LEFT
 		btn_s.set_meta("idx", i)
 		btn_s.pressed.connect(_on_source_btn_pressed.bind(btn_s, data))
 		sources_container.add_child(btn_s)
@@ -87,8 +98,9 @@ func _setup_patch_panel() -> void:
 	for idx in target_indices:
 		var data = patch_connections[idx]
 		var btn_t = Button.new()
-		btn_t.custom_minimum_size = Vector2(300, 52)
+		btn_t.custom_minimum_size = Vector2(340, 56)
 		btn_t.text = data["target"]
+		btn_t.alignment = HORIZONTAL_ALIGNMENT_LEFT
 		btn_t.set_meta("idx", idx)
 		btn_t.pressed.connect(_on_target_btn_pressed.bind(btn_t))
 		targets_container.add_child(btn_t)
@@ -121,6 +133,8 @@ func _on_target_btn_pressed(btn_t: Button) -> void:
 		selected_source_btn.text = "[OK] " + patch_connections[s_idx]["source"]
 		btn_t.disabled = true
 		btn_t.modulate = Color(0.3, 1.0, 0.5)
+		btn_t.icon = cable_texture
+		btn_t.expand_icon = true
 		btn_t.text = "[OK] " + patch_connections[s_idx]["target"]
 		selected_source_btn = null
 		label_status.text = "Conexão estabelecida com sucesso! Válvulas aquecendo..."

@@ -181,37 +181,37 @@ horizontal_alignment = 1
 
 [node name="BtnStage1" type="Button" parent="StagesModal/Margin/VBox"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 42)
+custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 text = "Fase 1: Ada Lovelace (1843) — O Primeiro Algoritmo"
 
 [node name="BtnStage2" type="Button" parent="StagesModal/Margin/VBox"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 42)
+custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 text = "Fase 2: ENIAC Girls (1945) — Programação Física"
 
 [node name="BtnStage3" type="Button" parent="StagesModal/Margin/VBox"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 42)
+custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 text = "Fase 3: Grace Hopper (1947) — O Bug & o Compilador"
 
 [node name="BtnStage4" type="Button" parent="StagesModal/Margin/VBox"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 42)
+custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 text = "Fase 4: Katherine Johnson (1962) — Mecânica Orbital"
 
 [node name="BtnStage5" type="Button" parent="StagesModal/Margin/VBox"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 42)
+custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 text = "Fase 5: Mary Kenneth Keller (1965) — BASIC na Educação"
 
 [node name="BtnStage6" type="Button" parent="StagesModal/Margin/VBox"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 42)
+custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 text = "Fase 6: Margaret Hamilton (1969) — A Missão Apollo"
 

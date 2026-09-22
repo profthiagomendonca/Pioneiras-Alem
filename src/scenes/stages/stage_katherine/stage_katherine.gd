@@ -13,11 +13,22 @@ extends Control
 @onready var btn_next_stage: Button = %BtnNextStage
 @onready var btn_menu: Button = %BtnMenu
 
+var ruler_texture = preload("res://src/assets/textures/icons/Regua_nasa.png")
 var start_time: float = 0.0
 
 func _ready() -> void:
 	start_time = Time.get_ticks_msec() / 1000.0
 	GameState.record_attempt("katherine")
+	var portrait_icon = TextureRect.new()
+	portrait_icon.custom_minimum_size = Vector2(38, 38)
+	portrait_icon.texture = preload("res://src/assets/textures/portraits/Katherine Johnson.png")
+	portrait_icon.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+	portrait_icon.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+	$HeaderPanel/Margin/HeaderBar.add_child(portrait_icon)
+	$HeaderPanel/Margin/HeaderBar.move_child(portrait_icon, 0)
+
+	btn_calculate.icon = ruler_texture
+	btn_calculate.expand_icon = true
 	btn_menu.pressed.connect(func():
 		AudioManager.play_click()
 		GameState.go_to_main_menu()
