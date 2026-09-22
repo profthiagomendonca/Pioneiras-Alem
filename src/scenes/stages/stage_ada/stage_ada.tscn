@@ -258,14 +258,14 @@ alignment = 1
 unique_name_in_owner = true
 custom_minimum_size = Vector2(130, 38)
 layout_mode = 2
-text = "💡 Pedir Dica"
+text = "Pedir Dica"
 
 [node name="BtnRun" type="Button" parent="MainPanel/Margin/VBox/ActionsHBox"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(240, 38)
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
-text = "⚙ Executar Motor Analítico"
+text = "Executar Motor Analítico"
 
 [node name="BtnNextStage" type="Button" parent="MainPanel/Margin/VBox/ActionsHBox"]
 unique_name_in_owner = true
@@ -273,7 +273,7 @@ custom_minimum_size = Vector2(220, 38)
 layout_mode = 2
 theme_override_colors/font_color = Color(0.98, 0.85, 0.3, 1)
 theme_override_font_sizes/font_size = 15
-text = "▶ Próxima Era: ENIAC Girls"
+text = "Próxima Era: ENIAC Girls"
 
 [node name="DialogueBox" parent="." instance=ExtResource("2_dialogue")]
 layout_mode = 1

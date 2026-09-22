@@ -95,7 +95,7 @@ func _on_relay_clicked(idx: int, btn: Button) -> void:
 		dialogue_box.dialogue_finished.connect(_on_intro_compiler_finished, CONNECT_ONE_SHOT)
 	else:
 		AudioManager.play_click()
-		btn.text = "Relé #" + str(70 + idx) + "\n✓ Normal"
+		btn.text = "Relé #" + str(70 + idx) + "\n[OK] Normal"
 		btn.disabled = true
 		label_status.text = "Relé #" + str(70 + idx) + ": Corrente nominal de 24V, sem obstruções."
 		label_status.modulate = Color(0.7, 0.8, 0.9)

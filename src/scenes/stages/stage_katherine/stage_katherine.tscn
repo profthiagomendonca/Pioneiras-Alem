@@ -247,7 +247,7 @@ alignment = 1
 unique_name_in_owner = true
 custom_minimum_size = Vector2(280, 38)
 layout_mode = 2
-text = "📐 Validar Cálculos de Trajetória"
+text = "Validar Cálculos de Trajetória"
 
 [node name="BtnNextStage" type="Button" parent="MainPanel/Margin/VBox/ActionsHBox"]
 unique_name_in_owner = true
@@ -255,7 +255,7 @@ custom_minimum_size = Vector2(280, 38)
 layout_mode = 2
 theme_override_colors/font_color = Color(0.4, 0.85, 1.0, 1)
 theme_override_font_sizes/font_size = 15
-text = "▶ Próxima Era: Mary Keller (1965)"
+text = "Próxima Era: Mary Keller (1965)"
 
 [node name="DialogueBox" parent="." instance=ExtResource("2_dialogue")]
 layout_mode = 1

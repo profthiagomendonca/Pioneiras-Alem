@@ -47,13 +47,13 @@ func _process(delta: float) -> void:
 			# CPU oscila criticamente no limite
 			cpu_load = min(100.0, cpu_load + delta * 3.0)
 			progress_cpu.value = cpu_load
-			label_alarm.text = "🚨 ALARME AGC 1202: SOBRECARGA DE CPU (" + str(int(cpu_load)) + "%)"
+			label_alarm.text = "ALARME AGC 1202: SOBRECARGA DE CPU (" + str(int(cpu_load)) + "%)"
 			label_alarm.modulate = Color(1.0, 0.2, 0.2)
 		else:
 			# Sobrecarga mitigada pela prioridade de Margaret
 			cpu_load = max(62.0, cpu_load - delta * 15.0)
 			progress_cpu.value = cpu_load
-			label_alarm.text = "✓ AGC ESTÁVEL: TAREFAS CRÍTICAS PRIORIZADAS (" + str(int(cpu_load)) + "%)"
+			label_alarm.text = "[OK] AGC ESTÁVEL: TAREFAS CRÍTICAS PRIORIZADAS (" + str(int(cpu_load)) + "%)"
 			label_alarm.modulate = Color(0.3, 1.0, 0.5)
 
 		if altitude_meters <= 0.0:

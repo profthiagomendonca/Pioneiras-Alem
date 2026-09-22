@@ -120,7 +120,7 @@ func _on_deck_card_pressed(btn: Button) -> void:
 		if active_slot_cards[i] == null:
 			active_slot_cards[i] = card_data
 			var slot_btn: Button = slots_container.get_node("Slot" + str(i + 1))
-			slot_btn.text = "✓ " + card_data["title"]
+			slot_btn.text = "[OK] " + card_data["title"]
 			btn.disabled = true
 			card_info_box.text = "Cartão inserido no Slot " + str(i + 1) + ". Clique no slot se quiser remover."
 			return

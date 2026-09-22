@@ -43,12 +43,12 @@ func _update_stage_buttons() -> void:
 	btn_stage_5.disabled = max_stage < 5
 	btn_stage_6.disabled = max_stage < 6
 
-	btn_stage_1.text = "▶ Fase 1: Ada Lovelace (1843) — O Primeiro Algoritmo"
-	btn_stage_2.text = ("▶ Fase 2: ENIAC Girls (1945) — Programação Física" if max_stage >= 2 else "🔒 Fase 2: ENIAC Girls (Bloqueada)")
-	btn_stage_3.text = ("▶ Fase 3: Grace Hopper (1947) — O Bug & Compilador" if max_stage >= 3 else "🔒 Fase 3: Grace Hopper (Bloqueada)")
-	btn_stage_4.text = ("▶ Fase 4: Katherine Johnson (1962) — Mecânica Orbital" if max_stage >= 4 else "🔒 Fase 4: Katherine Johnson (Bloqueada)")
-	btn_stage_5.text = ("▶ Fase 5: Mary Kenneth Keller (1965) — BASIC na Educação" if max_stage >= 5 else "🔒 Fase 5: Mary Kenneth Keller (Bloqueada)")
-	btn_stage_6.text = ("▶ Fase 6: Margaret Hamilton (1969) — A Missão Apollo" if max_stage >= 6 else "🔒 Fase 6: Margaret Hamilton (Bloqueada)")
+	btn_stage_1.text = "Fase 1: Ada Lovelace (1843) — O Primeiro Algoritmo"
+	btn_stage_2.text = ("Fase 2: ENIAC Girls (1945) — Programação Física" if max_stage >= 2 else "[Bloqueada] Fase 2: ENIAC Girls")
+	btn_stage_3.text = ("Fase 3: Grace Hopper (1947) — O Bug & Compilador" if max_stage >= 3 else "[Bloqueada] Fase 3: Grace Hopper")
+	btn_stage_4.text = ("Fase 4: Katherine Johnson (1962) — Mecânica Orbital" if max_stage >= 4 else "[Bloqueada] Fase 4: Katherine Johnson")
+	btn_stage_5.text = ("Fase 5: Mary Kenneth Keller (1965) — BASIC na Educação" if max_stage >= 5 else "[Bloqueada] Fase 5: Mary Kenneth Keller")
+	btn_stage_6.text = ("Fase 6: Margaret Hamilton (1969) — A Missão Apollo" if max_stage >= 6 else "[Bloqueada] Fase 6: Margaret Hamilton")
 
 func _on_btn_start_pressed() -> void:
 	AudioManager.play_click()

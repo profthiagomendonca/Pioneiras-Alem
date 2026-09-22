@@ -74,7 +74,7 @@ func _render_buttons() -> void:
 
 		if i > 0:
 			var btn_up = Button.new()
-			btn_up.text = "▲ Subir"
+			btn_up.text = "Subir"
 			btn_up.custom_minimum_size = Vector2(80, 42)
 			btn_up.pressed.connect(func():
 				AudioManager.play_card()
@@ -87,7 +87,7 @@ func _render_buttons() -> void:
 
 		if i < current_order.size() - 1:
 			var btn_down = Button.new()
-			btn_down.text = "▼ Descer"
+			btn_down.text = "Descer"
 			btn_down.custom_minimum_size = Vector2(80, 42)
 			btn_down.pressed.connect(func():
 				AudioManager.play_card()

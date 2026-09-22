@@ -166,7 +166,7 @@ text = "A metodologia interativa facilitou a compreensão."
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 36)
 layout_mode = 2
-text = "📋 Copiar Dados da Sessão (JSON)"
+text = "Copiar Dados da Sessão (JSON)"
 
 [node name="CopyFeedback" type="Label" parent="CenterContainer/MainPanel/Margin/VBox/HBoxCols/SurveyPanel/Margin/VBoxSurvey"]
 unique_name_in_owner = true
@@ -183,10 +183,10 @@ alignment = 1
 unique_name_in_owner = true
 custom_minimum_size = Vector2(180, 42)
 layout_mode = 2
-text = "🔄 Jogar Novamente"
+text = "Jogar Novamente"
 
 [node name="BtnMainMenu" type="Button" parent="CenterContainer/MainPanel/Margin/VBox/ButtonsHBox"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(180, 42)
 layout_mode = 2
-text = "🏠 Menu Principal"
+text = "Menu Principal"

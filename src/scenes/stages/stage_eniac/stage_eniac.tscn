@@ -200,7 +200,7 @@ custom_minimum_size = Vector2(260, 38)
 layout_mode = 2
 theme_override_colors/font_color = Color(0.4, 0.85, 1.0, 1)
 theme_override_font_sizes/font_size = 15
-text = "▶ Próxima Era: Grace Hopper (1947)"
+text = "Próxima Era: Grace Hopper (1947)"
 
 [node name="DialogueBox" parent="." instance=ExtResource("2_dialogue")]
 layout_mode = 1

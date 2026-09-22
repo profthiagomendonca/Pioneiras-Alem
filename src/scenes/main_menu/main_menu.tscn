@@ -127,21 +127,21 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 theme_override_font_sizes/font_size = 18
-text = "▶  Iniciar Jornada"
+text = "Iniciar Jornada"
 
 [node name="BtnStages" type="Button" parent="CenterContainer/MainCard/Margin/MainVBox/MenuButtons"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 44)
 layout_mode = 2
 theme_override_font_sizes/font_size = 16
-text = "🗺  Linha do Tempo (6 Eras)"
+text = "Linha do Tempo (6 Eras)"
 
 [node name="BtnAbout" type="Button" parent="CenterContainer/MainCard/Margin/MainVBox/MenuButtons"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 44)
 layout_mode = 2
 theme_override_font_sizes/font_size = 16
-text = "ℹ  Sobre a Pesquisa & ODS"
+text = "Sobre a Pesquisa & ODS"
 
 [node name="StagesModal" type="PanelContainer" parent="."]
 unique_name_in_owner = true
@@ -183,37 +183,37 @@ horizontal_alignment = 1
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 42)
 layout_mode = 2
-text = "▶ Fase 1: Ada Lovelace (1843) — O Primeiro Algoritmo"
+text = "Fase 1: Ada Lovelace (1843) — O Primeiro Algoritmo"
 
 [node name="BtnStage2" type="Button" parent="StagesModal/Margin/VBox"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 42)
 layout_mode = 2
-text = "▶ Fase 2: ENIAC Girls (1945) — Programação Física"
+text = "Fase 2: ENIAC Girls (1945) — Programação Física"
 
 [node name="BtnStage3" type="Button" parent="StagesModal/Margin/VBox"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 42)
 layout_mode = 2
-text = "▶ Fase 3: Grace Hopper (1947) — O Bug & o Compilador"
+text = "Fase 3: Grace Hopper (1947) — O Bug & o Compilador"
 
 [node name="BtnStage4" type="Button" parent="StagesModal/Margin/VBox"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 42)
 layout_mode = 2
-text = "▶ Fase 4: Katherine Johnson (1962) — Mecânica Orbital"
+text = "Fase 4: Katherine Johnson (1962) — Mecânica Orbital"
 
 [node name="BtnStage5" type="Button" parent="StagesModal/Margin/VBox"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 42)
 layout_mode = 2
-text = "▶ Fase 5: Mary Kenneth Keller (1965) — BASIC na Educação"
+text = "Fase 5: Mary Kenneth Keller (1965) — BASIC na Educação"
 
 [node name="BtnStage6" type="Button" parent="StagesModal/Margin/VBox"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 42)
 layout_mode = 2
-text = "▶ Fase 6: Margaret Hamilton (1969) — A Missão Apollo"
+text = "Fase 6: Margaret Hamilton (1969) — A Missão Apollo"
 
 [node name="BtnCloseStages" type="Button" parent="StagesModal/Margin/VBox"]
 unique_name_in_owner = true

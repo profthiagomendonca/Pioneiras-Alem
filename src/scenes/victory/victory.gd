@@ -54,7 +54,7 @@ func _on_btn_copy_telemetry_pressed() -> void:
 	}
 	var json_str = JSON.stringify(report, "\t")
 	DisplayServer.clipboard_set(json_str)
-	copy_feedback.text = "✓ Dados JSON copiados para a área de transferência!"
+	copy_feedback.text = "[OK] Dados JSON copiados para a área de transferência!"
 	copy_feedback.modulate = Color(0.3, 1.0, 0.5)
 
 func _on_btn_play_again_pressed() -> void:

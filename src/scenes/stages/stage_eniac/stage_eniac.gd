@@ -77,7 +77,7 @@ func _setup_patch_panel() -> void:
 		var data = patch_connections[i]
 		var btn_s = Button.new()
 		btn_s.custom_minimum_size = Vector2(300, 52)
-		btn_s.text = "🔌 " + data["source"]
+		btn_s.text = data["source"]
 		btn_s.set_meta("idx", i)
 		btn_s.pressed.connect(_on_source_btn_pressed.bind(btn_s, data))
 		sources_container.add_child(btn_s)
@@ -88,7 +88,7 @@ func _setup_patch_panel() -> void:
 		var data = patch_connections[idx]
 		var btn_t = Button.new()
 		btn_t.custom_minimum_size = Vector2(300, 52)
-		btn_t.text = "🔘 " + data["target"]
+		btn_t.text = data["target"]
 		btn_t.set_meta("idx", idx)
 		btn_t.pressed.connect(_on_target_btn_pressed.bind(btn_t))
 		targets_container.add_child(btn_t)
@@ -118,10 +118,10 @@ func _on_target_btn_pressed(btn_t: Button) -> void:
 		patch_connections[s_idx]["connected"] = true
 		selected_source_btn.disabled = true
 		selected_source_btn.modulate = Color(0.3, 1.0, 0.5)
-		selected_source_btn.text = "✓ " + patch_connections[s_idx]["source"]
+		selected_source_btn.text = "[OK] " + patch_connections[s_idx]["source"]
 		btn_t.disabled = true
 		btn_t.modulate = Color(0.3, 1.0, 0.5)
-		btn_t.text = "✓ " + patch_connections[s_idx]["target"]
+		btn_t.text = "[OK] " + patch_connections[s_idx]["target"]
 		selected_source_btn = null
 		label_status.text = "Conexão estabelecida com sucesso! Válvulas aquecendo..."
 		label_status.modulate = Color(0.3, 1.0, 0.5)
