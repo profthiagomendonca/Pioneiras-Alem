@@ -1,15 +1,15 @@
-[gd_scene load_steps=5 format=3]
+[gd_scene load_steps=7 format=3]
 
 [ext_resource type="Script" path="res://src/scenes/dialogue_system/dialogue_box.gd" id="1_script"]
 [ext_resource type="Texture2D" path="res://src/assets/textures/portraits/Ada_Lovelace.png" id="2_portrait"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_box"]
-bg_color = Color(0.08, 0.09, 0.14, 0.96)
+bg_color = Color(0.14, 0.09, 0.13, 0.96)
 border_width_left = 3
 border_width_top = 3
 border_width_right = 3
 border_width_bottom = 3
-border_color = Color(0.85, 0.68, 0.28, 1)
+border_color = Color(0.88, 0.75, 0.59, 1)
 corner_radius_top_left = 14
 corner_radius_top_right = 14
 corner_radius_bottom_right = 14
@@ -18,16 +18,40 @@ shadow_color = Color(0, 0, 0, 0.6)
 shadow_size = 10
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_frame"]
-bg_color = Color(0.12, 0.14, 0.2, 0.8)
+bg_color = Color(0.19, 0.11, 0.17, 0.9)
 border_width_left = 2
 border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
-border_color = Color(0.96, 0.82, 0.36, 1)
+border_color = Color(0.92, 0.78, 0.62, 1)
 corner_radius_top_left = 8
 corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btn"]
+bg_color = Color(0.72, 0.38, 0.47, 0.95)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.88, 0.75, 0.59, 0.9)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btn_hover"]
+bg_color = Color(0.80, 0.44, 0.54, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.96, 0.85, 0.70, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
 
 [node name="DialogueBox" type="PanelContainer"]
 custom_minimum_size = Vector2(920, 175)
@@ -77,7 +101,7 @@ layout_mode = 2
 
 [node name="SpeakerName" type="Label" parent="Margin/HBoxMain/VBoxText/Header"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.96, 0.82, 0.36, 1)
+theme_override_colors/font_color = Color(0.91, 0.71, 0.72, 1)
 theme_override_font_sizes/font_size = 20
 text = "Ada Lovelace"
 
@@ -85,7 +109,7 @@ text = "Ada Lovelace"
 custom_minimum_size = Vector2(0, 65)
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_colors/default_color = Color(0.93, 0.95, 0.98, 1)
+theme_override_colors/default_color = Color(0.96, 0.91, 0.91, 1)
 theme_override_font_sizes/normal_font_size = 15
 bbcode_enabled = true
 text = "Bem-vindo! Esta é a máquina analítica de Charles Babbage..."
@@ -97,4 +121,9 @@ alignment = 2
 [node name="BtnNext" type="Button" parent="Margin/HBoxMain/VBoxText/Footer"]
 custom_minimum_size = Vector2(130, 32)
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 0.95, 0.95, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_btn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_btn_hover")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_btn")
 text = "Continuar >"

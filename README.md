@@ -1,38 +1,50 @@
 # Pioneiras & Além: O Código Invisível
 
-> Jogo educacional e narrativo em Godot 4 sobre o protagonismo feminino na história da computação, desenvolvido para que as mulheres reconheçam e aprendam seu lugar na história, sendo alinhado ao ODS 05 (Igualdade de Gênero).
+> Uma jornada narrativa interativa em Godot 4 que desvenda as mentes brilhantes e os códigos que moldaram o mundo digital. Uma viagem no tempo para você assumir o controle de momentos cruciais da história, onde a inteligência, a lógica e a coragem de mulheres extraordinárias tornaram o impossível realidade — alinhado ao ODS 05 (Igualdade de Gênero).
 
-Pioneiras & Além é um jogo sério educacional e narrativo concebido para resgatar, valorizar e visibilizar o papel fundacional das mulheres na construção da ciência da computação. Historicamente, muitas das maiores contribuições femininas para o desenvolvimento de hardware, software, linguagens de programação e mecânica espacial foram minimizadas, esquecidas ou atribuídas exclusivamente a figuras masculinas. O jogo confronta esse apagamento histórico ao colocar a liderança intelectual de cientistas mulheres no centro da experiência pedagógica.
+Pioneiras & Além coloca a liderança intelectual de cientistas mulheres no centro da experiência. Historicamente, muitas das maiores contribuições femininas para o desenvolvimento de hardware, software, linguagens de programação e mecânica espacial foram minimizadas ou esquecidas. O jogo confronta esse apagamento histórico permitindo que o participante vivencie na prática os desafios lógicos e arquiteturais enfrentados por cada pioneira.
 
 Alinhado ao Objetivo de Desenvolvimento Sustentável 05 (Igualdade de Gênero) e ao ODS 04 (Educação de Qualidade), o projeto busca despertar o sentimento de representatividade e pertencimento em meninas e jovens estudantes, demonstrando que a tecnologia não é apenas um espaço a ser conquistado por mulheres, mas um campo que foi fundado, programado e consolidado por elas.
 
-## Proposta Pedagógica e Representatividade
+## Proposta Pedagógica, Público-Alvo e Objetivos de Aprendizagem
 
-A experiência foi planejada para superar a transmissão passiva de dados biográficos. Em vez de apenas ler sobre essas pioneiras, o participante vivencia os desafios conceituais enfrentados por cada uma, compreendendo na prática como suas decisões arquiteturais e matemáticas moldaram o mundo moderno.
+### 1. Público-Alvo
+O jogo foi projetado para **estudantes do Ensino Médio, cursos técnicos e ingressantes no Ensino Superior** (faixa etária aproximada de 14 a 22 anos), sem exigir qualquer conhecimento prévio de programação. A linguagem visual, as analogias mecânicas e os glossários contextuais tornam os conceitos acessíveis tanto para iniciantes quanto para estudantes da área de exatas.
 
-O ambiente de jogo integra instrumentos de avaliação de aprendizagem e percepção sobre o papel da mulher nas ciências exatas. A cada partida, o sistema monitora métricas de raciocínio, tempo de dedução e tentativas, permitindo avaliar a eficácia do jogo na conscientização histórica e na desconstrução de estereótipos de gênero que ainda permeiam a área tecnológica.
+### 2. Objetivos de Aprendizagem
+Ao final da experiência, espera-se que o participante seja capaz de:
+1. **Dimensão Histórico-Social (ODS 05 — Igualdade de Gênero):** Reconhecer o protagonismo fundacional de mulheres na computação, identificar as barreiras institucionais e o apagamento histórico enfrentados por elas, e valorizar a representatividade feminina e latino-americana nas ciências exatas.
+2. **Dimensão Conceitual:** Compreender a evolução da computação desde os cálculos mecânicos e fiação física até a criação de linguagens de alto nível, compiladores, tolerância a falhas e engenharia de software em tempo real.
+3. **Dimensão Prático-Lógica:** Aplicar o pensamento computacional através do sequenciamento algorítmico rigoroso (Entrada $\rightarrow$ Processamento $\rightarrow$ Condição/Decisão $\rightarrow$ Saída de Dados) e da resolução dedutiva de problemas.
 
-## As Seis Eras do Protagonismo Feminino
+### 3. Metodologia de Avaliação Científica (Pré e Pós-Teste)
+O jogo integra instrumentos quantitativos voltados à pesquisa empírica (*Computer on the Beach*):
+- **Sondagem Pré-Jogo:** Diagnóstico de familiaridade prévia com programação, conhecimento sobre pioneiras e percepção sobre igualdade de gênero na área de TI.
+- **Telemetria de Execução:** Registro automático de tempo por fase, número de tentativas e confirmação de leitura das sínteses pedagógicas.
+- **Avaliação Pós-Jogo:** Instrumento de 4 itens focado na consolidação conceitual, ampliação da percepção do ODS 5 e valorização do pioneirismo brasileiro, com exportação instantânea dos dados estruturados em JSON.
 
-A progressão do jogo acompanha seis momentos decisivos da evolução computacional, evidenciando como a liderança de mulheres foi indispensável para o sucesso de cada empreendimento.
+## A Jornada Histórica: 6 Eras e Epílogo Brasileiro
 
-### Fase 1: Ada Lovelace (1843) — A Visão do Software
-Muito antes da existência dos computadores eletrônicos, Ada Lovelace foi a primeira pessoa a compreender que a Máquina Analítica de Charles Babbage não se limitava a cálculos aritméticos, podendo manipular símbolos e compor arte caso fosse instruída por regras lógicas. O desafio recria a Nota G, na qual Lovelace documentou o primeiro algoritmo da história humana para o cálculo dos Números de Bernoulli, exigindo do jogador a estruturação lógica correta do fluxo de instruções e laços condicionais.
+### Fase 1: Ada Lovelace (1843) — A Visão do Software e o Sequenciamento Algorítmico
+Ada Lovelace traduziu o artigo de Luigi Menabrea sobre a Máquina Analítica de Charles Babbage e incluiu a célebre **Nota G**, amplamente reconhecida na história da ciência como o primeiro algoritmo documentado para uma máquina mecânica programável. O desafio ensina a progressão universal de qualquer algoritmo: **Entrada de Dados $\rightarrow$ Processamento Aritmético $\rightarrow$ Condição/Decisão $\rightarrow$ Saída de Resultados**.
 
-### Fase 2: As Garotas do ENIAC (1945) — As Pioneiras da Programação Prática
-Quando o primeiro computador eletrônico de grande escala entrou em operação, a construção do hardware foi amplamente divulgada, mas a programação da máquina foi relegada aos bastidores e confiada a seis matemáticas: Kathleen McNulty, Frances Bilas, Betty Jean Jennings, Ruth Lichterman, Elizabeth Snyder e Marlyn Wescoff. Sem linguagens formais, manuais ou sistemas operacionais, elas decifraram diagramas lógicos e programaram o ENIAC manipulando centenas de cabos e chaves manuais. O jogo homenageia essas pioneiras desafiando o jogador a interconectar fisicamente acumuladores e unidades de controle balístico.
+### Fase 2: As Garotas do ENIAC (1945) — Programação Física de Hardware e Sincronismo
+Kathleen McNulty, Frances Bilas, Betty Jean Jennings, Ruth Lichterman, Elizabeth Snyder e Marlyn Wescoff foram as pioneiras que programaram o primeiro computador eletrônico de grande escala sem manuais ou sistemas operacionais. O desafio ensina como circuitos físicos de hardware demandam sincronização de clock, barramentos de dados e roteamento de sinais para entrada/saída.
 
-### Fase 3: Grace Hopper (1947) — A Gênese dos Compiladores
-Almirante da Marinha norte-americana e cientista da computação, Grace Hopper desafiou o consenso de sua época ao defender que humanos deveriam programar utilizando linguagens próximas da fala cotidiana em vez de código de máquina binário. Criadora do primeiro compilador (A-0) e precursora do COBOL, Hopper também imortalizou o termo bug ao registrar a retirada de uma mariposa presa nos relés do Harvard Mark II. O jogador assume o desafio de inspecionar os bancos de relés eletromecânicos, localizar a falha física e compilar instruções estruturadas.
+### Fase 3: Grace Hopper (1947) — A Gênese dos Compiladores e Abstração de Software
+Grace Hopper imortalizou a prática do *debugging* ao documentar a mariposa nos relés do Harvard Mark II (*"first actual case of bug being found"*) e liderou a criação do primeiro compilador (A-0) e do COBOL. O jogador explora a **Escada de Abstração**: traduzindo intenções em Linguagem de Alto Nível para mnemônicos legíveis em Assembly (`SUB`, `BR_NEG`, `SYS_OUT`) com glossário em linguagem natural.
 
-### Fase 4: Katherine Johnson (1962) — A Precisão que Conquistou o Espaço
-Matemática brilhante que superou as profundas barreiras da segregação racial e de gênero nos Estados Unidos, Katherine Johnson tornou-se referência indispensável na NASA por sua excepcional acurácia de cálculo em mecânica orbital. Sua perícia era tão respeitada que o astronauta John Glenn recusou-se a embarcar na missão orbital Friendship 7 até que Katherine verificasse manualmente as trajetórias calculadas pelos novos computadores da IBM. O desafio coloca o jogador no papel de Katherine, auditando variáveis de empuxo, azimute e ângulo de reentrada atmosférica.
+### Fase 4: Katherine Johnson (1962) — Mecânica Orbital e Auditoria Matemática
+Superando as barreiras da segregação racial e de gênero na NASA, Katherine Johnson foi a referência matemática cuja verificação manual conferiu segurança ao astronauta John Glenn no voo da Friendship 7. O desafio substitui cópias cegas de números por deduções baseadas na física de reentrada atmosférica (ângulos rasos causam ricochete; ângulos íngremes geram calor letal).
 
-### Fase 5: Irmã Mary Kenneth Keller (1965) — A Educação e a Popularização da Computação
-Primeira mulher a concluir o doutorado em Ciência da Computação nos Estados Unidos, pela Universidade de Wisconsin, a Irmã Mary Kenneth Keller anteviu que o computador deveria ser uma extensão do raciocínio humano aberta a todas as áreas do conhecimento. Co-desenvolvedora da linguagem BASIC no Dartmouth College, Keller dedicou sua vida a democratizar a tecnologia, fundar departamentos acadêmicos e acolher pesquisadores iniciantes. O jogo recria seu espírito pedagógico através de desafios de sintaxe estruturada pensados para ensinar a programar com clareza.
+### Fase 5: Irmã Mary Kenneth Keller (1965) — A Linguagem BASIC e a Educação em Computação
+Primeira mulher a obter um Ph.D. em Ciência da Computação nos Estados Unidos (Univ. of Wisconsin), co-criou o Dartmouth BASIC e fundou departamentos de computação com o ideal de democratizar a tecnologia. O desafio exige a compreensão semântica dos comandos `REM` (comentário), `PRINT` (saída) e `INPUT` (entrada interativa de variáveis), sem números de linha pré-definidos.
 
-### Fase 6: Margaret Hamilton (1969) — A Criação da Engenharia de Software
-Diretora da Divisão de Engenharia de Software do Laboratório de Instrumentação do MIT, Margaret Hamilton cunhou o próprio termo Engenharia de Software para exigir que o desenvolvimento de sistemas recebesse o mesmo rigor conferido a outras engenharias tradicionais. Sua arquitetura de agendamento assíncrono por prioridade evitou uma catástrofe a três minutos do pouso da Apollo 11: quando o radar de acoplamento sobrecarregou a CPU do computador de bordo (Alarme 1202), o software de Hamilton descartou tarefas supérfluas e manteve os motores operantes, assegurando a chegada segura da humanidade à Lua. O jogador assume o controle desse agendador crítico para estabilizar o sistema e autorizar o pouso no solo lunar.
+### Fase 6: Margaret Hamilton (1969) — A Criação da Engenharia de Software e o Pouso na Lua
+Diretora no MIT para o Programa Apollo, Margaret Hamilton cunhou o termo **Engenharia de Software** para conferir rigor científico à programação. Seu sistema operacional de tempo real com agendamento preemptivo por prioridade salvou o pouso da Apollo 11 quando o radar de acoplamento sobrecarregou a CPU (Alarme 1202). O jogador atua estabilizando o processador ao descartar tarefas não essenciais.
+
+### ★ Epílogo Especial: Além das Fronteiras — Profa. Dra. Edith Ranzini e o Patinho Feio (1972)
+Homenagem à engenheira e professora pioneira da Escola Politécnica da USP e da PUC-SP, que integrou a equipe de criação do **Patinho Feio** (1972), o primeiro computador digital projetado e construído no Brasil. O epílogo conecta o ODS 5 à soberania tecnológica nacional e à representatividade latino-americana.
 
 ## Especificações Técnicas e Arquitetura
 

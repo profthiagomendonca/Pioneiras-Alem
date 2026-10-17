@@ -90,6 +90,13 @@ theme_override_colors/font_color = Color(0.4, 0.85, 1.0, 1)
 theme_override_font_sizes/font_size = 20
 text = "Fase 4: Katherine Johnson (1962) — A Mecânica Orbital e a Missão Friendship 7"
 
+[node name="BtnLearningCard" type="Button" parent="HeaderPanel/Margin/HeaderBar"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(185, 34)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.45, 0.85, 1.0, 1)
+text = "📖 Cartão de Katherine"
+
 [node name="BtnMenu" type="Button" parent="HeaderPanel/Margin/HeaderBar"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 34)
@@ -97,17 +104,17 @@ layout_mode = 2
 text = "Menu"
 
 [node name="MainPanel" type="PanelContainer" parent="."]
-custom_minimum_size = Vector2(1000, 440)
+custom_minimum_size = Vector2(1020, 470)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -500.0
-offset_top = -285.0
-offset_right = 500.0
-offset_bottom = 155.0
+offset_left = -510.0
+offset_top = -245.0
+offset_right = 510.0
+offset_bottom = 215.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_panel")
@@ -128,26 +135,32 @@ layout_mode = 2
 theme_override_constants/separation = 16
 
 [node name="RulerIcon" type="TextureRect" parent="MainPanel/Margin/VBox/TopInfoHBox"]
-custom_minimum_size = Vector2(90, 42)
+custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
 texture = ExtResource("4_ruler_icon")
 expand_mode = 1
 stretch_mode = 5
 
 [node name="RulerText" type="RichTextLabel" parent="MainPanel/Margin/VBox/TopInfoHBox"]
+custom_minimum_size = Vector2(0, 85)
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_colors/default_color = Color(0.88, 0.92, 0.98, 1)
+theme_override_colors/default_color = Color(0.9, 0.94, 1.0, 1)
 theme_override_font_sizes/normal_font_size = 13
 bbcode_enabled = true
-text = "[b]Régua de Cálculo da NASA & Geometria Analítica:[/b] Calibre os parâmetros orbitais da cápsula de John Glenn para garantir que o escudo térmico suporte a reentrada."
+scroll_active = false
+text = "[b]Caderno de Anotações de Katherine Johnson (NASA 1962):[/b]
+Para trazer a cápsula Friendship 7 de John Glenn em segurança para a Terra, deduza e calibre os 3 controles:
+• [b]Ângulo Seguro:[/b] Se entrar muito deitada (<6.5°), a nave quica na atmosfera e volta para o espaço; se entrar muito em pé (>7.1°), queima como um meteoro. O meio ideal fica perto de 6.8°.
+• [b]Velocidade Orbital:[/b] A velocidade segura de órbita baixa da Terra deve estabilizar próxima de 17.500 mph.
+• [b]Freio (Retrofoguetes):[/b] Os jatos de desaceleração devem queimar por cerca de meio minuto (30 segundos)."
 
 [node name="LabelCorridor" type="Label" parent="MainPanel/Margin/VBox"]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_colors/font_color = Color(1.0, 0.85, 0.4, 1)
+theme_override_colors/font_color = Color(0.7, 0.85, 1.0, 1)
 theme_override_font_sizes/font_size = 15
-text = "CORREDOR DE REENTRADA: CALIBRANDO PARÂMETROS..."
+text = "Simulador Orbital: Ajuste os controles e clique em 'Simular Trajetória de Reentrada' para testar a rota!"
 horizontal_alignment = 1
 
 [node name="SlidersBox" type="PanelContainer" parent="MainPanel/Margin/VBox"]
@@ -170,7 +183,7 @@ columns = 3
 [node name="Lbl1" type="Label" parent="MainPanel/Margin/VBox/SlidersBox/MarginSliders/Grid"]
 custom_minimum_size = Vector2(230, 0)
 layout_mode = 2
-text = "1. Ângulo de Reentrada (Meta ~6.8°):"
+text = "1. Ângulo de Reentrada na Atmosfera:"
 
 [node name="SliderAngle" type="HSlider" parent="MainPanel/Margin/VBox/SlidersBox/MarginSliders/Grid"]
 unique_name_in_owner = true
@@ -191,7 +204,7 @@ text = "8.5°"
 
 [node name="Lbl2" type="Label" parent="MainPanel/Margin/VBox/SlidersBox/MarginSliders/Grid"]
 layout_mode = 2
-text = "2. Velocidade Orbital (Meta ~17.500 mph):"
+text = "2. Velocidade Orbital em Órbita Baixa:"
 
 [node name="SliderVelocity" type="HSlider" parent="MainPanel/Margin/VBox/SlidersBox/MarginSliders/Grid"]
 unique_name_in_owner = true
@@ -212,7 +225,7 @@ text = "19000 mph"
 
 [node name="Lbl3" type="Label" parent="MainPanel/Margin/VBox/SlidersBox/MarginSliders/Grid"]
 layout_mode = 2
-text = "3. Ignição dos Retrofoguetes (Meta ~30s):"
+text = "3. Tempo de Queima dos Retrofoguetes:"
 
 [node name="SliderRetro" type="HSlider" parent="MainPanel/Margin/VBox/SlidersBox/MarginSliders/Grid"]
 unique_name_in_owner = true
@@ -245,9 +258,9 @@ alignment = 1
 
 [node name="BtnCalculate" type="Button" parent="MainPanel/Margin/VBox/ActionsHBox"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(280, 38)
+custom_minimum_size = Vector2(300, 40)
 layout_mode = 2
-text = "Validar Cálculos de Trajetória"
+text = "🚀 Simular Trajetória de Reentrada"
 
 [node name="BtnNextStage" type="Button" parent="MainPanel/Margin/VBox/ActionsHBox"]
 unique_name_in_owner = true

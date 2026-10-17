@@ -89,6 +89,13 @@ theme_override_colors/font_color = Color(0.5, 0.9, 0.6, 1)
 theme_override_font_sizes/font_size = 20
 text = "Fase 5: Irmã Mary Kenneth Keller (1965) — O Primeiro Doutorado & A Linguagem BASIC"
 
+[node name="BtnLearningCard" type="Button" parent="HeaderPanel/Margin/HeaderBar"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(175, 34)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.5, 0.95, 0.65, 1)
+text = "📖 Cartão de Keller"
+
 [node name="BtnMenu" type="Button" parent="HeaderPanel/Margin/HeaderBar"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 34)
@@ -126,7 +133,7 @@ theme_override_constants/separation = 12
 layout_mode = 2
 theme_override_colors/font_color = Color(0.88, 0.94, 0.9, 1)
 theme_override_font_sizes/font_size = 15
-text = "Ordene as instruções do programa BASIC para executar na Teletype 33 (Use os botões Subir/Descer):"
+text = "A Linguagem BASIC: Coloque as 4 instruções na ordem da conversa usando os botões ▲ e ▼:"
 horizontal_alignment = 1
 
 [node name="HBoxEditor" type="HBoxContainer" parent="MainPanel/Margin/VBox"]
@@ -152,13 +159,42 @@ theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 14
 theme_override_constants/margin_bottom = 10
 
-[node name="TerminalOutput" type="RichTextLabel" parent="MainPanel/Margin/VBox/HBoxEditor/TerminalPanel/MarginTerm"]
+[node name="VBoxTermContent" type="VBoxContainer" parent="MainPanel/Margin/VBox/HBoxEditor/TerminalPanel/MarginTerm"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="TerminalOutput" type="RichTextLabel" parent="MainPanel/Margin/VBox/HBoxEditor/TerminalPanel/MarginTerm/VBoxTermContent"]
 unique_name_in_owner = true
 layout_mode = 2
+size_flags_vertical = 3
 theme_override_colors/default_color = Color(0.7, 0.9, 0.75, 1)
 theme_override_font_sizes/normal_font_size = 13
 bbcode_enabled = true
-text = "[color=#88c0d0]TELETYPE MODEL 33\nDARTMOUTH TIME-SHARING SYSTEM\n\nAGUARDANDO CÓDIGO...[/color]"
+text = "[color=#88c0d0]TELETYPE MODEL 33\nDARTMOUTH TIME-SHARING SYSTEM (1965)\n\nAGUARDANDO SEQUÊNCIA LÓGICA...[/color]"
+
+[node name="InteractiveInputContainer" type="HBoxContainer" parent="MainPanel/Margin/VBox/HBoxEditor/TerminalPanel/MarginTerm/VBoxTermContent"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="PromptLabel" type="Label" parent="MainPanel/Margin/VBox/HBoxEditor/TerminalPanel/MarginTerm/VBoxTermContent/InteractiveInputContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.4, 1.0, 0.5, 1)
+theme_override_font_sizes/font_size = 13
+text = ">"
+
+[node name="NameInput" type="LineEdit" parent="MainPanel/Margin/VBox/HBoxEditor/TerminalPanel/MarginTerm/VBoxTermContent/InteractiveInputContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Digite seu nome ou apelido aqui..."
+
+[node name="BtnSubmitName" type="Button" parent="MainPanel/Margin/VBox/HBoxEditor/TerminalPanel/MarginTerm/VBoxTermContent/InteractiveInputContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+text = "Enter ↵"
 
 [node name="LabelStatus" type="Label" parent="MainPanel/Margin/VBox"]
 unique_name_in_owner = true

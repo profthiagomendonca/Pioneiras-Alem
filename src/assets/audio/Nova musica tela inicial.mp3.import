@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dsq866smta3mi"
+path="res://.godot/imported/Nova musica tela inicial.mp3-e989c4d2f799b48d1a875c503fd078cc.mp3str"
+
+[deps]
+
+source_file="res://src/assets/audio/Nova musica tela inicial.mp3"
+dest_files=["res://.godot/imported/Nova musica tela inicial.mp3-e989c4d2f799b48d1a875c503fd078cc.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

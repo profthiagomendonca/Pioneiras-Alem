@@ -90,6 +90,13 @@ theme_override_colors/font_color = Color(1.0, 0.7, 0.7, 1)
 theme_override_font_sizes/font_size = 20
 text = "Fase 2: ENIAC Girls (1945) — A Fiação Física do Primeiro Computador Eletrônico"
 
+[node name="BtnLearningCard" type="Button" parent="HeaderPanel/Margin/HeaderBar"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(175, 34)
+layout_mode = 2
+theme_override_colors/font_color = Color(1.0, 0.75, 0.75, 1)
+text = "📖 Cartão do ENIAC"
+
 [node name="BtnMenu" type="Button" parent="HeaderPanel/Margin/HeaderBar"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 34)
@@ -127,7 +134,7 @@ theme_override_constants/separation = 12
 layout_mode = 2
 theme_override_colors/font_color = Color(0.9, 0.92, 0.98, 1)
 theme_override_font_sizes/font_size = 15
-text = "Conecte os cabos de pulso do circuito (à esquerda) às unidades de processamento corretas (à direita):"
+text = "A Fiação do ENIAC: Escolha um cabo à esquerda e conecte-o ao painel correspondente à direita:"
 horizontal_alignment = 1
 
 [node name="HBoxPatch" type="HBoxContainer" parent="MainPanel/Margin/VBox"]

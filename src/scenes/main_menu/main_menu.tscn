@@ -1,15 +1,15 @@
-[gd_scene load_steps=6 format=3]
+[gd_scene load_steps=10 format=3]
 
 [ext_resource type="Script" path="res://src/scenes/main_menu/main_menu.gd" id="1_menu"]
 [ext_resource type="Texture2D" path="res://src/assets/textures/backgrounds/Fundo do Menu Principal.png" id="2_bg_texture"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_modal"]
-bg_color = Color(0.09, 0.11, 0.18, 0.98)
+bg_color = Color(0.16, 0.10, 0.15, 0.98)
 border_width_left = 2
 border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
-border_color = Color(0.85, 0.68, 0.28, 1)
+border_color = Color(0.88, 0.75, 0.59, 1)
 corner_radius_top_left = 16
 corner_radius_top_right = 16
 corner_radius_bottom_right = 16
@@ -18,30 +18,78 @@ shadow_color = Color(0, 0, 0, 0.7)
 shadow_size = 14
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_badge"]
-bg_color = Color(0.12, 0.15, 0.24, 0.85)
+bg_color = Color(0.26, 0.16, 0.22, 0.9)
 border_width_left = 1
 border_width_top = 1
 border_width_right = 1
 border_width_bottom = 1
-border_color = Color(0.4, 0.7, 0.9, 0.6)
+border_color = Color(0.82, 0.55, 0.62, 0.7)
 corner_radius_top_left = 8
 corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_glass"]
-bg_color = Color(0.06, 0.08, 0.14, 0.75)
+bg_color = Color(0.17, 0.11, 0.15, 0.82)
 border_width_left = 2
 border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
-border_color = Color(0.85, 0.68, 0.28, 0.6)
+border_color = Color(0.88, 0.75, 0.59, 0.75)
 corner_radius_top_left = 16
 corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
 shadow_color = Color(0, 0, 0, 0.6)
 shadow_size = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btn_primary"]
+bg_color = Color(0.72, 0.38, 0.47, 0.95)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.92, 0.78, 0.62, 0.9)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btn_primary_hover"]
+bg_color = Color(0.80, 0.44, 0.54, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.98, 0.86, 0.72, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btn_sec"]
+bg_color = Color(0.24, 0.15, 0.21, 0.85)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.88, 0.75, 0.59, 0.5)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btn_sec_hover"]
+bg_color = Color(0.32, 0.20, 0.28, 0.95)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.92, 0.78, 0.62, 0.8)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -70,7 +118,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.04, 0.05, 0.09, 0.55)
+color = Color(0.16, 0.09, 0.14, 0.22)
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 layout_mode = 1
@@ -99,14 +147,14 @@ alignment = 1
 
 [node name="Title" type="Label" parent="CenterContainer/MainCard/Margin/MainVBox"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.960784, 0.819608, 0.360784, 1)
+theme_override_colors/font_color = Color(0.96, 0.88, 0.78, 1)
 theme_override_font_sizes/font_size = 46
 text = "PIONEIRAS & ALÉM"
 horizontal_alignment = 1
 
 [node name="Subtitle" type="Label" parent="CenterContainer/MainCard/Margin/MainVBox"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.85, 0.89, 0.96, 1)
+theme_override_colors/font_color = Color(0.91, 0.75, 0.76, 1)
 theme_override_font_sizes/font_size = 18
 text = "O Código Invisível que Construiu a Computação"
 horizontal_alignment = 1
@@ -126,22 +174,49 @@ theme_override_constants/separation = 14
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 52)
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 0.95, 0.95, 1)
 theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxFlat_btn_primary")
+theme_override_styles/hover = SubResource("StyleBoxFlat_btn_primary_hover")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_btn_primary")
 text = "Iniciar Jornada"
 
 [node name="BtnStages" type="Button" parent="CenterContainer/MainCard/Margin/MainVBox/MenuButtons"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
+theme_override_colors/font_color = Color(0.96, 0.91, 0.91, 1)
+theme_override_colors/font_hover_color = Color(1, 0.98, 0.92, 1)
 theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_btn_sec")
+theme_override_styles/hover = SubResource("StyleBoxFlat_btn_sec_hover")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_btn_sec")
 text = "Linha do Tempo (6 Eras)"
 
-[node name="BtnAbout" type="Button" parent="CenterContainer/MainCard/Margin/MainVBox/MenuButtons"]
+[node name="BtnResearch" type="Button" parent="CenterContainer/MainCard/Margin/MainVBox/MenuButtons"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 48)
+custom_minimum_size = Vector2(0, 44)
 layout_mode = 2
-theme_override_font_sizes/font_size = 16
-text = "Sobre a Pesquisa & ODS"
+theme_override_colors/font_color = Color(0.96, 0.91, 0.91, 1)
+theme_override_colors/font_hover_color = Color(1, 0.98, 0.92, 1)
+theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxFlat_btn_sec")
+theme_override_styles/hover = SubResource("StyleBoxFlat_btn_sec_hover")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_btn_sec")
+text = "O Projeto Pioneiras e Além"
+
+[node name="BtnOds" type="Button" parent="CenterContainer/MainCard/Margin/MainVBox/MenuButtons"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 44)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.96, 0.91, 0.91, 1)
+theme_override_colors/font_hover_color = Color(1, 0.98, 0.92, 1)
+theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxFlat_btn_sec")
+theme_override_styles/hover = SubResource("StyleBoxFlat_btn_sec_hover")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_btn_sec")
+text = "ODS 5: Mulheres na Tecnologia"
 
 [node name="StagesModal" type="PanelContainer" parent="."]
 unique_name_in_owner = true
@@ -174,7 +249,7 @@ theme_override_constants/separation = 10
 
 [node name="ModalTitle" type="Label" parent="StagesModal/Margin/VBox"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.96, 0.82, 0.36, 1)
+theme_override_colors/font_color = Color(0.96, 0.88, 0.78, 1)
 theme_override_font_sizes/font_size = 22
 text = "Selecione uma Era Histórica"
 horizontal_alignment = 1
@@ -220,65 +295,275 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(140, 36)
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.96, 0.91, 0.91, 1)
+theme_override_colors/font_hover_color = Color(1, 0.98, 0.92, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_btn_sec")
+theme_override_styles/hover = SubResource("StyleBoxFlat_btn_sec_hover")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_btn_sec")
 text = "Voltar"
 
-[node name="AboutModal" type="PanelContainer" parent="."]
+[node name="ResearchModal" type="PanelContainer" parent="."]
 unique_name_in_owner = true
 visible = false
-custom_minimum_size = Vector2(680, 480)
+custom_minimum_size = Vector2(740, 520)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -340.0
-offset_top = -240.0
-offset_right = 340.0
-offset_bottom = 240.0
+offset_left = -370.0
+offset_top = -260.0
+offset_right = 370.0
+offset_bottom = 260.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_modal")
 
-[node name="Margin" type="MarginContainer" parent="AboutModal"]
+[node name="Margin" type="MarginContainer" parent="ResearchModal"]
 layout_mode = 2
 theme_override_constants/margin_left = 28
-theme_override_constants/margin_top = 22
+theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 28
-theme_override_constants/margin_bottom = 22
+theme_override_constants/margin_bottom = 20
 
-[node name="VBox" type="VBoxContainer" parent="AboutModal/Margin"]
+[node name="VBox" type="VBoxContainer" parent="ResearchModal/Margin"]
 layout_mode = 2
-theme_override_constants/separation = 14
+theme_override_constants/separation = 12
 
-[node name="AboutTitle" type="Label" parent="AboutModal/Margin/VBox"]
+[node name="ResearchTitle" type="Label" parent="ResearchModal/Margin/VBox"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.96, 0.82, 0.36, 1)
+theme_override_colors/font_color = Color(0.96, 0.88, 0.78, 1)
 theme_override_font_sizes/font_size = 22
-text = "Sobre a Pesquisa & Computer on the Beach"
+text = "O Projeto Pioneiras e Além"
 horizontal_alignment = 1
 
-[node name="AboutText" type="RichTextLabel" parent="AboutModal/Margin/VBox"]
+[node name="ResearchText" type="RichTextLabel" parent="ResearchModal/Margin/VBox"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_colors/default_color = Color(0.88, 0.9, 0.95, 1)
-theme_override_font_sizes/normal_font_size = 14
+theme_override_colors/default_color = Color(0.96, 0.91, 0.91, 1)
+theme_override_font_sizes/normal_font_size = 13
 bbcode_enabled = true
-text = "[b]Pioneiras & Além[/b] é um jogo sério e educativo concebido para evidenciar o protagonismo e as contribuições essenciais de mulheres na ciência da computação.
+text = "[b]Pioneiras & Além[/b] é uma jornada narrativa e interativa desenvolvida no âmbito de pesquisa em [b]Informática na Educação[/b], criada para resgatar, celebrar e dar visibilidade ao protagonismo histórico das mulheres na construção da Ciência da Computação.
 
-[b]As 6 Pioneiras do Jogo:[/b]
-1. [color=#ffc107]Ada Lovelace (1843):[/color] Primeiro Algoritmo da história.
-2. [color=#ef5350]ENIAC Girls (1945):[/color] Primeira programação física de computador eletrônico.
-3. [color=#4fc3f7]Grace Hopper (1947):[/color] Primeiro bug documentado e criação dos compiladores.
-4. [color=#81c784]Katherine Johnson (1962):[/color] Cálculos orbitais cruciais para a NASA.
-5. [color=#ba68c8]Mary Kenneth Keller (1965):[/color] Primeiro Ph.D. em TI e pioneira do BASIC educacional.
-6. [color=#ff8a65]Margaret Hamilton (1969):[/color] Criação da Engenharia de Software e o pouso na Lua.
+[b][color=#ffc107]1. O Propósito da Pesquisa:[/color][/b]
+Historicamente, as mulheres foram as fundadoras da programação e da arquitetura de sistemas, mas processos culturais acabaram invisibilizando essas contribuições. Este projeto investiga como o uso de [b]jogos sérios narrativos[/b], aliados a metáforas do cotidiano, pode quebrar estereótipos de gênero e democratizar a computação para pessoas que [b]nunca tiveram contato com tecnologia[/b].
 
-[b]Alinhamento aos ODS:[/b] ODS 05 (Igualdade de Gênero) e ODS 04 (Educação de Qualidade)."
+[b][color=#81c784]2. O que o Jogo Ensina:[/color][/b]
+• [b]Ada Lovelace (1843):[/b] O conceito de algoritmo como uma receita lógica passo a passo.
+• [b]ENIAC Girls (1945):[/b] A ligação física entre hardware, eletricidade e lógica binária.
+• [b]Grace Hopper (1947):[/b] A depuração de falhas (o 'bug') e o compilador como um tradutor para a língua humana.
+• [b]Katherine Johnson (1962):[/b] O poder do cálculo numérico e da verificação rigorosa em trajetórias espaciais.
+• [b]Irmã Mary Kenneth Keller (1965):[/b] A entrada de dados, memória interativa e a computação na educação.
+• [b]Margaret Hamilton (1969):[/b] O nascimento da Engenharia de Software e a tomada de decisões por prioridade sob pressão.
+• [b]Edith Ranzini (1972, Brasil):[/b] O pioneirismo latino-americano no projeto do computador nacional 'Patinho Feio'.
 
-[node name="BtnCloseAbout" type="Button" parent="AboutModal/Margin/VBox"]
+[b][color=#4fc3f7]3. Instrumentos de Avaliação Acadêmica:[/color][/b]
+O jogo foi estruturado como um instrumento de intervenção pedagógica que permite medir:
+• [b]Conhecimento Prévio & Percepção:[/b] Sondagem inicial antes de começar a jogar;
+• [b]Telemetria de Resolução:[/b] Tempo, raciocínio e engajamento com as sínteses conceituais em cada Era;
+• [b]Avaliação de Aprendizagem (Pós-Teste):[/b] Retenção dos conceitos e ampliação da percepção sobre o papel feminino na tecnologia (alinhado ao [b]ODS 5[/b] da ONU).
+[i]Os dados da sessão podem ser exportados ao final para fins de análise estatística em artigos e relatórios educacionais.[/i]
+
+[b][color=#ab47bc]4. Público-Alvo e Aplicação:[/color][/b]
+Estudantes do Ensino Fundamental II, Ensino Médio, cursos técnicos, licenciaturas e público geral, podendo ser aplicado em salas de aula, oficinas de extensão e eventos científicos."
+
+[node name="BtnCloseResearch" type="Button" parent="ResearchModal/Margin/VBox"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(140, 36)
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.96, 0.91, 0.91, 1)
+theme_override_colors/font_hover_color = Color(1, 0.98, 0.92, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_btn_sec")
+theme_override_styles/hover = SubResource("StyleBoxFlat_btn_sec_hover")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_btn_sec")
 text = "Fechar"
+
+[node name="OdsModal" type="PanelContainer" parent="."]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(740, 520)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -370.0
+offset_top = -260.0
+offset_right = 370.0
+offset_bottom = 260.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_modal")
+
+[node name="Margin" type="MarginContainer" parent="OdsModal"]
+layout_mode = 2
+theme_override_constants/margin_left = 28
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 28
+theme_override_constants/margin_bottom = 20
+
+[node name="VBox" type="VBoxContainer" parent="OdsModal/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="OdsTitle" type="Label" parent="OdsModal/Margin/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.96, 0.88, 0.78, 1)
+theme_override_font_sizes/font_size = 22
+text = "ODS 5: Igualdade de Gênero na Ciência & Tecnologia"
+horizontal_alignment = 1
+
+[node name="OdsText" type="RichTextLabel" parent="OdsModal/Margin/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/default_color = Color(0.96, 0.91, 0.91, 1)
+theme_override_font_sizes/normal_font_size = 13
+bbcode_enabled = true
+text = "O [b]Objetivo de Desenvolvimento Sustentável 5 (ODS 5)[/b] da Agenda 2030 da Organização das Nações Unidas (ONU) busca alcançar a igualdade de gênero e empoderar todas as mulheres e meninas.
+
+[b][color=#ff80ab]1. O Cenário Atual na Computação:[/color][/b]
+No Brasil e no mundo, as mulheres representam menos de 20% das pessoas matriculadas em cursos de Ciência da Computação e Engenharia, e uma parcela ainda menor nos cargos de liderança técnica. Romper essa barreira não é apenas uma questão de justiça social, mas de qualidade científica e inovação.
+
+[b][color=#ffd54f]2. Alinhamento com a Meta 5.b da ONU:[/color][/b]
+A Agenda 2030 estabelece explicitamente na [b]Meta 5.b[/b] a necessidade de [i]\"aumentar o uso de tecnologias de base, em particular as tecnologias de informação e comunicação, para promover o empoderamento das mulheres\"[/i].
+
+[b][color=#81c784]3. Boas Práticas que este Projeto Fomenta:[/color][/b]
+• [b]Representatividade:[/b] Quando meninas e jovens veem que a computação foi construída por mulheres, elas passam a enxergar a área como um lugar legítimo para seus talentos.
+• [b]Educação Inclusiva:[/b] O pensamento computacional deve ser ensinado de maneira acolhedora, utilizando metáforas do cotidiano e sem barreiras desnecessárias de termos inacessíveis.
+• [b]Ação Multiplicadora:[/b] Incentivar escolas, oficinas e universidades a debaterem a equidade de gênero e criarem ambientes seguros e estimulantes para futuras cientistas.
+
+[b][color=#4fc3f7]4. Por que a Diversidade Importa:[/color][/b]
+Os algoritmos e sistemas computacionais definem como a sociedade vive, trabalha e se comunica. Um futuro digital desenvolvido por apenas uma parcela da sociedade deixa de fora metade da criatividade, sensibilidade e potencial do mundo. A tecnologia precisa de todas as vozes!"
+
+[node name="BtnCloseOds" type="Button" parent="OdsModal/Margin/VBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(140, 36)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.96, 0.91, 0.91, 1)
+theme_override_colors/font_hover_color = Color(1, 0.98, 0.92, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_btn_sec")
+theme_override_styles/hover = SubResource("StyleBoxFlat_btn_sec_hover")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_btn_sec")
+text = "Fechar"
+
+[node name="PreSurveyModal" type="PanelContainer" parent="."]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(700, 490)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -350.0
+offset_top = -245.0
+offset_right = 350.0
+offset_bottom = 245.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_modal")
+
+[node name="MarginPre" type="MarginContainer" parent="PreSurveyModal"]
+layout_mode = 2
+theme_override_constants/margin_left = 28
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 28
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxPre" type="VBoxContainer" parent="PreSurveyModal/MarginPre"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="PreTitle" type="Label" parent="PreSurveyModal/MarginPre/VBoxPre"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.96, 0.88, 0.78, 1)
+theme_override_font_sizes/font_size = 20
+text = "Sondagem Inicial de Pesquisa (Pré-Jogo)"
+horizontal_alignment = 1
+
+[node name="PreDesc" type="Label" parent="PreSurveyModal/MarginPre/VBoxPre"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.85, 0.9, 0.95, 1)
+theme_override_font_sizes/font_size = 13
+text = "Antes de começar, identifique-se e responda às questões para nossa pesquisa sobre mulheres na computação:"
+autowrap_mode = 2
+
+[node name="UserDataHBox" type="HBoxContainer" parent="PreSurveyModal/MarginPre/VBoxPre"]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="VBoxName" type="VBoxContainer" parent="PreSurveyModal/MarginPre/VBoxPre/UserDataHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 4
+
+[node name="LblName" type="Label" parent="PreSurveyModal/MarginPre/VBoxPre/UserDataHBox/VBoxName"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.96, 0.82, 0.36, 1)
+theme_override_font_sizes/font_size = 12
+text = "Nome do Participante:"
+
+[node name="InputName" type="LineEdit" parent="PreSurveyModal/MarginPre/VBoxPre/UserDataHBox/VBoxName"]
+unique_name_in_owner = true
+layout_mode = 2
+custom_minimum_size = Vector2(0, 36)
+placeholder_text = "Digite seu nome..."
+
+[node name="VBoxCity" type="VBoxContainer" parent="PreSurveyModal/MarginPre/VBoxPre/UserDataHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 4
+
+[node name="LblCity" type="Label" parent="PreSurveyModal/MarginPre/VBoxPre/UserDataHBox/VBoxCity"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.96, 0.82, 0.36, 1)
+theme_override_font_sizes/font_size = 12
+text = "Cidade / Estado:"
+
+[node name="InputCity" type="LineEdit" parent="PreSurveyModal/MarginPre/VBoxPre/UserDataHBox/VBoxCity"]
+unique_name_in_owner = true
+layout_mode = 2
+custom_minimum_size = Vector2(0, 36)
+placeholder_text = "Ex: Florianópolis / SC..."
+
+[node name="PreQ1" type="CheckBox" parent="PreSurveyModal/MarginPre/VBoxPre"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 13
+text = "1. Eu já conheço a trajetória de mulheres pioneiras na Ciência da Computação."
+
+[node name="PreQ2" type="CheckBox" parent="PreSurveyModal/MarginPre/VBoxPre"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 13
+text = "2. Eu já tive contato prévio com conceitos de programação ou algoritmos."
+
+[node name="PreQ3" type="CheckBox" parent="PreSurveyModal/MarginPre/VBoxPre"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 13
+text = "3. Considero que as contribuições femininas têm ampla visibilidade na área de TI."
+
+[node name="FooterPreHBox" type="HBoxContainer" parent="PreSurveyModal/MarginPre/VBoxPre"]
+layout_mode = 2
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="BtnSkipPre" type="Button" parent="PreSurveyModal/MarginPre/VBoxPre/FooterPreHBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(140, 38)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_btn_sec")
+text = "Pular Sondagem"
+
+[node name="BtnConfirmPre" type="Button" parent="PreSurveyModal/MarginPre/VBoxPre/FooterPreHBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 38)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_btn_primary")
+text = "Confirmar & Iniciar Jogo >"

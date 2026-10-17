@@ -13,6 +13,7 @@ var portrait_margaret = preload("res://src/assets/textures/portraits/Margaret_Ha
 var portrait_eniac = preload("res://src/assets/textures/portraits/Eniac Girls.png")
 var portrait_katherine = preload("res://src/assets/textures/portraits/Katherine Johnson.png")
 var portrait_keller = preload("res://src/assets/textures/portraits/Irmã Mary Kenneth Keller.png")
+var portrait_edith = preload("res://src/assets/textures/portraits/Edith.png")
 
 var dialogue_queue: Array[Dictionary] = []
 var is_typing: bool = false
@@ -38,7 +39,7 @@ func _display_next_line() -> void:
 	label_name.text = speaker
 	var text_content: String = current.get("text", "")
 
-	# Definir retrato dinamicamente para as 6 pioneiras
+	# Definir retrato dinamicamente para as pioneiras + Edith
 	if "Ada" in speaker:
 		portrait_rect.texture = portrait_ada
 	elif "Grace" in speaker:
@@ -51,6 +52,8 @@ func _display_next_line() -> void:
 		portrait_rect.texture = portrait_katherine
 	elif "Keller" in speaker or "Mary" in speaker or "Irmã" in speaker:
 		portrait_rect.texture = portrait_keller
+	elif "Edith" in speaker or "Ranzini" in speaker:
+		portrait_rect.texture = portrait_edith
 	else:
 		portrait_rect.texture = null
 

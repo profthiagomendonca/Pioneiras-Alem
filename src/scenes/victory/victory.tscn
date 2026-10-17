@@ -148,25 +148,43 @@ text = "Avaliação Científica & Percepção (COTB):"
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_font_sizes/font_size = 13
-text = "Eu já conhecia essas pioneiras antes do jogo."
+text = "1. Compreendi a relação entre os desafios históricos e a tecnologia moderna."
 
 [node name="Q2Check" type="CheckBox" parent="CenterContainer/MainPanel/Margin/VBox/HBoxCols/SurveyPanel/Margin/VBoxSurvey"]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_font_sizes/font_size = 13
-text = "O jogo aumentou minha percepção sobre o ODS 05."
+text = "2. O jogo ampliou minha compreensão sobre a participação e contribuições femininas (ODS 5)."
 
 [node name="Q3Check" type="CheckBox" parent="CenterContainer/MainPanel/Margin/VBox/HBoxCols/SurveyPanel/Margin/VBoxSurvey"]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_font_sizes/font_size = 13
-text = "A metodologia interativa facilitou a compreensão."
+text = "3. A metodologia interativa e as sínteses facilitaram a consolidação da aprendizagem."
 
-[node name="BtnCopyTelemetry" type="Button" parent="CenterContainer/MainPanel/Margin/VBox/HBoxCols/SurveyPanel/Margin/VBoxSurvey"]
+[node name="Q4Check" type="CheckBox" parent="CenterContainer/MainPanel/Margin/VBox/HBoxCols/SurveyPanel/Margin/VBoxSurvey"]
 unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 13
+text = "4. A inclusão da pioneira brasileira (Edith Ranzini) ampliou a percepção de representatividade."
+
+[node name="BtnsExportHBox" type="HBoxContainer" parent="CenterContainer/MainPanel/Margin/VBox/HBoxCols/SurveyPanel/Margin/VBoxSurvey"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="BtnCopyTelemetry" type="Button" parent="CenterContainer/MainPanel/Margin/VBox/HBoxCols/SurveyPanel/Margin/VBoxSurvey/BtnsExportHBox"]
+unique_name_in_owner = true
+size_flags_horizontal = 3
 custom_minimum_size = Vector2(0, 36)
 layout_mode = 2
-text = "Copiar Dados da Sessão (JSON)"
+text = "📋 Copiar (JSON)"
+
+[node name="BtnSaveTelemetry" type="Button" parent="CenterContainer/MainPanel/Margin/VBox/HBoxCols/SurveyPanel/Margin/VBoxSurvey/BtnsExportHBox"]
+unique_name_in_owner = true
+size_flags_horizontal = 3
+custom_minimum_size = Vector2(0, 36)
+layout_mode = 2
+text = "💾 Salvar Arquivo"
 
 [node name="CopyFeedback" type="Label" parent="CenterContainer/MainPanel/Margin/VBox/HBoxCols/SurveyPanel/Margin/VBoxSurvey"]
 unique_name_in_owner = true

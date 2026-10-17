@@ -1,0 +1,165 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://src/scenes/stages/stage_synthesis_modal.gd" id="1_synth"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_panel"]
+bg_color = Color(0.11, 0.13, 0.20, 0.98)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.96, 0.82, 0.36, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 0.75)
+shadow_size = 18
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tab"]
+bg_color = Color(0.16, 0.19, 0.28, 0.9)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.4, 0.5, 0.7, 0.6)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_content"]
+bg_color = Color(0.08, 0.09, 0.14, 0.9)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.3, 0.4, 0.6, 0.4)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="StageSynthesisModal" type="PanelContainer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -440.0
+offset_top = -270.0
+offset_right = 440.0
+offset_bottom = 270.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_panel")
+script = ExtResource("1_synth")
+
+[node name="Margin" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 28
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 28
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxMain" type="VBoxContainer" parent="Margin"]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="HeaderHBox" type="HBoxContainer" parent="Margin/VBoxMain"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="IconCategory" type="TextureRect" parent="Margin/VBoxMain/HeaderHBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(36, 36)
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TitleLabel" type="Label" parent="Margin/VBoxMain/HeaderHBox"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.96, 0.82, 0.36, 1)
+theme_override_font_sizes/font_size = 20
+text = "Síntese Pedagógica — Consolidação da Era"
+vertical_alignment = 1
+
+[node name="BtnCloseModal" type="Button" parent="Margin/VBoxMain/HeaderHBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(130, 32)
+layout_mode = 2
+text = "✕ Voltar ao Jogo"
+
+[node name="TabsHBox" type="HBoxContainer" parent="Margin/VBoxMain"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="TabPioneerBtn" type="Button" parent="Margin/VBoxMain/TabsHBox"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+custom_minimum_size = Vector2(0, 36)
+theme_override_styles/normal = SubResource("StyleBoxFlat_tab")
+theme_override_font_sizes/font_size = 13
+text = "1. Pioneira & Barreiras"
+
+[node name="TabHistoryBtn" type="Button" parent="Margin/VBoxMain/TabsHBox"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+custom_minimum_size = Vector2(0, 36)
+theme_override_styles/normal = SubResource("StyleBoxFlat_tab")
+theme_override_font_sizes/font_size = 13
+text = "2. Contribuição Histórica"
+
+[node name="TabConceptBtn" type="Button" parent="Margin/VBoxMain/TabsHBox"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+custom_minimum_size = Vector2(0, 36)
+theme_override_styles/normal = SubResource("StyleBoxFlat_tab")
+theme_override_font_sizes/font_size = 13
+text = "3. Conceito Computacional"
+
+[node name="TabTodayBtn" type="Button" parent="Margin/VBoxMain/TabsHBox"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+custom_minimum_size = Vector2(0, 36)
+theme_override_styles/normal = SubResource("StyleBoxFlat_tab")
+theme_override_font_sizes/font_size = 13
+text = "4. Por Que Importa Hoje?"
+
+[node name="ContentPanel" type="PanelContainer" parent="Margin/VBoxMain"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_content")
+
+[node name="MarginContent" type="MarginContainer" parent="Margin/VBoxMain/ContentPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 18
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 18
+theme_override_constants/margin_bottom = 16
+
+[node name="ContentText" type="RichTextLabel" parent="Margin/VBoxMain/ContentPanel/MarginContent"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/default_color = Color(0.92, 0.94, 0.98, 1)
+theme_override_font_sizes/normal_font_size = 14
+bbcode_enabled = true
+text = "Texto explicativo..."
+
+[node name="FooterHBox" type="HBoxContainer" parent="Margin/VBoxMain"]
+layout_mode = 2
+alignment = 2
+
+[node name="BtnContinue" type="Button" parent="Margin/VBoxMain/FooterHBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(240, 42)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 14
+text = "Próximo Tópico da Síntese >"

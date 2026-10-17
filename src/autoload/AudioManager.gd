@@ -18,6 +18,8 @@ func _ready() -> void:
 
 func _load_bgm_stream() -> void:
 	var music_paths = [
+		"res://Nova musica tela inicial.mp3",
+		"res://src/assets/audio/Nova musica tela inicial.mp3",
 		"res://Musica tela inicial.mp3",
 		"res://src/assets/audio/Musica tela inicial.mp3"
 	]
