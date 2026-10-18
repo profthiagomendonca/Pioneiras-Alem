@@ -95,7 +95,7 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(175, 34)
 layout_mode = 2
 theme_override_colors/font_color = Color(1.0, 0.75, 0.75, 1)
-text = "📖 Cartão do ENIAC"
+text = "Cartão do ENIAC"
 
 [node name="BtnMenu" type="Button" parent="HeaderPanel/Margin/HeaderBar"]
 unique_name_in_owner = true

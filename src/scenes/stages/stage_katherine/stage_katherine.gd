@@ -138,15 +138,15 @@ func _on_btn_calculate_pressed() -> void:
 		var diag = ""
 		if not ok_a:
 			if a > 7.1:
-				diag = "🔥 Simulação Falhou: Ângulo de " + str(snapped(a, 0.1)) + "° é íngreme demais! A nave aqueceu acima de 1.600°C e o escudo térmico quase queimou. Dica do Caderno: Suavize a inclinação!"
+				diag = "Simulação Falhou: Ângulo de " + str(snapped(a, 0.1)) + "° é íngreme demais! A nave aqueceu acima de 1.600°C e o escudo térmico quase queimou. Dica do Caderno: Suavize a inclinação!"
 			else:
-				diag = "🌌 Simulação Falhou: Ângulo de " + str(snapped(a, 0.1)) + "° é deitado demais! A cápsula bateu no ar e quicou para o vácuo espacial. Dica do Caderno: Incline um pouco mais a cápsula!"
+				diag = "Simulação Falhou: Ângulo de " + str(snapped(a, 0.1)) + "° é deitado demais! A cápsula bateu no ar e quicou para o vácuo espacial. Dica do Caderno: Incline um pouco mais a cápsula!"
 		elif not ok_v:
-			diag = "⚡ Simulação Falhou: Velocidade de " + str(int(v)) + " mph fora do limite orbital! Dica do Caderno: Ajuste a velocidade para perto de 17.500 mph para a descida suave."
+			diag = "Simulação Falhou: Velocidade de " + str(int(v)) + " mph fora do limite orbital! Dica do Caderno: Ajuste a velocidade para perto de 17.500 mph para a descida suave."
 		else:
-			diag = "🌊 Simulação Falhou: Tempo de freio dos retrofoguetes de " + str(int(r)) + " s incorreto! A nave caiu fora do ponto de resgate. Dica do Caderno: O freio a jato precisa queimar por cerca de meio minuto (30s)!"
+			diag = "Simulação Falhou: Tempo de freio dos retrofoguetes de " + str(int(r)) + " s incorreto! A nave caiu fora do ponto de resgate. Dica do Caderno: O freio a jato precisa queimar por cerca de meio minuto (30s)!"
 
-		label_corridor.text = "⚠️ Alerta de Reentrada: Parâmetros inseguros detectados na simulação!"
+		label_corridor.text = "Alerta de Reentrada: Parâmetros inseguros detectados na simulação!"
 		label_corridor.modulate = Color(1.0, 0.65, 0.3)
 		label_status.text = diag
 		label_status.modulate = Color(1.0, 0.4, 0.4)

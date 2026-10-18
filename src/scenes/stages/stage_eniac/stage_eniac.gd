@@ -87,7 +87,7 @@ func _start_intro_dialogue() -> void:
 		{
 			"speaker": "ENIAC Girls (1945)",
 			"color": Color(0.85, 0.4, 0.4),
-			"text": "Seu desafio: selecione cada um dos 3 cabos à esquerda e ligue-o ao destino correto à direita. Você pode consultar o '📖 Cartão do ENIAC' no topo a qualquer momento para aprender mais!"
+			"text": "Seu desafio: selecione cada um dos 3 cabos à esquerda e ligue-o ao destino correto à direita. Você pode consultar o 'Cartão do ENIAC' no topo a qualquer momento para aprender mais!"
 		}
 	]
 	dialogue_box.start_dialogue(lines)

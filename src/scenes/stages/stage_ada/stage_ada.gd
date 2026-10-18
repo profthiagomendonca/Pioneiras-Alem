@@ -25,36 +25,36 @@ var cards_data = [
 		"id": "input",
 		"title": "1. Os Ingredientes",
 		"concept": "Entrada de Dados",
-		"analogy": "🥕 1. Ingredientes (Entrada)",
+		"analogy": "1. Ingredientes (Entrada)",
 		"short_desc": "Colocar na mesa o que a máquina vai usar",
-		"desc": "[b][color=#ffd54f]🥕 1. Cartão de Ingredientes (Entrada de Dados):[/color][/b]\nAntes de fazer um bolo, você separa a farinha, os ovos e o açúcar na mesa. No computador é a mesma coisa: o algoritmo precisa [b]receber os dados iniciais[/b] antes de realizar qualquer cálculo!",
+		"desc": "[b][color=#ffd54f]1. Cartão de Ingredientes (Entrada de Dados):[/color][/b]\nAntes de fazer um bolo, você separa a farinha, os ovos e o açúcar na mesa. No computador é a mesma coisa: o algoritmo precisa [b]receber os dados iniciais[/b] antes de realizar qualquer cálculo!",
 		"correct_pos": 0
 	},
 	{
 		"id": "calc",
 		"title": "2. O Preparo / Massa",
 		"concept": "Processamento (Cálculo)",
-		"analogy": "🥣 2. Preparo (Processamento)",
+		"analogy": "2. Preparo (Processamento)",
 		"short_desc": "Misturar e realizar as transformações",
-		"desc": "[b][color=#4fc3f7]🥣 2. Cartão de Preparo (Processamento / Cálculo):[/color][/b]\nCom os ingredientes prontos, você bate a massa e ajeita na fôrma. Na máquina de Ada, é aqui que as engrenagens giram para [b]somar, multiplicar e transformar os dados[/b] inseridos!",
+		"desc": "[b][color=#4fc3f7]2. Cartão de Preparo (Processamento / Cálculo):[/color][/b]\nCom os ingredientes prontos, você bate a massa e ajeita na fôrma. Na máquina de Ada, é aqui que as engrenagens giram para [b]somar, multiplicar e transformar os dados[/b] inseridos!",
 		"correct_pos": 1
 	},
 	{
 		"id": "decision",
 		"title": "3. Teste do Palito",
 		"concept": "Decisão / Repetição (Laço)",
-		"analogy": "🔍 3. Teste do Palito (Decisão)",
+		"analogy": "3. Teste do Palito (Decisão)",
 		"short_desc": "Checar: 'Terminou? SE NÃO, repete!'",
-		"desc": "[b][color=#81c784]🔍 3. Cartão de Checagem (Decisão / Condição):[/color][/b]\nVocê espeta o palito no bolo: [b]SE[/b] sair úmido, assa mais 5 minutos; [b]SENÃO[/b], pode retirar! O computador faz essa pergunta: [b]'A conta acabou? SE NÃO, repita o passo anterior!'[/b]",
+		"desc": "[b][color=#81c784]3. Cartão de Checagem (Decisão / Condição):[/color][/b]\nVocê espeta o palito no bolo: [b]SE[/b] sair úmido, assa mais 5 minutos; [b]SENÃO[/b], pode retirar! O computador faz essa pergunta: [b]'A conta acabou? SE NÃO, repita o passo anterior!'[/b]",
 		"correct_pos": 2
 	},
 	{
 		"id": "output",
 		"title": "4. Servir o Bolo",
 		"concept": "Saída de Dados",
-		"analogy": "🎂 4. Servir à Mesa (Saída)",
+		"analogy": "4. Servir à Mesa (Saída)",
 		"short_desc": "Entregar o resultado final prontinho",
-		"desc": "[b][color=#ff8a65]🎂 4. Cartão de Servir (Saída de Dados):[/color][/b]\nO bolo cheiroso é colocado na mesa para saborear! No computador, é o momento em que a máquina perfura a resposta final no papel ou [b]mostra o resultado pronto na tela[/b].",
+		"desc": "[b][color=#ff8a65]4. Cartão de Servir (Saída de Dados):[/color][/b]\nO bolo cheiroso é colocado na mesa para saborear! No computador, é o momento em que a máquina perfura a resposta final no papel ou [b]mostra o resultado pronto na tela[/b].",
 		"correct_pos": 3
 	}
 ]
@@ -112,7 +112,7 @@ func _start_intro_dialogue() -> void:
 		{
 			"speaker": "Ada Lovelace (1843)",
 			"color": Color(0.9, 0.7, 0.2),
-			"text": "Seu desafio: organize os 4 cartões na ordem lógica correta, como se fosse uma receita de bolo! Você também pode clicar em '📖 Cartão de Ada' no topo da tela para aprender mais."
+			"text": "Seu desafio: organize os 4 cartões na ordem lógica correta, como se fosse uma receita de bolo! Você também pode clicar em 'Cartão de Ada' no topo da tela para aprender mais."
 		}
 	]
 	dialogue_box.start_dialogue(lines)
@@ -178,7 +178,7 @@ func _on_slot_pressed(slot_idx: int, slot_btn: Button) -> void:
 
 func _on_btn_hint_pressed() -> void:
 	AudioManager.play_click()
-	card_info_box.text = "[color=#ffd54f][b]💡 Dica Pedagógica de Ada (A Receita do Bolo):[/b]\nPense na ordem natural da cozinha:\n1º Você separa os [b]Ingredientes (Entrada)[/b];\n2º Você mistura e bate a [b]Massa (Processamento)[/b];\n3º Você faz o [b]Teste do Palito (Decisão)[/b] para ver se já assou;\n4º Você [b]Serve o Bolo (Saída)[/b] para os convidados![/color]"
+	card_info_box.text = "[color=#ffd54f][b]Dica Pedagógica de Ada (A Receita do Bolo):[/b]\nPense na ordem natural da cozinha:\n1º Você separa os [b]Ingredientes (Entrada)[/b];\n2º Você mistura e bate a [b]Massa (Processamento)[/b];\n3º Você faz o [b]Teste do Palito (Decisão)[/b] para ver se já assou;\n4º Você [b]Serve o Bolo (Saída)[/b] para os convidados![/color]"
 
 func _on_btn_run_pressed() -> void:
 	attempts += 1
@@ -203,7 +203,7 @@ func _on_btn_run_pressed() -> void:
 		GameState.complete_stage("ada", duration, 150)
 		GameState.unlock_next_stage(1)
 
-		card_info_box.text = "[color=#a3be8c][b]✨ Perfeito! A Máquina Analítica funcionou como um relógio:[/b]\n1. Recebeu os Ingredientes (Entrada de Dados);\n2. Bateu a massa e calculou as engrenagens (Processamento);\n3. Fez o Teste do Palito para saber quando parar (Decisão/Laço);\n4. Serviu o prato pronto impresso no papel (Saída de Dados)![/color]"
+		card_info_box.text = "[color=#a3be8c][b]Perfeito! A Máquina Analítica funcionou como um relógio:[/b]\n1. Recebeu os Ingredientes (Entrada de Dados);\n2. Bateu a massa e calculou as engrenagens (Processamento);\n3. Fez o Teste do Palito para saber quando parar (Decisão/Laço);\n4. Serviu o prato pronto impresso no papel (Saída de Dados)![/color]"
 		label_status.text = "Algoritmo Perfeito! Você descobriu como funciona o coração de qualquer programa de computador!"
 		label_status.modulate = Color(0.3, 1.0, 0.5)
 		btn_run.disabled = true

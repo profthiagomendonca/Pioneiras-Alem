@@ -29,11 +29,11 @@ func show_synthesis(data: Dictionary, victory_mode: bool = false) -> void:
 	current_data = data
 	is_victory_mode = victory_mode
 	if victory_mode:
-		title_label.text = "🏆 Conquista da Era — " + data.get("stage_title", "Conceito Histórico")
-		btn_close_modal.text = "✕ Fechar"
+		title_label.text = "Conquista da Era — " + data.get("stage_title", "Conceito Histórico")
+		btn_close_modal.text = "Fechar"
 	else:
-		title_label.text = "📖 Cartão de Conhecimento — " + data.get("stage_title", "Conceito Histórico")
-		btn_close_modal.text = "✕ Voltar ao Jogo"
+		title_label.text = "Cartão de Conhecimento — " + data.get("stage_title", "Conceito Histórico")
+		btn_close_modal.text = "Voltar ao Jogo"
 	_select_tab(0)
 	show()
 
