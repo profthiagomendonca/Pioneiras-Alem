@@ -63,7 +63,7 @@ func _select_tab(tab_idx: int) -> void:
 		if is_victory_mode:
 			btn_continue.text = "Avançar para a Próxima Era >"
 		else:
-			btn_continue.text = "✕ Concluir e Voltar ao Desafio"
+			btn_continue.text = "Concluir e Voltar ao Desafio"
 	else:
 		btn_continue.text = "Próximo Tópico >"
 

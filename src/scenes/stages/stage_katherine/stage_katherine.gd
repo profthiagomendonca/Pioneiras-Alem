@@ -110,7 +110,7 @@ func _on_btn_calculate_pressed() -> void:
 		GameState.complete_stage("katherine", duration, 220)
 		GameState.unlock_next_stage(4)
 
-		label_corridor.text = "✨ SIMULAÇÃO BEM-SUCEDIDA: A nave entrou suavemente no corredor atmosférico!"
+		label_corridor.text = "SIMULAÇÃO BEM-SUCEDIDA: A nave entrou suavemente no corredor atmosférico!"
 		label_corridor.modulate = Color(0.3, 1.0, 0.5)
 
 		label_status.text = "POUSO CONFIRMADO NO OCEANO! O astronauta John Glenn foi resgatado com total segurança graças aos seus cálculos!"

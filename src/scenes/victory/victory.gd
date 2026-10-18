@@ -51,7 +51,7 @@ func _format_metrics_display() -> void:
 	text += "4. [color=#81c784]Katherine Johnson (1962):[/color] " + str(snapped(stages["katherine"]["time_spent"], 0.1)) + "s | " + str(stages["katherine"]["attempts"]) + " tent. | Síntese: " + ("Lida [OK]" if stages["katherine"]["read_synthesis"] else "Pendente") + "\n"
 	text += "5. [color=#ba68c8]Mary Kenneth Keller (1965):[/color] " + str(snapped(stages["keller"]["time_spent"], 0.1)) + "s | " + str(stages["keller"]["attempts"]) + " tent. | Síntese: " + ("Lida [OK]" if stages["keller"]["read_synthesis"] else "Pendente") + "\n"
 	text += "6. [color=#ff8a65]Margaret Hamilton (1969):[/color] " + str(snapped(stages["margaret"]["time_spent"], 0.1)) + "s | " + str(stages["margaret"]["attempts"]) + " tent. | Síntese: " + ("Lida [OK]" if stages["margaret"]["read_synthesis"] else "Pendente") + "\n"
-	text += "★ [color=#aed581]Epílogo Edith Ranzini (1972, Brasil):[/color] " + ("Concluído [OK]" if GameState.telemetry_data["edith_epilogue_viewed"] else "Não acessado") + "\n"
+	text += "7. [color=#aed581]Epílogo Edith Ranzini (1972, Brasil):[/color] " + ("Concluído [OK]" if GameState.telemetry_data["edith_epilogue_viewed"] else "Não acessado") + "\n"
 
 	label_metrics.text = text
 

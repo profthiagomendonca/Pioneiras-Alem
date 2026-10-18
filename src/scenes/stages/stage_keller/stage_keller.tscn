@@ -192,9 +192,9 @@ placeholder_text = "Digite seu nome ou apelido aqui..."
 
 [node name="BtnSubmitName" type="Button" parent="MainPanel/Margin/VBox/HBoxEditor/TerminalPanel/MarginTerm/VBoxTermContent/InteractiveInputContainer"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(70, 0)
+custom_minimum_size = Vector2(75, 0)
 layout_mode = 2
-text = "Enter ↵"
+text = "Enviar"
 
 [node name="LabelStatus" type="Label" parent="MainPanel/Margin/VBox"]
 unique_name_in_owner = true
