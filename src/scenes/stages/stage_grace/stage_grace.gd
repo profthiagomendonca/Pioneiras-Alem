@@ -10,7 +10,7 @@ extends Control
 @onready var btn_learning_card: Button = %BtnLearningCard
 @onready var btn_menu: Button = %BtnMenu
 
-var moth_texture = preload("res://src/assets/textures/icons/mariposa.png")
+var moth_texture = preload("res://src/assets/textures/icons/mariposa_bug.png")
 
 var synthesis_modal_scene = preload("res://src/scenes/stages/stage_synthesis_modal.tscn")
 var synthesis_modal: PanelContainer = null
@@ -98,7 +98,7 @@ func _start_intro_dialogue() -> void:
 func _setup_relays() -> void:
 	for i in range(8):
 		var btn = Button.new()
-		btn.custom_minimum_size = Vector2(110, 68)
+		btn.custom_minimum_size = Vector2(115, 70)
 		btn.text = "Chave #" + str(70 + i) + "\n[ Testar ]"
 		btn.pressed.connect(_on_relay_clicked.bind(i, btn))
 		relays_grid.add_child(btn)
@@ -110,8 +110,11 @@ func _on_relay_clicked(idx: int, btn: Button) -> void:
 	if idx == moth_relay_index:
 		AudioManager.play_success()
 		bug_found = true
-		btn.text = "Chave #" + str(70 + idx) + "\n[ ! MARIPOSA ! ]"
-		btn.modulate = Color(1.0, 0.8, 0.2)
+		btn.icon = moth_texture
+		btn.expand_icon = true
+		btn.text = " Chave #" + str(70 + idx) + "\n [! MARIPOSA !]"
+		btn.modulate = Color(1.0, 0.9, 0.2)
+		moth_icon_rect.texture = moth_texture
 		moth_icon_rect.show()
 		
 		bug_info_label.text = "[color=#fbc02d][b]Origem Histórica do 'Bug':[/b] Uma mariposa de verdade entrou no circuito da Chave #" + str(70 + idx) + " e bloqueou o contato elétrico! Grace colou o inseto no caderno oficial com a frase: 'Primeiro caso real de inseto (bug) encontrado'. Daí nasceu o termo 'Debug' para caçar erros![/color]"

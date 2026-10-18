@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://src/scenes/stages/stage_grace/stage_grace.gd" id="1_stage"]
 [ext_resource type="PackedScene" path="res://src/scenes/dialogue_system/dialogue_box.tscn" id="2_dialogue"]
 [ext_resource type="Texture2D" path="res://src/assets/textures/backgrounds/Fundo fase 2.png" id="3_bg_grace"]
-[ext_resource type="Texture2D" path="res://src/assets/textures/icons/mariposa.png" id="4_moth"]
+[ext_resource type="Texture2D" path="res://src/assets/textures/icons/mariposa_bug.png" id="4_moth"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_header"]
 bg_color = Color(0.08, 0.09, 0.14, 0.85)
@@ -146,24 +146,24 @@ theme_override_constants/v_separation = 10
 columns = 4
 
 [node name="BugPanel" type="PanelContainer" parent="MainPanel/Margin/VBox"]
-custom_minimum_size = Vector2(0, 56)
+custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_desc")
 
 [node name="Margin" type="MarginContainer" parent="MainPanel/Margin/VBox/BugPanel"]
 layout_mode = 2
-theme_override_constants/margin_left = 12
-theme_override_constants/margin_top = 6
-theme_override_constants/margin_right = 12
-theme_override_constants/margin_bottom = 6
+theme_override_constants/margin_left = 14
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 14
+theme_override_constants/margin_bottom = 8
 
 [node name="HBoxBug" type="HBoxContainer" parent="MainPanel/Margin/VBox/BugPanel/Margin"]
 layout_mode = 2
-theme_override_constants/separation = 14
+theme_override_constants/separation = 16
 
 [node name="MothIconRect" type="TextureRect" parent="MainPanel/Margin/VBox/BugPanel/Margin/HBoxBug"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(50, 44)
+custom_minimum_size = Vector2(96, 64)
 layout_mode = 2
 texture = ExtResource("4_moth")
 expand_mode = 1

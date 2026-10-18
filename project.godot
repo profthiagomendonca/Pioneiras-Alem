@@ -1,10 +1,6 @@
 ; Engine configuration file.
 ; It's best edited using the editor UI and not directly,
-; since the parameters that go here are not all obvious.
-;
-; Format:
-;   [section] ; section goes between []
-;   param=value ; assign values to parameters
+; but it can be edited safely if you know what you are doing.
 
 config_version=5
 
@@ -13,8 +9,7 @@ config_version=5
 config/name="Pioneiras & Além"
 config/description="Jogo educativo e narrativo sobre as mulheres pioneiras da computação para o Computer on the Beach (COTB)."
 run/main_scene="res://src/scenes/main_menu/main_menu.tscn"
-config/features=PackedStringArray("4.6", "GL Compatibility")
-config/icon="res://icon.svg"
+config/features=PackedStringArray("4.3", "GL Compatibility")
 
 [autoload]
 
@@ -25,11 +20,23 @@ AudioManager="*res://src/autoload/AudioManager.gd"
 
 window/size/viewport_width=1280
 window/size/viewport_height=720
+window/size/mode=0
+window/size/resizable=true
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 window/handheld/orientation=4
 
+[gui]
+
+theme/default_font_antialiasing=1
+theme/default_font_hinting=2
+theme/default_font_subpixel_positioning=1
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"
-environment/defaults/default_clear_color=Color(0.1, 0.06, 0.09, 1)
+renderer/rendering_method.web="gl_compatibility"
+environment/defaults/default_clear_color=Color(0.10, 0.06, 0.09, 1)
+textures/canvas_textures/default_texture_filter=1
+2d/snap/snap_2d_transforms_to_pixel=true
+2d/snap/snap_2d_vertices_to_pixel=true

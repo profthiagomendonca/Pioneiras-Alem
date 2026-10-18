@@ -26,13 +26,13 @@ var patch_connections = [
 		"connected": false
 	},
 	{
-		"source": "Cabo 2: O Canal dos Números (Dados para a Conta)",
+		"source": "Cabo 2: Os Números (Dados para a Conta)",
 		"target": "Unidade de Fazer Contas (Processador / Multiplicador)",
 		"desc": "[b][color=#4fc3f7]2. Cabo dos Números (Canal de Dados):[/color][/b]\nLeva os números da trajetória guardados na memória até a peça da máquina responsável por multiplicar e fazer as contas!",
 		"connected": false
 	},
 	{
-		"source": "Cabo 3: A Saída da Resposta (Gravação Final)",
+		"source": "Cabo 3: A Resposta (Gravação Final)",
 		"target": "Mecanismo Perfurador de Cartões (Saída / Impressora)",
 		"desc": "[b][color=#81c784]3. Cabo da Resposta (Canal de Saída):[/color][/b]\nApós a conta ser feita, este cabo leva o resultado pronto para acionar as agulhas e perfurar o papel, entregando a resposta final aos cientistas!",
 		"connected": false
@@ -113,17 +113,18 @@ func _setup_patch_panel() -> void:
 
 	for idx in source_indices:
 		var btn = Button.new()
-		btn.custom_minimum_size = Vector2(360, 56)
-		btn.text = patch_connections[idx]["source"]
+		btn.custom_minimum_size = Vector2(420, 56)
+		btn.text = " " + patch_connections[idx]["source"]
 		btn.icon = cable_texture
 		btn.expand_icon = true
+		btn.alignment = HORIZONTAL_ALIGNMENT_LEFT
 		btn.set_meta("conn_index", idx)
 		btn.pressed.connect(_on_source_clicked.bind(btn, idx))
 		sources_container.add_child(btn)
 
 	for idx in target_indices:
 		var btn = Button.new()
-		btn.custom_minimum_size = Vector2(360, 56)
+		btn.custom_minimum_size = Vector2(420, 56)
 		btn.text = "[ Conectar aqui ]\n" + patch_connections[idx]["target"]
 		btn.set_meta("conn_index", idx)
 		btn.pressed.connect(_on_target_clicked.bind(btn, idx))

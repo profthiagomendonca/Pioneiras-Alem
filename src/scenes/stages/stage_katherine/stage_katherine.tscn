@@ -1,9 +1,11 @@
-[gd_scene load_steps=8 format=3]
+[gd_scene load_steps=10 format=3]
 
 [ext_resource type="Script" path="res://src/scenes/stages/stage_katherine/stage_katherine.gd" id="1_stage"]
 [ext_resource type="PackedScene" path="res://src/scenes/dialogue_system/dialogue_box.tscn" id="2_dialogue"]
 [ext_resource type="Texture2D" path="res://src/assets/textures/backgrounds/Fundo fase 4.png" id="3_bg_katherine"]
 [ext_resource type="Texture2D" path="res://src/assets/textures/icons/Regua_nasa.png" id="4_ruler_icon"]
+[ext_resource type="FontFile" path="res://src/assets/fonts/font_regular.ttf" id="5_font_reg"]
+[ext_resource type="FontFile" path="res://src/assets/fonts/font_bold.ttf" id="6_font_bold"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_header"]
 bg_color = Color(0.08, 0.09, 0.14, 0.85)
@@ -142,18 +144,21 @@ expand_mode = 1
 stretch_mode = 5
 
 [node name="RulerText" type="RichTextLabel" parent="MainPanel/Margin/VBox/TopInfoHBox"]
-custom_minimum_size = Vector2(0, 85)
+custom_minimum_size = Vector2(0, 95)
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_colors/default_color = Color(0.9, 0.94, 1.0, 1)
-theme_override_font_sizes/normal_font_size = 13
+theme_override_colors/default_color = Color(0.92, 0.95, 1.0, 1)
+theme_override_fonts/normal_font = ExtResource("5_font_reg")
+theme_override_fonts/bold_font = ExtResource("6_font_bold")
+theme_override_font_sizes/normal_font_size = 14
+theme_override_font_sizes/bold_font_size = 14
 bbcode_enabled = true
 scroll_active = false
-text = "[b]Caderno de Anotações de Katherine Johnson (NASA 1962):[/b]
+text = "[b][color=#ffd54f]Caderno de Anotações de Katherine Johnson (NASA 1962):[/color][/b]
 Para trazer a cápsula Friendship 7 de John Glenn em segurança para a Terra, deduza e calibre os 3 controles:
-• [b]Ângulo Seguro:[/b] Se entrar muito deitada (<6.5°), a nave quica na atmosfera e volta para o espaço; se entrar muito em pé (>7.1°), queima como um meteoro. O meio ideal fica perto de 6.8°.
-• [b]Velocidade Orbital:[/b] A velocidade segura de órbita baixa da Terra deve estabilizar próxima de 17.500 mph.
-• [b]Freio (Retrofoguetes):[/b] Os jatos de desaceleração devem queimar por cerca de meio minuto (30 segundos)."
+• [b][color=#ffd54f]Ângulo Seguro:[/color][/b] Se entrar muito deitada (<6.5°), a nave quica na atmosfera e volta para o espaço; se entrar muito em pé (>7.1°), queima como um meteoro. O meio ideal fica perto de 6.8°.
+• [b][color=#4fc3f7]Velocidade Orbital:[/color][/b] A velocidade segura de órbita baixa da Terra deve estabilizar próxima de 17.500 mph.
+• [b][color=#81c784]Freio (Retrofoguetes):[/color][/b] Os jatos de desaceleração devem queimar por cerca de meio minuto (30 segundos)."
 
 [node name="LabelCorridor" type="Label" parent="MainPanel/Margin/VBox"]
 unique_name_in_owner = true
