@@ -135,6 +135,7 @@ func _on_btn_calculate_pressed() -> void:
 		, CONNECT_ONE_SHOT)
 	else:
 		AudioManager.play_error()
+		GameState.record_attempt("katherine")
 		var diag = ""
 		if not ok_a:
 			if a > 7.1:

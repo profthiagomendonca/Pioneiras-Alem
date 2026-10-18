@@ -186,6 +186,7 @@ func _on_btn_run_pressed() -> void:
 	for i in range(4):
 		if active_slot_cards[i] == null:
 			AudioManager.play_error()
+			GameState.record_attempt("ada")
 			label_status.text = "Atenção: Preencha todos os 4 passos da receita antes de acionar a máquina!"
 			label_status.modulate = Color(1.0, 0.4, 0.4)
 			return
@@ -231,6 +232,7 @@ func _on_btn_run_pressed() -> void:
 		, CONNECT_ONE_SHOT)
 	else:
 		AudioManager.play_error()
+		GameState.record_attempt("ada")
 		var error_msg = ""
 		if active_slot_cards[0]["id"] == "output":
 			error_msg = "Você colocou 'Servir o Bolo' antes de tudo! Como a máquina vai entregar uma resposta se nem recebeu os ingredientes e nem fez nenhuma conta?"

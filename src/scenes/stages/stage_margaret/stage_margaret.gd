@@ -222,6 +222,7 @@ func _on_btn_land_pressed() -> void:
 	for t in pending_tasks:
 		if t["essential"] and t["discarded"]:
 			AudioManager.play_error()
+			GameState.record_attempt("margaret")
 			label_status.text = "FALHA CRÍTICA: Você desativou '" + t["name"] + "'! Sem esse sistema vital, os astronautas não sobrevivem ao pouso. Reative-o e descarte processos que não afetam a descida imediata!"
 			label_status.modulate = Color(1.0, 0.2, 0.2)
 			return

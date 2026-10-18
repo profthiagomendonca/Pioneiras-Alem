@@ -166,6 +166,7 @@ func _on_target_clicked(btn_t: Button, target_idx: int) -> void:
 		_check_all_cables()
 	else:
 		AudioManager.play_error()
+		GameState.record_attempt("eniac")
 		label_status.text = "Circuito incompatível! Pense na função: o Maestro vai no Ritmo, os Números vão para as Contas, e a Resposta vai para a Impressora."
 		label_status.modulate = Color(1.0, 0.4, 0.4)
 

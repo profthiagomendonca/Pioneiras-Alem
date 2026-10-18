@@ -199,6 +199,7 @@ func _on_btn_run_pressed() -> void:
 		name_input.grab_focus()
 	else:
 		AudioManager.play_error()
+		GameState.record_attempt("keller")
 		var diagnostic = "Atenção: A ordem dos passos está confusa! "
 		if current_order[0]["correct_idx"] == 2:
 			diagnostic += "O computador tentou pedir para o usuário digitar antes mesmo de fazer a pergunta! Primeiro perguntamos (PRINT), depois ouvimos (INPUT)."

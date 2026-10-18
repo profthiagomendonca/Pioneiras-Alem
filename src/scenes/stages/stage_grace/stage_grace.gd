@@ -209,6 +209,7 @@ func _on_low_btn_pressed(btn: Button) -> void:
 		_check_compiler_completion()
 	else:
 		AudioManager.play_error()
+		GameState.record_attempt("grace")
 		label_status.text = "Ação incompatível: Essa ordem da máquina faz outra coisa. Leia as duas opções com atenção!"
 		label_status.modulate = Color(1.0, 0.4, 0.4)
 
