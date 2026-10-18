@@ -133,7 +133,7 @@ theme_override_constants/separation = 12
 layout_mode = 2
 theme_override_colors/font_color = Color(0.88, 0.94, 0.9, 1)
 theme_override_font_sizes/font_size = 15
-text = "A Linguagem BASIC: Coloque as 4 instruções na ordem da conversa usando os botões ▲ e ▼:"
+text = "A Linguagem BASIC: Coloque as 4 instruções na ordem da conversa usando os botões de Subir e Descer:"
 horizontal_alignment = 1
 
 [node name="HBoxEditor" type="HBoxContainer" parent="MainPanel/Margin/VBox"]

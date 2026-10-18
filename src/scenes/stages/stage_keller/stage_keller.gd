@@ -13,6 +13,8 @@ extends Control
 @onready var btn_submit_name: Button = %BtnSubmitName
 
 var card_texture = preload("res://src/assets/textures/icons/Cartao_perfurado.png")
+var icon_arrow_up = preload("res://src/assets/textures/icons/icon_arrow_up.svg")
+var icon_arrow_down = preload("res://src/assets/textures/icons/icon_arrow_down.svg")
 var synthesis_modal_scene = preload("res://src/scenes/stages/stage_synthesis_modal.tscn")
 var synthesis_modal: PanelContainer = null
 var start_time: float = 0.0
@@ -140,15 +142,19 @@ func _render_buttons() -> void:
 
 		if i > 0:
 			var btn_up = Button.new()
-			btn_up.custom_minimum_size = Vector2(40, 36)
-			btn_up.text = "▲"
+			btn_up.custom_minimum_size = Vector2(38, 38)
+			btn_up.icon = icon_arrow_up
+			btn_up.expand_icon = true
+			btn_up.tooltip_text = "Mover linha para cima"
 			btn_up.pressed.connect(_move_line.bind(i, -1))
 			hbox.add_child(btn_up)
 
 		if i < current_order.size() - 1:
 			var btn_down = Button.new()
-			btn_down.custom_minimum_size = Vector2(40, 36)
-			btn_down.text = "▼"
+			btn_down.custom_minimum_size = Vector2(38, 38)
+			btn_down.icon = icon_arrow_down
+			btn_down.expand_icon = true
+			btn_down.tooltip_text = "Mover linha para baixo"
 			btn_down.pressed.connect(_move_line.bind(i, 1))
 			hbox.add_child(btn_down)
 
@@ -202,7 +208,7 @@ func _on_btn_run_pressed() -> void:
 			diagnostic += "Lembre-se do fluxo da conversa: 1º Bilhete explicativo (REM) -> 2º Perguntar o nome (PRINT) -> 3º Ouvir e guardar na gaveta (INPUT) -> 4º Dar boas-vindas com o nome guardado!"
 		
 		terminal_output.text = "[color=#bf616a][b]Erro de Lógica:[/b] " + diagnostic + "[/color]"
-		label_status.text = "Use os botões ▲ e ▼ para reposicionar as linhas!"
+		label_status.text = "Use os botões de Subir e Descer para reposicionar as linhas!"
 		label_status.modulate = Color(1.0, 0.4, 0.4)
 
 func _on_name_submitted(user_name: String) -> void:
