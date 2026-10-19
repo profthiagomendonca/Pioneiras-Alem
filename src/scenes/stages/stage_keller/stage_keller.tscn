@@ -190,6 +190,13 @@ layout_mode = 2
 size_flags_horizontal = 3
 placeholder_text = "Digite seu nome ou apelido aqui..."
 
+[node name="BtnPromptKellerName" type="Button" parent="MainPanel/Margin/VBox/HBoxEditor/TerminalPanel/MarginTerm/VBoxTermContent/InteractiveInputContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(65, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "Digitar"
+
 [node name="BtnSubmitName" type="Button" parent="MainPanel/Margin/VBox/HBoxEditor/TerminalPanel/MarginTerm/VBoxTermContent/InteractiveInputContainer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(75, 0)

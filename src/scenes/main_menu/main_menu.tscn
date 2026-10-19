@@ -508,11 +508,23 @@ theme_override_colors/font_color = Color(0.96, 0.82, 0.36, 1)
 theme_override_font_sizes/font_size = 12
 text = "Nome do Participante:"
 
-[node name="InputName" type="LineEdit" parent="PreSurveyModal/MarginPre/VBoxPre/UserDataHBox/VBoxName"]
+[node name="HBoxInputName" type="HBoxContainer" parent="PreSurveyModal/MarginPre/VBoxPre/UserDataHBox/VBoxName"]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="InputName" type="LineEdit" parent="PreSurveyModal/MarginPre/VBoxPre/UserDataHBox/VBoxName/HBoxInputName"]
 unique_name_in_owner = true
 layout_mode = 2
+size_flags_horizontal = 3
 custom_minimum_size = Vector2(0, 36)
 placeholder_text = "Digite seu nome..."
+
+[node name="BtnPromptName" type="Button" parent="PreSurveyModal/MarginPre/VBoxPre/UserDataHBox/VBoxName/HBoxInputName"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(65, 36)
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "Digitar"
 
 [node name="VBoxCity" type="VBoxContainer" parent="PreSurveyModal/MarginPre/VBoxPre/UserDataHBox"]
 layout_mode = 2
@@ -525,11 +537,23 @@ theme_override_colors/font_color = Color(0.96, 0.82, 0.36, 1)
 theme_override_font_sizes/font_size = 12
 text = "Cidade / Estado:"
 
-[node name="InputCity" type="LineEdit" parent="PreSurveyModal/MarginPre/VBoxPre/UserDataHBox/VBoxCity"]
+[node name="HBoxInputCity" type="HBoxContainer" parent="PreSurveyModal/MarginPre/VBoxPre/UserDataHBox/VBoxCity"]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="InputCity" type="LineEdit" parent="PreSurveyModal/MarginPre/VBoxPre/UserDataHBox/VBoxCity/HBoxInputCity"]
 unique_name_in_owner = true
 layout_mode = 2
+size_flags_horizontal = 3
 custom_minimum_size = Vector2(0, 36)
 placeholder_text = "Ex: Florianópolis / SC..."
+
+[node name="BtnPromptCity" type="Button" parent="PreSurveyModal/MarginPre/VBoxPre/UserDataHBox/VBoxCity/HBoxInputCity"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(65, 36)
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "Digitar"
 
 [node name="PreQ1" type="CheckBox" parent="PreSurveyModal/MarginPre/VBoxPre"]
 unique_name_in_owner = true

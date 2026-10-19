@@ -10,6 +10,7 @@ extends Control
 @onready var terminal_output: RichTextLabel = %TerminalOutput
 @onready var input_container: HBoxContainer = %InteractiveInputContainer
 @onready var name_input: LineEdit = %NameInput
+@onready var btn_prompt_keller_name: Button = %BtnPromptKellerName
 @onready var btn_submit_name: Button = %BtnSubmitName
 
 var card_texture = preload("res://src/assets/textures/icons/Cartao_perfurado.png")
@@ -18,6 +19,7 @@ var icon_arrow_down = preload("res://src/assets/textures/icons/icon_arrow_down.s
 var synthesis_modal_scene = preload("res://src/scenes/stages/stage_synthesis_modal.tscn")
 var synthesis_modal: PanelContainer = null
 var start_time: float = 0.0
+var _prompt_active: bool = false
 
 # Linhas de código em BASIC explicadas com a metáfora de 'Perguntar e Guardar na Gaveta'
 var basic_lines = [
@@ -69,6 +71,15 @@ func _ready() -> void:
 
 	name_input.text_submitted.connect(_on_name_submitted)
 	btn_submit_name.pressed.connect(func(): _on_name_submitted(name_input.text))
+	btn_prompt_keller_name.pressed.connect(func():
+		AudioManager.play_click()
+		_prompt_mobile_input(name_input, "Digite seu nome ou apelido:")
+	)
+	name_input.gui_input.connect(func(event: InputEvent):
+		if _is_mobile_environment():
+			if (event is InputEventMouseButton and event.pressed) or (event is InputEventScreenTouch and event.pressed):
+				_prompt_mobile_input(name_input, "Digite seu nome ou apelido:")
+	)
 
 	# Instanciar modal de síntese
 	synthesis_modal = synthesis_modal_scene.instantiate()
@@ -270,3 +281,45 @@ func _on_synthesis_closed(is_victory: bool) -> void:
 func _on_btn_next_stage_pressed() -> void:
 	AudioManager.play_click()
 	GameState.go_to_stage(6)
+
+func _is_mobile_environment() -> bool:
+	if OS.has_feature("web"):
+		var js_check = """
+		(function() {
+			var isTouch = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0) || (navigator.msMaxTouchPoints > 0);
+			var isMobileUA = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+			return isTouch || isMobileUA;
+		})()
+		"""
+		var result = JavaScriptBridge.eval(js_check)
+		if result != null and bool(result):
+			return true
+	if DisplayServer.is_touchscreen_available():
+		return true
+	var os_name = OS.get_name().to_lower()
+	return os_name in ["android", "ios"]
+
+func _prompt_mobile_input(target_line_edit: LineEdit, title: String) -> void:
+	if _prompt_active:
+		return
+	_prompt_active = true
+	
+	if OS.has_feature("web"):
+		var safe_title = title.replace("\\", "\\\\").replace("'", "\\'")
+		var current_val = target_line_edit.text.replace("\\", "\\\\").replace("'", "\\'")
+		var js = """
+		(function() {
+			var res = window.prompt('%s', '%s');
+			return res !== null ? res : '__CANCELLED__';
+		})()
+		""" % [safe_title, current_val]
+		var res = JavaScriptBridge.eval(js)
+		if res != null and str(res) != "__CANCELLED__":
+			target_line_edit.text = str(res).strip_edges()
+	else:
+		target_line_edit.grab_focus()
+		
+	get_tree().create_timer(0.3).timeout.connect(func():
+		_prompt_active = false
+	)
+

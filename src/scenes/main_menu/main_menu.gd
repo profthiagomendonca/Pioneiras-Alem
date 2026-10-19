@@ -28,6 +28,8 @@ var icon_margaret = preload("res://src/assets/textures/portraits/Margaret_Hamilt
 @onready var pre_survey_modal: PanelContainer = %PreSurveyModal
 @onready var input_name: LineEdit = %InputName
 @onready var input_city: LineEdit = %InputCity
+@onready var btn_prompt_name: Button = %BtnPromptName
+@onready var btn_prompt_city: Button = %BtnPromptCity
 @onready var pre_q1: CheckBox = %PreQ1
 @onready var pre_q2: CheckBox = %PreQ2
 @onready var pre_q3: CheckBox = %PreQ3
@@ -35,6 +37,7 @@ var icon_margaret = preload("res://src/assets/textures/portraits/Margaret_Hamilt
 @onready var btn_skip_pre: Button = %BtnSkipPre
 
 var pre_survey_completed: bool = false
+var _prompt_active: bool = false
 
 func _ready() -> void:
 	AudioManager.play_bgm()
@@ -78,6 +81,25 @@ func _ready() -> void:
 
 	btn_confirm_pre.pressed.connect(_on_confirm_pre_survey)
 	btn_skip_pre.pressed.connect(_on_skip_pre_survey)
+
+	btn_prompt_name.pressed.connect(func():
+		AudioManager.play_click()
+		_prompt_mobile_input(input_name, "Digite o Nome do Participante:")
+	)
+	btn_prompt_city.pressed.connect(func():
+		AudioManager.play_click()
+		_prompt_mobile_input(input_city, "Digite sua Cidade / Estado:")
+	)
+	input_name.gui_input.connect(func(event: InputEvent):
+		if _is_mobile_environment():
+			if (event is InputEventMouseButton and event.pressed) or (event is InputEventScreenTouch and event.pressed):
+				_prompt_mobile_input(input_name, "Digite o Nome do Participante:")
+	)
+	input_city.gui_input.connect(func(event: InputEvent):
+		if _is_mobile_environment():
+			if (event is InputEventMouseButton and event.pressed) or (event is InputEventScreenTouch and event.pressed):
+				_prompt_mobile_input(input_city, "Digite sua Cidade / Estado:")
+	)
 
 	stages_modal.hide()
 	research_modal.hide()
@@ -173,3 +195,45 @@ func _on_btn_stages_pressed() -> void:
 	AudioManager.play_click()
 	_update_stage_buttons()
 	stages_modal.show()
+
+func _is_mobile_environment() -> bool:
+	if OS.has_feature("web"):
+		var js_check = """
+		(function() {
+			var isTouch = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0) || (navigator.msMaxTouchPoints > 0);
+			var isMobileUA = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+			return isTouch || isMobileUA;
+		})()
+		"""
+		var result = JavaScriptBridge.eval(js_check)
+		if result != null and bool(result):
+			return true
+	if DisplayServer.is_touchscreen_available():
+		return true
+	var os_name = OS.get_name().to_lower()
+	return os_name in ["android", "ios"]
+
+func _prompt_mobile_input(target_line_edit: LineEdit, title: String) -> void:
+	if _prompt_active:
+		return
+	_prompt_active = true
+	
+	if OS.has_feature("web"):
+		var safe_title = title.replace("\\", "\\\\").replace("'", "\\'")
+		var current_val = target_line_edit.text.replace("\\", "\\\\").replace("'", "\\'")
+		var js = """
+		(function() {
+			var res = window.prompt('%s', '%s');
+			return res !== null ? res : '__CANCELLED__';
+		})()
+		""" % [safe_title, current_val]
+		var res = JavaScriptBridge.eval(js)
+		if res != null and str(res) != "__CANCELLED__":
+			target_line_edit.text = str(res).strip_edges()
+	else:
+		target_line_edit.grab_focus()
+		
+	get_tree().create_timer(0.3).timeout.connect(func():
+		_prompt_active = false
+	)
+
