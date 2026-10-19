@@ -14,12 +14,20 @@ extends Control
 @onready var q3_check: CheckBox = %Q3Check
 @onready var q4_check: CheckBox = %Q4Check
 
+const GOOGLE_SHEETS_WEBHOOK_URL = "https://script.google.com/macros/s/AKfycbzkEU188MUGcf8LEJAP5upbJK7vrzlsEWz3jdkHsLg7biBKAZnel1JvOtuqkI6cdAEd3Q/exec"
+var http_request: HTTPRequest = null
+var already_sent_to_sheets: bool = false
+
 func _ready() -> void:
 	AudioManager.play_success()
 	var p_name = GameState.player_name if not GameState.player_name.is_empty() else "Participante"
 	var p_city = GameState.player_city if not GameState.player_city.is_empty() else "Não informada"
 	label_score.text = "Pontuação: " + str(GameState.player_score) + " pts | Participante: " + p_name + " (" + p_city + ")"
 	copy_feedback.text = ""
+
+	http_request = HTTPRequest.new()
+	add_child(http_request)
+	http_request.request_completed.connect(_on_http_request_completed)
 
 	_format_metrics_display()
 
@@ -28,6 +36,8 @@ func _ready() -> void:
 	btn_play_again.pressed.connect(_on_btn_play_again_pressed)
 	btn_main_menu.pressed.connect(func():
 		AudioManager.play_click()
+		if not already_sent_to_sheets:
+			_send_to_google_sheets(_build_report_dict())
 		GameState.go_to_main_menu()
 	)
 
@@ -157,6 +167,33 @@ func _on_btn_copy_telemetry_pressed() -> void:
 	copy_feedback.text = "[OK] Dados completos de " + p_name + " copiados para a Área de Transferência (JSON)!"
 	copy_feedback.modulate = Color(0.3, 1.0, 0.5)
 
+func _send_to_google_sheets(report: Dictionary) -> void:
+	already_sent_to_sheets = true
+	var json_str = JSON.stringify(report)
+	
+	if OS.has_feature("web"):
+		# No navegador, dispara fetch com mode: 'no-cors' para envio direto e garantido
+		var js_code = """
+			fetch('%s', {
+				method: 'POST',
+				mode: 'no-cors',
+				headers: { 'Content-Type': 'text/plain' },
+				body: %s
+			}).then(function() {
+				console.log('Questionario enviado ao Google Sheets com sucesso!');
+			}).catch(function(err) {
+				console.error('Erro envio webhook:', err);
+			});
+		""" % [GOOGLE_SHEETS_WEBHOOK_URL, JSON.stringify(json_str)]
+		JavaScriptBridge.eval(js_code)
+	else:
+		# No Desktop/Editor, usa o nó HTTPRequest nativo
+		var headers = ["Content-Type: text/plain"]
+		http_request.request(GOOGLE_SHEETS_WEBHOOK_URL, headers, HTTPClient.METHOD_POST, json_str)
+
+func _on_http_request_completed(_result: int, _response_code: int, _headers: PackedStringArray, _body: PackedByteArray) -> void:
+	print("Resposta do Webhook Google Sheets recebida com sucesso.")
+
 func _on_btn_save_telemetry_pressed() -> void:
 	AudioManager.play_click()
 	var report = _build_report_dict()
@@ -165,15 +202,18 @@ func _on_btn_save_telemetry_pressed() -> void:
 	
 	DisplayServer.clipboard_set(json_str)
 	
-	# Se for Web (navegador), acionar download direto do arquivo
+	# 1. Enviar automaticamente para a Planilha do Google Sheets na nuvem
+	_send_to_google_sheets(report)
+	
+	# 2. Se for Web (navegador), acionar download direto do arquivo como backup
 	if OS.has_feature("web"):
 		var buffer = json_str.to_utf8_buffer()
 		JavaScriptBridge.download_buffer(buffer, filename, "application/json")
-		copy_feedback.text = "[OK] Download concluído: '" + filename + "' salvo na sua pasta de Downloads!"
+		copy_feedback.text = "[OK] Respostas enviadas para o Google Sheets do professor!\n(Arquivo de backup baixado em Downloads)"
 		copy_feedback.modulate = Color(0.3, 1.0, 0.5)
 		return
 	
-	# Se estiver executando localmente (Desktop / Editor)
+	# 3. Se estiver executando localmente (Desktop / Editor)
 	var saved_locally = false
 	var target_candidates = [
 		"D:/Mestrado/Jogos/Computer on the beach/Pioneiras&Alem/pioneiras&além/Resposta questionários",
@@ -197,14 +237,17 @@ func _on_btn_save_telemetry_pressed() -> void:
 				break
 	
 	if saved_locally:
-		copy_feedback.text = "[OK] Salvo em: Resposta questionários/" + filename + "\ne consolidado no Excel (CSV)!"
+		copy_feedback.text = "[OK] Enviado para o Google Sheets e salvo em:\nResposta questionários/" + filename + " (CSV atualizado)!"
 		copy_feedback.modulate = Color(0.3, 1.0, 0.5)
 	else:
-		copy_feedback.text = "[OK] Dados copiados com sucesso na Área de Transferência (JSON)!"
+		copy_feedback.text = "[OK] Respostas enviadas para o Google Sheets com sucesso!"
 		copy_feedback.modulate = Color(0.3, 1.0, 0.5)
 
 func _on_btn_play_again_pressed() -> void:
 	AudioManager.play_click()
+	if not already_sent_to_sheets:
+		_send_to_google_sheets(_build_report_dict())
 	GameState.player_score = 0
 	GameState.go_to_stage(1)
+
 
