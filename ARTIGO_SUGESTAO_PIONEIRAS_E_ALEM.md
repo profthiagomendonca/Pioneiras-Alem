@@ -6,19 +6,24 @@
 
 ---
 
+## Resumo (Abstract)
+
 ### Resumo
 Ensinar conceitos fundamentais de Ciência da Computação na Educação Básica frequentemente esbarra na abstração conceitual e no desinteresse dos estudantes. Contudo, essa barreira pedagógica é profundamente agravada pela escassez de representatividade histórica feminina, fruto de um processo sociocultural de invisibilização e segregação de gênero no campo científico-tecnológico. Para responder de forma integrada a esses desafios, desenvolveu-se o **Pioneiras & Além**, uma aplicação web interativa desenvolvida na engine Godot 4. O jogo convida os estudantes a uma imersão temporal estruturada em seis Eras e um Epílogo, relacionando pilares do Pensamento Computacional às contribuições de sete cientistas emblemáticas: Ada Lovelace, as ENIAC Girls, Grace Hopper, Katherine Johnson, Irmã Mary Kenneth Keller, Margaret Hamilton e Edith Ranzini. Alinhado ao ODS 5 da ONU (Igualdade de Gênero) e às diretrizes da BNCC para a Computação na Educação Básica, o projeto articula o construcionismo pedagógico aos Estudos de Ciência, Tecnologia e Gênero (CTG). O artefato conta com um subsistema de telemetria formativa em tempo real integrado à nuvem. A intervenção prática realizada com alunos do 8º e 9º anos de uma escola pública paranaense demonstrou elevado engajamento, estímulo à aprendizagem colaborativa, persistência diante de erros e perceptível ganho de autoeficácia e identificação vocacional, especialmente entre as alunas.
-
-**Palavras-Chave:** Gamificação; Ensino de Computação; Pensamento Computacional; Jogo Digital Educativo; Representatividade Feminina; Ciência, Tecnologia e Gênero; ODS 5.
 
 ### Abstract
 Teaching fundamental concepts of Computer Science in Basic Education often faces barriers of conceptual abstraction and student disengagement. However, this pedagogical hurdle is deeply compounded by the scarcity of historical female representation, resulting from a sociocultural process of invisibilization and gender segregation in science and technology. To address these interconnected challenges, this paper presents **Pioneiras & Além**, an interactive serious game developed using the Godot 4 engine and distributed via WebAssembly. The game guides students through a historical journey structured across six Eras and an Epilogue, mapping Computational Thinking pillars to the foundational contributions of seven iconic women scientists: Ada Lovelace, the ENIAC Girls, Grace Hopper, Katherine Johnson, Sister Mary Kenneth Keller, Margaret Hamilton, and Brazilian pioneer Edith Ranzini. Aligned with UN Sustainable Development Goal 5 (Gender Equality) and the Brazilian National Common Curricular Base (BNCC), the project combines constructionist pedagogy with Science, Technology, and Gender (STG) studies. The artifact features an integrated cloud-based real-time formative telemetry system. A practical intervention conducted with 8th and 9th grade students in a Brazilian public school revealed high engagement, collaborative problem-solving, resilience in error debugging, and a measurable increase in self-efficacy and career identification, particularly among female students.
 
-**Keywords:** Gamification; Computer Science Education; Computational Thinking; Educational Digital Game; Female Representation; Science, Technology and Gender; SDG 5.
+---
+
+## Palavras-chave (Keywords)
+
+* **Palavras-chave:** Gamificação; Ensino de Computação; Pensamento Computacional; Jogo Digital Educativo; Representatividade Feminina; Ciência, Tecnologia e Gênero; ODS 5.
+* **Keywords:** Gamification; Computer Science Education; Computational Thinking; Educational Digital Game; Female Representation; Science, Technology and Gender; SDG 5.
 
 ---
 
-## 1. Introdução
+## Introdução
 
 A inserção da Ciência da Computação na Educação Básica consolida-se contemporaneamente como uma exigência estrutural para a formação cidadã crítica e o desenvolvimento do raciocínio lógico no século XXI. A homologação das Normas sobre Computação na Educação Básica como complemento à Base Nacional Comum Curricular (BNCC) estabeleceu a necessidade de desenvolver competências de Pensamento Computacional, Mundo Digital e Cultura Digital desde as etapas iniciais da escolarização (Brasil, 2022). Todavia, a prática pedagógica tradicional frequentemente enfrenta dois obstáculos de grande envergadura: em primeiro lugar, o ensino de algoritmos e lógica costuma ser conduzido de maneira excessivamente abstrata e descontextualizada, gerando desmotivação e sensação de inatingibilidade entre os educandos; em segundo lugar, o ecossistema tecnológico e científico carrega uma histórica e marcante disparidade de gênero (Barros, 2022).
 
@@ -28,144 +33,104 @@ A despeito dessa riqueza factual, operou-se ao longo da segunda metade do sécul
 
 Com o propósito de superar concomitantemente a abstração dos conceitos de computação e combater a invisibilização histórica feminina, desenvolveu-se o jogo digital educativo **Pioneiras & Além**. A aplicação web articula a resolução de problemas algorítmicos ao resgate histórico das cientistas precursoras, estruturando uma transposição didática amparada no construcionismo e alinhada ao Objetivo de Desenvolvimento Sustentável 5 da Organização das Nações Unidas (ODS 5: Igualdade de Gênero). 
 
-O presente artigo apresenta o percurso completo da pesquisa: a fundamentação teórica que ampara a proposta, o estado da arte e contraste com trabalhos correlatos, as escolhas de engenharia e materiais de desenvolvimento do jogo, os procedimentos metodológicos da intervenção prática em escola pública e a discussão aprofundada dos resultados quanti-qualitativos obtidos por meio de observação participativa e telemetria automatizada.
+O presente artigo apresenta o percurso completo da pesquisa: a fundamentação teórica e análise de trabalhos correlatos, as escolhas de engenharia e materiais de desenvolvimento do jogo, os procedimentos metodológicos da intervenção prática em escola pública, a apresentação dos resultados quanti-qualitativos obtidos por telemetria e observação participativa, e a discussão aprofundada dos impactos educacionais e sociais observados.
 
 ---
 
-## 2. Fundamentação Teórica
+## Fundamentação Teórica / Trabalhos Relacionados
 
-### 2.1 Pensamento Computacional e Aprendizagem Baseada em Jogos (GBL)
+### Fundamentação Teórica: Pensamento Computacional e Aprendizagem Baseada em Jogos (GBL)
+O Pensamento Computacional (PC), conceituado por Wing (2006), compreende os processos mentais envolvidos na formulação de problemas e na expressão de suas soluções de modo que um agente processador de informações (seja ele humano ou computacional) possa executá-las com eficácia. Seus quatro pilares estruturantes englobam a decomposição, o reconhecimento de padrões, a abstração e o pensamento algorítmico. Gresse von Wangenheim et al. (2019) salientam que a apropriação do PC na Educação Básica não deve restringir-se à memorização precoce de sintaxes de linguagens profissionais de programação, florescendo com maior robustez quando mediado por atividades interativas, lúdicas e ricas em significado.
 
-O Pensamento Computacional (PC), conceituado por Wing (2006), compreende os processos mentais envolvidos na formulação de problemas e na expressão de suas soluções de modo que um agente processador de informações (seja ele humano ou computacional) possa executá-las com eficácia. Seus pilares estruturantes englobam:
-1. **Decomposição:** fragmentação de um desafio complexo em partes menores e gerenciáveis;
-2. **Reconhecimento de Padrões:** identificação de similaridades, regularidades e tendências;
-3. **Abstração:** filtragem dos detalhes secundários para focar estritamente nas variáveis essenciais;
-4. **Pensamento Algorítmico:** estruturação ordenada de instruções passo a passo para atingir um resultado previsível.
+Nesse prisma, a Aprendizagem Baseada em Jogos (*Game-Based Learning* — GBL) desponta como paradigma pedagógico fecundo ao integrar mecânicas lúdicas a metas instrucionais intencionais (Barradas & Lencastre, 2017). Essa perspectiva vincula-se diretamente ao construcionismo de Seymour Papert (1980) e à aprendizagem criativa de Mitchel Resnick (2013): o conhecimento é construído de maneira mais significativa quando o aprendiz engaja-se ativamente na confecção e manipulação de um artefato palpável dentro de um "micromundo" dinâmico. No jogo educativo, a mecânica funciona como espelho conceitual do conteúdo curricular (Gomes & Melo, 2018), ressignificando o erro: o *bug* ou a falha deixam de ser motivo de frustração e passam a atuar como convite à análise lógica e depuração iterativa (*debugging*).
 
-Gresse von Wangenheim et al. (2019) salientam que a apropriação do PC na Educação Básica não deve restringir-se à memorização precoce de sintaxes de linguagens profissionais de programação. Ao contrário, o raciocínio computacional floresce com maior robustez quando mediado por atividades interativas, lúdicas e ricas em significado.
+### Fundamentação Teórica: Estudos de Ciência, Tecnologia e Gênero (CTG) e o Efeito *Role Model*
+A dimensão sociocultural desta investigação apoia-se nos Estudos de Ciência, Tecnologia e Gênero (CTG), consolidados por Schiebinger (1999), Garcia e Sedeño (2006) e Barros (2022). O campo CTG desmistifica a neutralidade axiológica da ciência, evidenciando como relações de poder historicamente privilegiaram a presença masculina nos centros de decisão técnica. A literatura categoriza a sub-representação feminina em duas formas de segregação complementares: a vertical ("teto de vidro", barreiras que impedem a ascensão a postos de liderança) e a horizontal ("campos murados", direcionamento sociocultural que afasta mulheres de áreas tecnológicas) (Carneiro, 2018). 
 
-Nesse prisma, a Aprendizagem Baseada em Jogos (*Game-Based Learning* — GBL) desponta como paradigma pedagógico fecundo ao integrar mecânicas lúdicas a metas instrucionais intencionais (Barradas & Lencastre, 2017). Diferentemente da simples gamificação por pontuação externa, os *serious games* promovem a aprendizagem experiencial. Essa perspectiva vincula-se diretamente ao construcionismo de Seymour Papert (1980) e à espiral da aprendizagem criativa de Mitchel Resnick (2013): o conhecimento é construído de maneira mais significativa quando o aprendiz engaja-se ativamente na confecção e manipulação de um artefato palpável dentro de um "micromundo" dinâmico. 
+A psicologia social e a pedagogia crítica demonstram que a presença explícita de modelos femininos de referência (*role models*) exerce influência determinante sobre a percepção de autoeficácia de estudantes do gênero feminino (Bandura, 1997; Lima, 2013). Ao testemunharem que mulheres foram as criadoras de conceitos estruturantes da tecnologia que utilizam em seus cotidianos, as estudantes desconstroem o sentimento de inadequação e ampliam seu horizonte vocacional.
 
-No contexto de jogos educativos digitais, a mecânica deve funcionar como espelho conceitual do conteúdo curricular (Gomes & Melo, s.d.). Mais do que isso, o ambiente de jogo ressignifica o erro: o *bug* ou a falha deixam de ser motivo de punição ou frustração e passam a atuar como convite à análise lógica, experimentação de hipóteses e depuração iterativa (*debugging*).
+### Trabalhos Relacionados e Análise Comparativa
+A análise da literatura científica revela iniciativas educacionais que podem ser categorizadas em três vertentes principais:
+1. **Jogos Digitais Comerciais de Lógica (*LightBot*, *CodeCombat*, *Human Resource Machine*):** exercitam quebra-cabeças e lógica de programação de forma eficiente, porém com foco estritamente abstrato e impessoal, desprovidos de contextualização humana, histórica e social;
+2. **Jogos Educativos Físicos e Desplugados (*SplashCode*, *Storytelling de Dados*):** jogos de tabuleiro e cartas nacionais (Gresse von Wangenheim et al., 2019; Barbosa et al., 2020) que introduzem algoritmos com sucesso em oficinas presenciais, mas enfrentam barreiras de distribuição física em larga escala e não dispõem de coleta automatizada de telemetria de aprendizagem;
+3. **Iniciativas Institucionais de Gênero (Programa *Meninas Digitais* — SBC):** redes e projetos de fomento que realizam oficinas práticas e palestras essenciais em todo o país, mas que carecem de jogos digitais narrativos próprios onde as biografias das cientistas sejam a própria mecânica interativa central.
 
-### 2.2 Estudos de Ciência, Tecnologia e Gênero (CTG) e o Efeito *Role Model*
+A Tabela 1 sintetiza o posicionamento do *Pioneiras & Além* em relação ao estado da arte:
 
-A dimensão sociocultural desta investigação fundamenta-se nos Estudos de Ciência, Tecnologia e Gênero (CTG), desenvolvidos amplamente por autoras como Schiebinger (1999), Garcia e Sedeño (2006) e Barros (2022). O campo CTG desmistifica a neutralidade axiológica da ciência, evidenciando como relações de poder e construções socioculturais historicamente privilegiaram a presença masculina nos centros de prestígio técnico-científico.
-
-A literatura categoriza a sub-representação feminina em duas formas de segregação complementares:
-* **Segregação Vertical ("Teto de Vidro"):** barreiras sutis e culturais que impedem ou retardam a ascensão de mulheres aos postos de liderança, docência titular e coordenação de projetos estratégicos;
-* **Segregação Horizontal ("Campos Murados"):** canalização sociocultural que direciona mulheres para profissões voltadas ao cuidado e ciências humanas, enquanto homens são incentivados desde a infância à exploração de ferramentas, mecânica e raciocínio exato (Carneiro, 2018).
-
-A psicologia social e a pedagogia crítica demonstram que a presença explícita de modelos femininos de referência (*role models*) exerce influência determinante sobre a percepção de autoeficácia de estudantes do gênero feminino (Bandura, 1997; Lima, 2013). Ao testemunharem que mulheres foram as criadoras de conceitos estruturantes da tecnologia que utilizam em seus smartphones e computadores, as estudantes desconstroem o sentimento de inadequação e ampliam seu horizonte de aspiração acadêmica e profissional. A articulação entre GBL e CTG estabelece, portanto, um ambiente propício para a convergência entre aprendizagem técnica e emancipação social (Figura 1).
-
-> **Síntese Teórica Articulada:**  
-> A conjugação entre o *Construcionismo Tecnológico* (o estudante como construtor ativo de soluções algorítmicas) e a *Abordagem Histórico-Crítica de Gênero* (resgate das pioneiras como sujeitos históricos da ciência) constitui a espinha dorsal pedagógica do jogo educativo.
-
----
-
-## 3. Trabalhos Relacionados
-
-A análise do estado da arte revela diversas abordagens direcionadas ao ensino introdutório de computação e à atração de estudantes para a área de Tecnologia da Informação. Esses trabalhos podem ser agrupados em três categorias principais:
-
-### 3.1 Jogos Digitais Comerciais e Educacionais de Programação
-Títulos como *LightBot*, *CodeCombat* e *Human Resource Machine* obtiveram expressiva adoção internacional no ensino de lógica de programação. Tais ferramentas utilizam quebra-cabeças mecânicos para exercitar conceitos de laços de repetição, condicionais e pilha de execução. Entretanto, esses artefatos concentram-se estritamente na mecânica algorítmica desprovida de qualquer contexto humano ou histórico. Neles, a tecnologia é retratada como um domínio abstrato, impessoal e desprovido de implicações socioculturais, perdendo a oportunidade de abordar questões de diversidade, empatia e contexto social.
-
-### 3.2 Jogos Educativos Físicos e Desplugados Brasileiros
-No cenário nacional, destacam-se iniciativas voltadas ao ensino lúdico na Educação Básica, como o jogo de tabuleiro *SplashCode* (Gresse von Wangenheim et al., 2019), desenvolvido para introduzir algoritmos e ordenação a crianças por meio de dinâmicas desplugadas. Projetos como os de Barbosa et al. (2020) exploram protótipos de jogos de cartas com elementos de *storytelling* para ensinar estruturas de dados no Ensino Médio. Embora altamente eficazes em oficinas presenciais, essas soluções físicas enfrentam gargalos de replicação e escalabilidade em redes públicas, dependem de custos de impressão e distribuição de materiais e não dispõem de mecanismos automatizados para coleta e registro contínuo de telemetria de aprendizagem.
-
-### 3.3 Iniciativas Institucionais de Fomento à Participação Feminina
-No Brasil, o principal referencial de incentivo à equidade de gênero na computação é o Programa *Meninas Digitais*, chancelado pela Sociedade Brasileira de Computação (SBC). O programa fomenta projetos em todo o território nacional através de palestras, minicursos práticos de robótica e rodas de conversa. Não obstante o inestimável impacto social das iniciativas, constata-se na literatura uma escassez de recursos didáticos digitais interativos dedicados — isto é, jogos estruturados onde a história das pioneiras não seja um mero anexo textual ou painel biográfico estático, mas sim o próprio motor da mecânica jogável.
-
-### 3.4 Diferencial e Lacunas Preenchidas pelo *Pioneiras & Além*
-A Tabela 1 sintetiza a comparação do *Pioneiras & Além* em relação às abordagens correlatas da literatura:
-
-| Dimensão de Análise | Jogos Tradicionais de Lógica (*LightBot*, etc.) | Jogos de Tabuleiro (*SplashCode*) | Oficinas Formativas (*Meninas Digitais*) | **Pioneiras & Além (Este Trabalho)** |
+| Dimensão de Análise | Jogos Tradicionais de Lógica (*LightBot*) | Jogos de Tabuleiro (*SplashCode*) | Oficinas Formativas (*Meninas Digitais*) | **Pioneiras & Além (Este Trabalho)** |
 | :--- | :---: | :---: | :---: | :---: |
-| **Ensino de Pensamento Computacional** | Alto (sintaxe e lógica pura) | Médio (conceitos desplugados) | Médio/Variável (práticas pontuais) | **Alto (pilares do PC contextualizados)** |
-| **Resgate Histórico de Mulheres Pioneiras** | Inexistente (ambiente fictício) | Inexistente | Alto (exposições e palestras) | **Alto (diálogo em 1ª pessoa em 6 Eras)** |
-| **Mecânica Fundada em Metáforas Ativas** | Média (comandos geométricos) | Alta (cartas e tabuleiros) | Não aplicável | **Alta (metáfora espelha o conceito da Era)** |
+| **Ensino de Pensamento Computacional** | Alto (lógica pura) | Médio (desplugado) | Médio (práticas pontuais) | **Alto (pilares do PC contextualizados)** |
+| **Resgate Histórico de Mulheres Pioneiras** | Inexistente | Inexistente | Alto (palestras/exposições) | **Alto (diálogo em 1ª pessoa em 6 Eras)** |
+| **Mecânica Fundada em Metáforas Ativas** | Média (comandos geométricos) | Alta (cartas físicas) | Não aplicável | **Alta (metáfora espelha o conceito da Era)** |
 | **Soberania e História da Computação Nacional** | Inexistente | Baixa | Média | **Alta (Epílogo Edith Ranzini / Patinho Feio)** |
 | **Acessibilidade Web sem Instalação Local** | Alta (Web/App) | Inexistente (físico) | Não aplicável | **Alta (Godot 4 WebAssembly / HTML5 leve)** |
-| **Telemetria de Aprendizagem em Tempo Real** | Baixa ou ausente | Inexistente | Manual/Questionários | **Alta (Webhook silencioso + nuvem + JSON)** |
+| **Telemetria Formativa em Tempo Real** | Baixa ou ausente | Inexistente | Questionários Manuais | **Alta (Webhook silencioso + nuvem + JSON)** |
 
-O diferencial do *Pioneiras & Além* reside, portanto, na integração indissociável entre narrativa biográfica empática, metáforas pedagógicas concretas, tecnologia web acessível e instrumento científico de coleta automatizada de dados avaliativos.
+O diferencial do *Pioneiras & Além* consiste na integração indissociável entre narrativa biográfica empática, metáforas pedagógicas concretas, tecnologia web leve e instrumento de telemetria científica integrada.
 
 ---
 
-## 4. Materiais e Métodos ou Desenvolvimento
+## Materiais e Métodos ou Desenvolvimento
 
-### 4.1 Abordagem Metodológica
-A pesquisa adota uma abordagem mista (quanti-qualitativa), de natureza aplicada e intervencionista, estruturada a partir da metodologia da **pesquisa-ação educacional** (Thiollent, 2011). O ciclo metodológico contemplou quatro etapas iterativas:
-1. **Diagnóstico Inicial:** mapeamento de carências de infraestrutura na escola pública parceira e aplicação de sondagem diagnóstica sobre conhecimentos prévios e percepção de gênero;
-2. **Concepção e Desenvolvimento:** engenharia do jogo na engine Godot 4, desenho instrucional das fases e implementação do pipeline de telemetria;
-3. **Intervenção Pedagógica Prática:** aplicação de oficinas didáticas orientadas em laboratório de informática com estudantes do 8º e 9º anos do Ensino Fundamental;
-4. **Avaliação Formativa e Tabulação:** consolidação e análise cruzada dos dados comportamentais (telemetria em tempo real) com os dados perceptivos (questionários pós-teste e observação etnográfica).
+### Abordagem Metodológica
+A pesquisa adota uma abordagem mista (quanti-qualitativa), de natureza aplicada e intervencionista, estruturada a partir da metodologia da **pesquisa-ação educacional** (Thiollent, 2011). O ciclo metodológico contemplou quatro etapas iterativas: (1) Diagnóstico Inicial de carências e sondagem prévia; (2) Concepção e Engenharia de Software do jogo educativo na engine Godot 4; (3) Intervenção Pedagógica Prática em laboratório escolar com 42 estudantes do 8º e 9º anos do Ensino Fundamental de uma escola pública estadual do Paraná; e (4) Avaliação Formativa e Tabulação estatística cruzada dos dados comportamentais (telemetria) e perceptivos (questionários pós-teste e observação etnográfica).
 
-### 4.2 Arquitetura Tecnológica e Acessibilidade Web
-As escolas públicas brasileiras frequentemente dispõem de laboratórios com máquinas heterogêneas, sistemas operacionais legados e restrições administrativas para instalação de softwares executáveis. Para garantir democratização do acesso, o *Pioneiras & Além* foi projetado sob as seguintes premissas de engenharia de software:
+### Arquitetura Tecnológica e Acessibilidade Web
+Para assegurar democratização do acesso em laboratórios escolares públicos heterogêneos e sem necessidade de permissões administrativas de instalação, o jogo foi concebido sob a seguinte arquitetura técnica:
 * **Engine e Linguagem:** Godot Engine 4 (v4.6), utilizando GDScript com tipagem estática rigorosa para garantir estabilidade operacional e desempenho consistente;
-* **Pipeline de Exportação:** compilação para **WebAssembly (Wasm)** e **HTML5 Canvas**, permitindo que a aplicação seja executada diretamente em qualquer navegador moderno (Chrome, Edge, Firefox, Safari) sem dependências locais;
-* **Hospedagem e CDN:** publicação automatizada via Continuous Deployment na plataforma Netlify (`https://pioneirasealem.netlify.app/`), assegurando baixo tempo de carregamento e alta disponibilidade;
+* **Pipeline de Exportação:** compilação para **WebAssembly (Wasm)** e **HTML5 Canvas**, permitindo que a aplicação seja executada diretamente em qualquer navegador moderno (Chrome, Edge, Firefox, Safari);
+* **Hospedagem e CDN:** publicação automatizada via Continuous Deployment na plataforma Netlify (`https://pioneirasealem.netlify.app/`), com alta disponibilidade e baixo tempo de carregamento;
 * **Compatibilidade e Responsividade Mobile/Tablet:** implementação de *overlay* vetorial inteligente em CSS/DOM que detecta a orientação do dispositivo, orientando o usuário a girar para o modo paisagem (`landscape.lock`) e suporte a caixas de diálogo nativas do navegador para digitação fluida em teclados virtuais touch (Android e iOS).
 
-### 4.3 Design Mecânico e Proposta Pedagógica (As Fases do Jogo)
-O jogo divide-se em uma introdução diagnóstica, seis Eras cronológicas e um Epílogo nacional. Em cada Era, o educando interage inicialmente com um diálogo em primeira pessoa no qual a cientista expõe o dilema histórico e técnico enfrentado. Em seguida, o jogador assume a postura ativa de resolver um desafio mecânico regido por uma **metáfora pedagógica**, recebendo feedback dedutivo imediato. Ao triunfar, tem acesso ao *Cartão de Conquista e Síntese Teórica*, que relaciona o desafio superado ao conceito de computação formal e às metas do ODS 5:
+### Design Mecânico e Proposta Pedagógica (As Fases do Jogo)
+O jogo estrutura-se em uma introdução diagnóstica, seis Eras históricas e um Epílogo especial brasileiro. Em cada Era, o estudante interage com um diálogo em primeira pessoa no qual a cientista expõe o problema histórico enfrentado. Em seguida, assume a postura ativa de solucionar o desafio mecânico regido por uma **metáfora pedagógica**, recebendo feedback dedutivo imediato. Ao concluir, abre-se o *Cartão de Síntese Teórica*, relacionando a vivência prática ao conceito formal de computação e ao ODS 5:
 
 1. **Era 1 — Ada Lovelace (1843):**
-   * *Conceito Computacional:* Algoritmos, Sequenciamento Lógico e Estruturas de Controle (Entrada, Processamento, Decisão e Saída).
-   * *Metáfora Pedagógica:* A receita do bolo da Máquina Analítica. O jogador aprende que não se pode misturar a massa sem ingredientes na bancada (tentativa de processar sem entrada) nem servir o prato sem antes testar se está assado (saída sem decisão condicional).
-   * *Mecânica:* Ordenação sequencial de quatro cartões perfurados conceituais em slots designados.
-
+   * *Conceito:* Algoritmos, Sequenciamento Lógico e Estruturas de Controle (Entrada, Processamento, Decisão e Saída).
+   * *Metáfora Pedagógica:* A receita do bolo da Máquina Analítica. O jogador aprende que não se pode misturar a massa sem ingredientes na bancada (processar sem entrada) nem servir o prato sem antes testar se está assado (saída sem decisão condicional).
+   * *Mecânica:* Ordenação sequencial de quatro cartões perfurados conceituais em slots sequenciais.
 2. **Era 2 — ENIAC Girls (1945):**
-   * *Conceito Computacional:* Arquitetura de Computadores, Circuitos Físicos e Fluxo de Dados.
+   * *Conceito:* Arquitetura de Computadores, Circuitos Físicos e Fluxo de Dados.
    * *Metáfora Pedagógica:* A orquestra eletrônica regida pelo *Master Programmer*. As programadoras precisavam unir módulos físicos manualmente.
    * *Mecânica:* *Patch panel* interativo no qual o estudante conecta cabos funcionais entre o relógio de pulso central, os acumuladores aritméticos e a unidade de impressão.
-
 3. **Era 3 — Grace Hopper (1947):**
-   * *Conceito Computacional:* Depuração (*Debugging*) e Compiladores (Linguagens de Alto Nível).
-   * *Metáfora Pedagógica:* A caça à mariposa física nos relés eletromecânicos do Harvard Mark II e o compilador como um tradutor poliglota entre o pensamento humano e os interruptores da máquina.
-   * *Mecânica:* Localização do relé travado por um inseto real e correspondência direta entre instruções em linguagem natural e microoperações binárias de baixo nível.
-
+   * *Conceito:* Depuração (*Debugging*) e Compiladores (Linguagens de Alto Nível).
+   * *Metáfora Pedagógica:* A caça à mariposa física nos relés eletromecânicos do Harvard Mark II e o compilador como um tradutor poliglota entre a linguagem humana e os transistores.
+   * *Mecânica:* Localização do relé travado por uma falha física e correspondência direta entre instruções em inglês e microoperações binárias de máquina.
 4. **Era 4 — Katherine Johnson (1962):**
-   * *Conceito Computacional:* Modelagem Matemática, Parâmetros Críticos e Verificação Humana de Sistemas Automatizados.
+   * *Conceito:* Modelagem Matemática, Parâmetros Críticos e Verificação Humana de Sistemas Automatizados.
    * *Metáfora Pedagógica:* O estreito corredor atmosférico de reentrada orbital da cápsula espacial *Friendship 7* (Missão Mercury-Atlas 6).
    * *Mecânica:* Calibração em tempo real de três parâmetros numéricos interdependentes (ângulo de incidência, velocidade orbital e temporização dos retrofoguetes), exigindo atenção à precisão analítica.
-
 5. **Era 5 — Irmã Mary Kenneth Keller (1965):**
-   * *Conceito Computacional:* Democratização da Linguagem, Variáveis de Memória e Entrada Interativa.
+   * *Conceito:* Democratização da Linguagem, Variáveis de Memória e Entrada Interativa.
    * *Metáfora Pedagógica:* Perguntar e guardar na gaveta rotulada (`NOME$`).
    * *Mecânica:* Organização de quatro linhas semânticas de código em linguagem BASIC (`REM`, `PRINT`, `INPUT`, `PRINT`) e subsequente execução de um terminal Teletype interativo que lê o nome real do estudante e o cumprimenta na tela.
-
 6. **Era 6 — Margaret Hamilton (1969):**
-   * *Conceito Computacional:* Engenharia de Software, Priorização de Processos Assíncronos e Tolerância a Falhas Críticas.
+   * *Conceito:* Engenharia de Software, Priorização de Processos Assíncronos e Tolerância a Falhas Críticas.
    * *Metáfora Pedagógica:* A triagem médica de emergência durante a saturação do computador de bordo (AGC) na descida do Módulo Lunar da Apollo 11 (Alarme 1202).
    * *Mecânica:* O jogador gerencia a CPU sobrecarregada a 130%, desativando processos supérfluos (radar de acoplamento de subida) para reduzir o consumo para níveis seguros (<85%) sem desligar os sistemas vitais de descida.
-
 7. **Epílogo Especial — Edith Ranzini (1972, Brasil):**
-   * *Conceito Computacional:* Soberania Tecnológica, Hardware Nacional e Descentralização Geográfica da História.
+   * *Conceito:* Soberania Tecnológica, Hardware Nacional e Descentralização Geográfica da História.
    * *Metáfora Pedagógica:* O "Patinho Feio" que se transformou em cisne da informática nacional.
    * *Conteúdo:* Painel documental interativo apresentando a trajetória da Profa. Dra. Edith Ranzini na Escola Politécnica da USP e seu pioneirismo na montagem do primeiro computador digital brasileiro.
 
-### 4.4 Sistema de Telemetria Formativa Integrada
-Para subsidiar a pesquisa empírica com rigor métrico, o jogo incorpora uma camada de instrumentação de telemetria transparente aos educandos. A arquitetura opera em fluxo automatizado:
-1. **Consentimento e Perfil Inicial:** registro de identificação básica (nome voluntário, município/escola) e três questões diagnósticas pré-jogo (conhecimento de pioneiras, contato prévio com programação e percepção de representatividade);
-2. **Rastreamento Comportamental por Fase:** monitoramento do tempo decorrido em segundos (precisão de milissegundos), quantidade precisa de tentativas e erros cometidos antes do êxito e verificação booleana da leitura do cartão de síntese;
-3. **Questionário Pós-Teste e Transmissão em Nuvem:** ao alcançar a tela de vitória, o jogo registra as respostas avaliativas em escala Likert e dispara um payload JSON assíncrono via requisição HTTP POST para um endpoint do **Google Apps Script**, alimentando instantaneamente uma planilha de consolidação de dados na nuvem, com gravação de redundância local em arquivo tabular `.csv`.
+### Sistema de Telemetria Formativa e Coleta em Nuvem
+O artefato incorpora um sistema de telemetria não intrusivo com fluxo automatizado: registro de consentimento e pré-sondagem diagnóstica; monitoramento de tempo decorrido em segundos por fase (precisão decimal), contagem de tentativas e erros cometidos; e disparo assíncrono via Webhook HTTP POST (Google Apps Script) para consolidação instantânea em planilha do Google Sheets, com redundância local em arquivo tabular `.csv`.
 
 ---
 
-## 5. Resultados
+## Resultados (quando aplicável)
 
-A intervenção pedagógica foi realizada com turmas do 8º e 9º anos do Ensino Fundamental de uma escola pública estadual do Paraná, totalizando 42 estudantes participantes. As atividades foram mediadas no laboratório de informática escolar, organizadas em uma sequência didática de três momentos: *Descoberta Autônoma* (jogabilidade individual ou em duplas), *Mediação Formativa* (discussão dos conceitos à luz das sínteses) e *Roda de Conversa Final* (avaliação de gênero e debate da ODS 5).
+A intervenção pedagógica foi realizada com 42 estudantes do 8º e 9º anos do Ensino Fundamental no laboratório de informática escolar, mediada em três etapas: *Descoberta Autônoma*, *Mediação Formativa* e *Roda de Conversa Avaliativa*.
 
-### 5.1 Dinâmica de Engajamento e Resolução de Problemas
-A análise dos registros comportamentais e das observações em sala de aula revelou um nível notável de imersão e engajamento dos educandos:
-* **Fluidez e Baixa Desistência:** 95,2% dos estudantes concluíram todas as seis Eras e o Epílogo da Edith Ranzini. A curva de aprendizagem evidenciou tempos médios decrescentes na assimilação das mecânicas após a compreensão do modelo mental de cada fase;
-* **Resiliência e Depuração Iterativa:** nas fases com maior demanda lógica (Era 4 — Katherine Johnson e Era 6 — Margaret Hamilton), a taxa de tentativas antes do sucesso situou-se entre 2,1 e 3,4 tentativas por aluno. Diferente de atividades tradicionais em papel, onde o erro frequentemente induz à inibição, o feedback dedutivo imediato do jogo estimulou os estudantes a testarem hipóteses ativamente, ressignificando o erro como parte natural do processo de depuração;
-* **Aprendizagem Colaborativa Espontânea:** verificou-se intensa interação entre os pares. Estudantes que compreendiam primeiro o ajuste dos parâmetros orbitais ou a lógica de conexão dos cabos do ENIAC atuavam como monitores informais dos colegas, incentivando a cooperação mútua.
+### Engajamento, Resolução de Problemas e Aprendizagem Colaborativa
+A observação participativa e os registros comportamentais evidenciaram expressivo engajamento:
+* **Elevada Taxa de Conclusão:** 95,2% dos estudantes (40 de 42) concluíram voluntariamente todas as seis Eras e o Epílogo da Edith Ranzini dentro do tempo de aula;
+* **Persistência diante do Erro:** nas fases de maior exigência analítica (Era 4 — Katherine Johnson e Era 6 — Margaret Hamilton), a média de tentativas situou-se entre 2,3 e 2,7 por aluno. Ao contrário de abordagens tradicionais onde o erro gera desmotivação, o feedback dedutivo imediato induziu os educandos a testarem novas hipóteses com autonomia;
+* **Cooperação Espontânea entre Pares:** observou-se intensa dinâmica de ajuda mútua, com alunos que decifravam a lógica dos parâmetros orbitais auxiliando colegas a interpretarem os gráficos do jogo.
 
-### 5.2 Desempenho e Métricas de Telemetria por Fase
-A Tabela 2 apresenta o consolidado dos dados quantitativos capturados pelo sistema de telemetria durante a intervenção:
+### Desempenho e Métricas de Telemetria por Fase
+A Tabela 2 apresenta o consolidado dos dados quantitativos capturados pelo subsistema de telemetria formativa:
 
 | Era / Fase | Cientista Homenageada | Tempo Médio de Resolução | Média de Tentativas | Taxa de Sucesso na 1ª Tentativa | Abertura do Cartão de Síntese |
 | :--- | :--- | :---: | :---: | :---: | :---: |
@@ -177,56 +142,56 @@ A Tabela 2 apresenta o consolidado dos dados quantitativos capturados pelo siste
 | **Era 6** | Margaret Hamilton | 2 min 05 s | 2,3 | 42,8% | 100% |
 | **Epílogo**| Edith Ranzini | 1 min 20 s | - | 100% (Leitura Interativa) | 100% |
 
-Os dados revelam que o nível de desafio cognitivo do jogo foi calibrado de forma progressiva. As Eras 4 e 6 exerceram a maior demanda analítica, exigindo múltiplas testagens iterativas, ao passo que as Eras 1 e 2 propiciaram ancoragem conceitual rápida e intuitiva.
+Os dados revelam uma progressão pedagógica balanceada: as Eras 1 e 2 propiciaram rápida ancoragem e ambientação, enquanto as Eras 4 e 6 exerceram a maior demanda cognitiva, exigindo múltiplas testagens iterativas e raciocínio crítico.
 
 ---
 
 ## Discussão
 
 ### A Efetividade das Metáforas Pedagógicas na Superação da Abstração
-Os resultados práticos corroboram as proposições de Papert (1980) e Resnick (2013) sobre o construcionismo digital. Ao personificar a instrução algorítmica na metáfora de uma "receita de bolo" ou o armazenamento de variáveis na imagem de "guardar na gaveta rotulada", o *Pioneiras & Além* converteu abstrações que costumam alienar estudantes iniciantes em referências familiares e manipuláveis. A experiência interativa com o terminal BASIC da Irmã Keller (Era 5) foi apontada pelos alunos como um dos momentos mais marcantes da oficina: o ato de visualizar o próprio nome impresso na teletype digital conferiu aos estudantes uma sensação concreta de agência e autoria sobre a tecnologia.
+Os achados empíricos confirmam os postulados de Papert (1980) e Resnick (2013) sobre o construcionismo digital. Ao traduzir o conceito abstrato de variáveis e memória na imagem palpável de "guardar numa gaveta rotulada" (Era 5) ou a execução algorítmica na lógica de "uma receita de bolo" (Era 1), o *Pioneiras & Além* reduziu sensivelmente a ansiedade computacional. O momento de interação com o terminal BASIC da Irmã Keller — no qual o aluno digita o próprio nome e recebe uma resposta personalizada gerada pelo código construído — foi relatado por múltiplos estudantes como o ponto alto da atividade, gerando sentimento concreto de autoria e domínio técnico.
 
-### Desconstrução de Estereótipos e Ganho de Autoeficácia Feminina
-O impacto mais substancial do estudo manifestou-se na esfera sociocultural de gênero (CTG). No pré-teste, quando indagados sobre figuras marcantes da história da tecnologia, 83,3% dos estudantes citaram exclusivamente homens contemporâneos (como criadores de redes sociais e fundadores de grandes corporações de TI), e apenas 14,3% dos alunos relataram conhecer alguma mulher pioneira na computação.
+### Desconstrução de Estereótipos e Ganho de Autoeficácia Feminina (ODS 5)
+O impacto mais profundo e transformador manifestou-se na dimensão de gênero (CTG). Na sondagem pré-teste, quando indagados sobre personalidades marcantes da história da tecnologia, 83,3% dos estudantes citaram unicamente homens contemporâneos (fundadores de corporações e redes sociais), e apenas 14,3% relataram ter conhecimento de alguma mulher na computação.
 
-No pós-teste e nas rodas de debate, observou-se uma transformação expressiva:
-1. **Reconhecimento Histórico:** 100% dos estudantes passaram a identificar ao menos três cientistas mulheres e seus feitos fundamentais;
-2. **Elevação da Autoeficácia entre as Alunas:** a quase totalidade das meninas (94,7%) declarou que conhecer as trajetórias de Margaret Hamilton, Grace Hopper e Edith Ranzini alterou positivamente sua percepção sobre a própria capacidade de lidar com programação e matemática;
-3. **Valorização da Ciência Nacional:** a inclusão de Edith Ranzini no Epílogo gerou grande surpresa e orgulho cívico nos estudantes, que desconheciam o fato de o Brasil ter desenvolvido computadores próprios no início da década de 1970 com liderança feminina.
+No pós-teste e nas discussões finais, constatou-se expressiva evolução:
+* **Ampla Retenção Histórica:** 100% dos educandos passaram a identificar com segurança pelo menos três cientistas precursoras e seus respectivos feitos;
+* **Empoderamento das Estudantes:** 94,7% das alunas declararam que o contato com as trajetórias de superação de preconceitos de Margaret Hamilton, Grace Hopper e Edith Ranzini aumentou sua confiança na própria capacidade de estudar matemática e programação;
+* **Valorização da Ciência Nacional:** a inclusão da pioneira brasileira Edith Ranzini despertou grande orgulho cívico e curiosidade científica na turma, demonstrando que a tecnologia de ponta também é fruto do trabalho de cientistas brasileiras em universidades públicas.
 
-Esses achados confirmam os postulados de Barros (2022) e Lima (2013) quanto à urgência pedagógica de romper com a invisibilidade histórica: a representatividade feminina não atua como mera curiosidade biográfica, mas como um catalisador de inclusão e democratização científica.
+Esses resultados comprovam a tese de Barros (2022) e Lima (2013) de que a representatividade histórica explícita é um instrumento pedagógico potente para combater o androcentrismo escolar e desconstruir precocemente o fenômeno do teto de vidro.
 
-### Viabilidade Operacional e Sustentabilidade Tecnológica
-A opção técnica pelo Godot 4 WebAssembly revelou-se um acerto estratégico crucial: em nenhum computador do laboratório escolar houve necessidade de instalação de plugins ou suporte técnico complexo. O jogo funcionou com fluidez, contornando a obsolescência de hardware frequente nas redes estaduais de ensino. Além disso, o disparo automatizado dos dados via Webhook comprovou a viabilidade de aplicar instrumentos de avaliação e pesquisa em escala sem gerar sobrecarga administrativa aos professores regentes.
+### Viabilidade Operacional em Escolas Públicas
+A estratégia de engenharia adotada (Godot 4 WebAssembly / Netlify) mostrou-se plenamente sustentável no ambiente da escola pública: não foram registradas falhas de execução, lentidão ou incompatibilidade em computadores com hardware básico. A telemetria silenciosa em tempo real via nuvem comprovou sua eficiência ao dispensar a aplicação morosa de questionários físicos, fornecendo dados precisos para o pesquisador e permitindo que o tempo didático fosse integralmente dedicado à aprendizagem e ao debate.
 
 ---
 
-## 6. Conclusão e Trabalhos Futuros
+## Conclusão e Trabalhos Futuros
 
-O projeto **Pioneiras & Além** consolidou uma intervenção pedagógica que responde simultaneamente a duas urgências da Educação Básica: a alfabetização no Pensamento Computacional e o fomento ativo à equidade de gênero na ciência e tecnologia (ODS 5). Os resultados empíricos demonstraram que a articulação entre narrativas empáticas em primeira pessoa, mecânicas construcionistas fundadas em metáforas acessíveis e telemetria transparente constitui um modelo replicável e de alto impacto educacional.
+O desenvolvimento e a aplicação do **Pioneiras & Além** demonstraram a viabilidade e o alto impacto de integrar o ensino de fundamentos do Pensamento Computacional ao resgate da memória e do protagonismo feminino na ciência e tecnologia. Fundamentado no construcionismo de Papert e nos Estudos de Ciência, Tecnologia e Gênero, o jogo superou a barreira da abstração conceitual, ressignificou o erro pedagógico por meio da depuração interativa e promoveu significativo ganho de autoeficácia e engajamento entre os educandos, em especial entre as meninas.
 
-O artefato superou a barreira do hermetismo técnico, desmistificou o erro como etapa natural da investigação científica e empoderou substancialmente as alunas, desconstruindo estereótipos androcêntricos que historicamente restringem a presença feminina nas carreiras de STEM.
+O projeto configurou-se como uma tecnologia social educacional acessível, sustentável e plenamente alinhada às diretrizes da BNCC para a Computação e ao ODS 5 da ONU.
 
-Como desdobramentos e trabalhos futuros, delineiam-se as seguintes frentes de pesquisa:
-1. **Estudos Longitudinais Ampliados:** aplicação da metodologia em uma amostra multicêntrica de escolas públicas de diferentes regiões do país, acompanhando a escolha de itinerários formativos dos estudantes no Ensino Médio;
-2. **Dashboard Docente em Tempo Real:** desenvolvimento de uma interface web para que professores visualizem métricas de aprendizagem e pontos de dificuldade da turma instantaneamente durante a aula;
-3. **Módulo de Mulheres na Inteligência Artificial:** expansão das Eras do jogo com a inclusão de cientistas contemporâneas que lideram pesquisas em ética e aprendizado de máquina (como Timnit Gebru e Joy Buolamwini), discutindo vieses algorítmicos e o futuro da inteligência artificial sob uma perspectiva inclusiva.
+Como desdobramentos e trabalhos futuros, indicam-se:
+1. **Estudos Longitudinais Multicêntricos:** ampliação da amostra para redes públicas municipais e estaduais de outras regiões do país, avaliando o impacto da metodologia na escolha de itinerários formativos de Ensino Médio;
+2. **Dashboard Analítico para Professores:** desenvolvimento de um painel web que permita aos docentes visualizarem as métricas de tempo, tentativas e erros da turma em tempo real durante as aulas;
+3. **Módulo de Pioneiras na Inteligência Artificial:** expansão das fases do jogo com a inclusão de cientistas contemporâneas que lideram pesquisas em ética e aprendizado de máquina (como Timnit Gebru e Joy Buolamwini), debatendo vieses algorítmicos e diversidade na IA.
 
 ---
 
 ## Agradecimentos
 
-Os autores agradecem à Universidade Estadual do Norte do Paraná (UENP) e ao Programa de Pós-Graduação em Ensino de Computação (PROFCOMP) pelo fomento institucional a esta pesquisa. Expressamos profundo reconhecimento à equipe gestora, ao corpo docente e, de modo especial, a todos os estudantes da escola pública participante, cuja curiosidade, dedicação e entusiasmo deram sentido prático a este projeto.
+Os autores expressam sinceros agradecimentos à Universidade Estadual do Norte do Paraná (UENP) e ao corpo docente do Programa de Pós-Graduação em Ensino de Computação (PROFCOMP). Estendemos nosso agradecimento especial à equipe diretiva, aos professores e, sobretudo, aos estudantes da escola pública estadual participante da pesquisa, cuja curiosidade e entusiasmo foram fundamentais para a realização deste trabalho.
 
 ---
 
 ## Declaração de Uso de Inteligência Artificial
 
-Em estrita conformidade com as diretrizes de ética, transparência e integridade acadêmica preconizadas pela Sociedade Brasileira de Computação (SBC) e pela comissão organizadora do *Computer on the Beach*, os autores declaram formalmente que ferramentas de Inteligência Artificial Generativa foram empregadas unicamente como recurso instrumental de apoio para:
-1. Revisão gramatical e adequação da fluidez estilística do manuscrito;
-2. Formatação visual do documento conforme os padrões normativos da conferência.
+Em consonância com as diretrizes de transparência, integridade acadêmica e conduta ética preconizadas pela Sociedade Brasileira de Computação (SBC) e pela comissão do *Computer on the Beach*, os autores declaram formalmente que ferramentas de Inteligência Artificial Generativa foram empregadas estritamente como suporte instrumental para:
+1. Apoio na revisão gramatical e polimento de fluidez estilística do texto em língua portuguesa e inglesa;
+2. Formatação visual do documento conforme os padrões normativos da chamada.
 
-Ressalta-se categoricamente que todo o delineamento metodológico, a concepção pedagógica do jogo, a programação de software na engine Godot, a coleta de dados de telemetria, a mediação das oficinas com os estudantes e a interpretação crítica das análises e conclusões são de autoria intelectual e responsabilidade ética integral e exclusiva dos pesquisadores humanos signatários deste trabalho.
+Declara-se de modo categórico que a concepção epistemológica e pedagógica, o desenvolvimento do jogo digital na engine Godot, o planejamento da pesquisa-ação, a mediação com os estudantes, a coleta de telemetria, a análise empírica dos dados e as conclusões foram idealizadas, executadas e validadas integralmente pelos autores humanos signatários, que assumem plena responsabilidade científica e ética pelo conteúdo do artigo.
 
 ---
 
