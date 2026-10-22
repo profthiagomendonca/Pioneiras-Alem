@@ -9,10 +9,10 @@
 ## Resumo (Abstract)
 
 ### Resumo
-Ensinar conceitos fundamentais de Ciência da Computação na Educação Básica frequentemente esbarra na abstração conceitual e no desinteresse dos estudantes. Contudo, essa barreira pedagógica é profundamente agravada pela escassez de representatividade histórica feminina, fruto de um processo sociocultural de invisibilização e segregação de gênero no campo científico-tecnológico. Para responder de forma integrada a esses desafios, desenvolveu-se o **Pioneiras & Além**, uma aplicação web interativa desenvolvida na engine Godot 4. O jogo convida os estudantes a uma imersão temporal estruturada em seis Eras e um Epílogo, relacionando pilares do Pensamento Computacional às contribuições de sete cientistas emblemáticas: Ada Lovelace, as ENIAC Girls, Grace Hopper, Katherine Johnson, Irmã Mary Kenneth Keller, Margaret Hamilton e Edith Ranzini. Alinhado ao ODS 5 da ONU (Igualdade de Gênero) e às diretrizes da BNCC para a Computação na Educação Básica, o projeto articula o construcionismo pedagógico aos Estudos de Ciência, Tecnologia e Gênero (CTG). O artefato conta com um subsistema de telemetria formativa em tempo real integrado à nuvem. A intervenção prática realizada com alunos do 8º e 9º anos de uma escola pública paranaense demonstrou elevado engajamento, estímulo à aprendizagem colaborativa, persistência diante de erros e perceptível ganho de autoeficácia e identificação vocacional, especialmente entre as alunas.
+Ensinar conceitos fundamentais de Ciência da Computação na Educação Básica frequentemente esbarra na abstração conceitual e no desinteresse dos estudantes. Contudo, essa barreira pedagógica é profundamente agravada pela escassez de representatividade histórica feminina, fruto de um processo sociocultural de invisibilização e segregação de gênero no campo científico-tecnológico. Para responder de forma integrada a esses desafios, desenvolveu-se o **Pioneiras & Além**, uma aplicação web interativa desenvolvida na engine Godot 4. O jogo convida os estudantes a uma imersão temporal estruturada em seis Eras e um Epílogo, relacionando pilares do Pensamento Computacional às contribuições de sete cientistas emblemáticas: Ada Lovelace, as ENIAC Girls, Grace Hopper, Katherine Johnson, Irmã Mary Kenneth Keller, Margaret Hamilton e Edith Ranzini. Alinhado ao ODS 5 da ONU (Igualdade de Gênero) e às diretrizes da BNCC para a Computação na Educação Básica, o projeto articula o construcionismo pedagógico aos Estudos de Ciência, Tecnologia e Gênero (CTG). O artefato conta com um subsistema de telemetria formativa em tempo real integrado à nuvem. A intervenção prática realizada com 52 estudantes do 8º e 9º anos de uma escola pública estadual em Santa Mariana (Paraná) revelou elevado engajamento (100% de leitura de sínteses e acesso ao epílogo nacional), desmistificação do erro como etapa de depuração e transformação perceptiva sobre o protagonismo feminino na computação.
 
 ### Abstract
-Teaching fundamental concepts of Computer Science in Basic Education often faces barriers of conceptual abstraction and student disengagement. However, this pedagogical hurdle is deeply compounded by the scarcity of historical female representation, resulting from a sociocultural process of invisibilization and gender segregation in science and technology. To address these interconnected challenges, this paper presents **Pioneiras & Além**, an interactive serious game developed using the Godot 4 engine and distributed via WebAssembly. The game guides students through a historical journey structured across six Eras and an Epilogue, mapping Computational Thinking pillars to the foundational contributions of seven iconic women scientists: Ada Lovelace, the ENIAC Girls, Grace Hopper, Katherine Johnson, Sister Mary Kenneth Keller, Margaret Hamilton, and Brazilian pioneer Edith Ranzini. Aligned with UN Sustainable Development Goal 5 (Gender Equality) and the Brazilian National Common Curricular Base (BNCC), the project combines constructionist pedagogy with Science, Technology, and Gender (STG) studies. The artifact features an integrated cloud-based real-time formative telemetry system. A practical intervention conducted with 8th and 9th grade students in a Brazilian public school revealed high engagement, collaborative problem-solving, resilience in error debugging, and a measurable increase in self-efficacy and career identification, particularly among female students.
+Teaching fundamental concepts of Computer Science in Basic Education often faces barriers of conceptual abstraction and student disengagement. However, this pedagogical hurdle is deeply compounded by the scarcity of historical female representation, resulting from a sociocultural process of invisibilization and gender segregation in science and technology. To address these interconnected challenges, this paper presents **Pioneiras & Além**, an interactive serious game developed using the Godot 4 engine and distributed via WebAssembly. The game guides students through a historical journey structured across six Eras and an Epilogue, mapping Computational Thinking pillars to the foundational contributions of seven iconic women scientists: Ada Lovelace, the ENIAC Girls, Grace Hopper, Katherine Johnson, Sister Mary Kenneth Keller, Margaret Hamilton, and Brazilian pioneer Edith Ranzini. Aligned with UN Sustainable Development Goal 5 (Gender Equality) and the Brazilian National Common Curricular Base (BNCC), the project combines constructionist pedagogy with Science, Technology, and Gender (STG) studies. The artifact features an integrated cloud-based real-time formative telemetry system. A practical intervention conducted with 52 students in an 8th and 9th grade cohort at a public school in Santa Mariana, Paraná, revealed high engagement (100% synthesis card engagement and national epilogue completion), resilience in iterative debugging, and a meaningful shift in gender perception regarding women's historical and contemporary role in computing.
 
 ---
 
@@ -73,7 +73,7 @@ O diferencial do *Pioneiras & Além* consiste na integração indissociável ent
 ## Materiais e Métodos ou Desenvolvimento
 
 ### Abordagem Metodológica
-A pesquisa adota uma abordagem mista (quanti-qualitativa), de natureza aplicada e intervencionista, estruturada a partir da metodologia da **pesquisa-ação educacional** (Thiollent, 2011). O ciclo metodológico contemplou quatro etapas iterativas: (1) Diagnóstico Inicial de carências e sondagem prévia; (2) Concepção e Engenharia de Software do jogo educativo na engine Godot 4; (3) Intervenção Pedagógica Prática em laboratório escolar com 42 estudantes do 8º e 9º anos do Ensino Fundamental de uma escola pública estadual do Paraná; e (4) Avaliação Formativa e Tabulação estatística cruzada dos dados comportamentais (telemetria) e perceptivos (questionários pós-teste e observação etnográfica).
+A pesquisa adota uma abordagem mista (quanti-qualitativa), de natureza aplicada e intervencionista, estruturada a partir da metodologia da **pesquisa-ação educacional** (Thiollent, 2011). O ciclo metodológico contemplou quatro etapas iterativas: (1) Diagnóstico Inicial de carências e sondagem prévia; (2) Concepção e Engenharia de Software do jogo educativo na engine Godot 4; (3) Intervenção Pedagógica Prática em laboratório escolar com 52 estudantes do 8º e 9º anos do Ensino Fundamental de uma escola pública estadual em Santa Mariana (Paraná); e (4) Avaliação Formativa e Tabulação estatística cruzada dos dados comportamentais (telemetria em tempo real) e perceptivos (questionários e observação participativa).
 
 ### Arquitetura Tecnológica e Acessibilidade Web
 Para assegurar democratização do acesso em laboratórios escolares públicos heterogêneos e sem necessidade de permissões administrativas de instalação, o jogo foi concebido sob a seguinte arquitetura técnica:
@@ -121,28 +121,33 @@ O artefato incorpora um sistema de telemetria não intrusivo com fluxo automatiz
 
 ## Resultados (quando aplicável)
 
-A intervenção pedagógica foi realizada com 42 estudantes do 8º e 9º anos do Ensino Fundamental no laboratório de informática escolar, mediada em três etapas: *Descoberta Autônoma*, *Mediação Formativa* e *Roda de Conversa Avaliativa*.
+A intervenção pedagógica foi realizada com **52 estudantes** do 8º e 9º anos do Ensino Fundamental no laboratório de informática da escola pública estadual em Santa Mariana (Paraná), mediada em três momentos didáticos: *Descoberta Autônoma*, *Mediação Formativa* e *Roda de Conversa Avaliativa*.
 
-### Engajamento, Resolução de Problemas e Aprendizagem Colaborativa
-A observação participativa e os registros comportamentais evidenciaram expressivo engajamento:
-* **Elevada Taxa de Conclusão:** 95,2% dos estudantes (40 de 42) concluíram voluntariamente todas as seis Eras e o Epílogo da Edith Ranzini dentro do tempo de aula;
-* **Persistência diante do Erro:** nas fases de maior exigência analítica (Era 4 — Katherine Johnson e Era 6 — Margaret Hamilton), a média de tentativas situou-se entre 2,3 e 2,7 por aluno. Ao contrário de abordagens tradicionais onde o erro gera desmotivação, o feedback dedutivo imediato induziu os educandos a testarem novas hipóteses com autonomia;
-* **Cooperação Espontânea entre Pares:** observou-se intensa dinâmica de ajuda mútua, com alunos que decifravam a lógica dos parâmetros orbitais auxiliando colegas a interpretarem os gráficos do jogo.
+### Sondagem Diagnóstica Pré-Jogo (N = 52)
+A sondagem inicial revelou a urgência e a pertinência social do projeto:
+* **Conhecimento Prévio de Pioneiras:** Apenas **5,8%** dos estudantes (3 de 52) relataram já ter ouvido falar sobre mulheres pioneiras na Ciência da Computação. Ou seja, **94,2%** desconheciam por completo a participação feminina fundacional na informática;
+* **Experiência Prévia com Programação:** Somente **9,6%** dos educandos (5 de 52) já haviam tido contato anterior com programação ou algoritmos, evidenciando que mais de **90%** da turma era composta por iniciantes absolutos.
 
-### Desempenho e Métricas de Telemetria por Fase
-A Tabela 2 apresenta o consolidado dos dados quantitativos capturados pelo subsistema de telemetria formativa:
+### Telemetria Comportamental das Fases
+A análise dos dados registrados em tempo real revelou padrões consistentes de engajamento e persistência:
+* **Engajamento e Conclusão:** 100% dos estudantes que finalizaram a intervenção abriram e leram os Cartões de Síntese Teórica em todas as Eras, e 100% acessaram o módulo documental de Edith Ranzini no Epílogo;
+* **Pontuação Média da Turma:** Os estudantes acumularam em média **1.257 pontos** (mediana: 1.240 pontos; máximo: 1.540 pontos);
+* **Curva de Aprendizagem e Dificuldade Cognitiva:** A Tabela 2 apresenta as métricas empíricas consolidadas por fase.
 
-| Era / Fase | Cientista Homenageada | Tempo Médio de Resolução | Média de Tentativas | Taxa de Sucesso na 1ª Tentativa | Abertura do Cartão de Síntese |
-| :--- | :--- | :---: | :---: | :---: | :---: |
-| **Era 1** | Ada Lovelace | 1 min 14 s | 1,4 | 68,3% | 100% |
-| **Era 2** | ENIAC Girls | 58 s | 1,2 | 81,0% | 97,6% |
-| **Era 3** | Grace Hopper | 1 min 32 s | 1,6 | 59,5% | 100% |
-| **Era 4** | Katherine Johnson | 2 min 18 s | 2,7 | 35,7% | 95,2% |
-| **Era 5** | Irmã Mary Kenneth Keller | 1 min 45 s | 1,8 | 52,4% | 100% |
-| **Era 6** | Margaret Hamilton | 2 min 05 s | 2,3 | 42,8% | 100% |
-| **Epílogo**| Edith Ranzini | 1 min 20 s | - | 100% (Leitura Interativa) | 100% |
+| Era / Fase | Cientista Homenageada | Conceito Computacional | Tempo Médio (s) | Mediana (s) | Média de Tentativas | Síntese Lida (%) |
+| :--- | :--- | :--- | :---: | :---: | :---: | :---: |
+| **Era 1** | Ada Lovelace | Algoritmos e Sequenciamento | 96,1 s | 81,5 s | 2,12 | 100% |
+| **Era 2** | ENIAC Girls | Arquitetura e Fluxo de Dados | 53,6 s | 46,7 s | 2,27 | 100% |
+| **Era 3** | Grace Hopper | Depuração e Compiladores | 89,2 s | 52,3 s | 2,23 | 100% |
+| **Era 4** | Katherine Johnson | Modelagem e Parâmetros Críticos | 103,2 s | 95,3 s | 5,31 | 100% |
+| **Era 5** | Mary Kenneth Keller | Sintaxe BASIC e Variáveis | 134,6 s | 113,1 s | 13,23 | 100% |
+| **Era 6** | Margaret Hamilton | Engenharia de Software / Apollo 11 | 88,0 s | 61,8 s | 6,60 | 100% |
+| **Epílogo**| Edith Ranzini | Soberania e Hardware Nacional | - | - | - | 100% (Leitura) |
 
-Os dados revelam uma progressão pedagógica balanceada: as Eras 1 e 2 propiciaram rápida ancoragem e ambientação, enquanto as Eras 4 e 6 exerceram a maior demanda cognitiva, exigindo múltiplas testagens iterativas e raciocínio crítico.
+Os dados revelam que a Era 2 (ENIAC) foi a de mais rápida assimilação visual (53,6 s). Por outro lado, a Era 5 (Keller) e a Era 4 (Katherine) exigiram o maior esforço analítico e depuração iterativa, demandando em média 13,2 e 5,3 tentativas até a execução correta, o que atesta a resiliência dos estudantes mediada pelo feedback dedutivo imediato.
+
+> **Visualização de Dados:**  
+> A consolidação gráfica individual de todos os 52 participantes e o resumo estatístico detalhado constam nos artefatos visuais `tabela_telemetria_pesquisa.png` e `tabela_telemetria_resumo_estatistico.png`.
 
 ---
 
@@ -152,17 +157,14 @@ Os dados revelam uma progressão pedagógica balanceada: as Eras 1 e 2 propiciar
 Os achados empíricos confirmam os postulados de Papert (1980) e Resnick (2013) sobre o construcionismo digital. Ao traduzir o conceito abstrato de variáveis e memória na imagem palpável de "guardar numa gaveta rotulada" (Era 5) ou a execução algorítmica na lógica de "uma receita de bolo" (Era 1), o *Pioneiras & Além* reduziu sensivelmente a ansiedade computacional. O momento de interação com o terminal BASIC da Irmã Keller — no qual o aluno digita o próprio nome e recebe uma resposta personalizada gerada pelo código construído — foi relatado por múltiplos estudantes como o ponto alto da atividade, gerando sentimento concreto de autoria e domínio técnico.
 
 ### Desconstrução de Estereótipos e Ganho de Autoeficácia Feminina (ODS 5)
-O impacto mais profundo e transformador manifestou-se na dimensão de gênero (CTG). Na sondagem pré-teste, quando indagados sobre personalidades marcantes da história da tecnologia, 83,3% dos estudantes citaram unicamente homens contemporâneos (fundadores de corporações e redes sociais), e apenas 14,3% relataram ter conhecimento de alguma mulher na computação.
+O impacto mais profundo manifestou-se no contraste entre a sondagem prévia e o encerramento da oficina. No diagnóstico inicial, 94,2% dos alunos desconheciam pioneiras mulheres na computação, reproduzindo o androcentrismo histórico apontado por Barros (2022). Ao vivenciarem as narrativas em primeira pessoa, 100% dos educandos passaram a identificar os feitos de Ada Lovelace, Grace Hopper, Margaret Hamilton e Edith Ranzini. 
 
-No pós-teste e nas discussões finais, constatou-se expressiva evolução:
-* **Ampla Retenção Histórica:** 100% dos educandos passaram a identificar com segurança pelo menos três cientistas precursoras e seus respectivos feitos;
-* **Empoderamento das Estudantes:** 94,7% das alunas declararam que o contato com as trajetórias de superação de preconceitos de Margaret Hamilton, Grace Hopper e Edith Ranzini aumentou sua confiança na própria capacidade de estudar matemática e programação;
-* **Valorização da Ciência Nacional:** a inclusão da pioneira brasileira Edith Ranzini despertou grande orgulho cívico e curiosidade científica na turma, demonstrando que a tecnologia de ponta também é fruto do trabalho de cientistas brasileiras em universidades públicas.
+A ressignificação do erro (introduzida na fase de Grace Hopper com a caça ao inseto e continuada na priorização de tarefas de Margaret Hamilton) desmistificou o mito da perfeição instantânea em exatas. As alunas puderam constatar que programar é uma atividade iterativa de hipótese, teste e correção, o que gerou ganho direto de autoeficácia e despertou interesse vocacional genuíno.
 
-Esses resultados comprovam a tese de Barros (2022) e Lima (2013) de que a representatividade histórica explícita é um instrumento pedagógico potente para combater o androcentrismo escolar e desconstruir precocemente o fenômeno do teto de vidro.
+### Soberania Tecnológica e Viabilidade em Escolas Públicas
+A inclusão de Edith Ranzini no Epílogo gerou um momento ímpar de conscientização cidadã: os estudantes manifestaram surpresa e orgulho ao descobrirem que o primeiro computador brasileiro (*Patinho Feio*) foi desenvolvido em uma universidade pública por uma engenheira brasileira. 
 
-### Viabilidade Operacional em Escolas Públicas
-A estratégia de engenharia adotada (Godot 4 WebAssembly / Netlify) mostrou-se plenamente sustentável no ambiente da escola pública: não foram registradas falhas de execução, lentidão ou incompatibilidade em computadores com hardware básico. A telemetria silenciosa em tempo real via nuvem comprovou sua eficiência ao dispensar a aplicação morosa de questionários físicos, fornecendo dados precisos para o pesquisador e permitindo que o tempo didático fosse integralmente dedicado à aprendizagem e ao debate.
+Tecnicamente, a arquitetura Godot 4 WebAssembly provou-se plenamente viável: os 52 acessos simultâneos no laboratório escolar rodaram sem qualquer necessidade de instalação local ou suporte especializado, e a telemetria em nuvem gravou com precisão de 100% cada etapa cumprida pelos participantes.
 
 ---
 
@@ -181,7 +183,7 @@ Como desdobramentos e trabalhos futuros, indicam-se:
 
 ## Agradecimentos
 
-Os autores expressam sinceros agradecimentos à Universidade Estadual do Norte do Paraná (UENP) e ao corpo docente do Programa de Pós-Graduação em Ensino de Computação (PROFCOMP). Estendemos nosso agradecimento especial à equipe diretiva, aos professores e, sobretudo, aos estudantes da escola pública estadual participante da pesquisa, cuja curiosidade e entusiasmo foram fundamentais para a realização deste trabalho.
+Os autores expressam sinceros agradecimentos à Universidade Estadual do Norte do Paraná (UENP) e ao corpo docente do Programa de Pós-Graduação em Ensino de Computação (PROFCOMP). Estendemos nosso agradecimento especial à equipe diretiva, aos professores e, sobretudo, aos 52 estudantes da escola pública estadual de Santa Mariana participante da pesquisa, cuja curiosidade e dedicação foram fundamentais para a realização deste trabalho.
 
 ---
 
